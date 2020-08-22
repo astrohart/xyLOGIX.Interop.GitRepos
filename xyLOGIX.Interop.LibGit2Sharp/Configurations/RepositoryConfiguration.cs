@@ -16,7 +16,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Configurations
         /// <remarks>This constructor sets default values for some of the properties.</remarks>
         public RepositoryConfiguration()
         {
-            HasRemote = true;   // by default
+            HasRemote = true; // by default
             IsActive = false;
             IsCommitMessageMandatory = true;
             RemoteName = "origin";
