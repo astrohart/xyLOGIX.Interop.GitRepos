@@ -5,7 +5,7 @@ using xyLOGIX.Interop.Git.Events;
 namespace xyLOGIX.Interop.Git.Interfaces
 {
     /// <summary>
-    /// Object that is bound to a Git repository.
+    /// Defines methods and properties for an object that is bound to a Git repository.
     /// </summary>
     public interface IRepositoryBoundObject
     {
