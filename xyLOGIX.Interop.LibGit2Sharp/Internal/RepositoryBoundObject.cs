@@ -1,11 +1,11 @@
 ﻿using Alphaleonis.Win32.Filesystem;
 using LibGit2Sharp;
 using System;
-using xyLOGIX.Interop.Git.Events;
-using xyLOGIX.Interop.Git.Exceptions;
-using xyLOGIX.Interop.Git.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Events;
+using xyLOGIX.Interop.LibGit2Sharp.Exceptions;
+using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
 
-namespace xyLOGIX.Interop.Git.Internal
+namespace xyLOGIX.Interop.LibGit2Sharp.Internal
 {
     /// <summary>
     /// Defines methods and properties that are common to all repository-bound objects.
@@ -142,12 +142,12 @@ namespace xyLOGIX.Interop.Git.Internal
         /// Determine whether the configuration is set up.
         /// </summary>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.Git.Exceptions.RepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
         /// if either the
-        /// <see cref="P:xyLOGIX.Interop.Git.Internal.RepositoryBoundObject.GitHubName" />
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubName" />
         /// or
-        /// <see cref="P:xyLOGIX.Interop.Git.Internal.RepositoryBoundObject.GitHubEmail" />
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubEmail" />
         /// properties are blank.
         /// </exception>
         protected void ValidateConfiguration()

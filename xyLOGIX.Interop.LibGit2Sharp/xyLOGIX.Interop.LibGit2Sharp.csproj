@@ -86,6 +86,7 @@
     <Compile Include="Exceptions\RepositoryNotAttachedException.cs" />
     <Compile Include="Exceptions\RepositoryNotConfiguredException.cs" />
     <Compile Include="Interfaces\ICommitter.cs" />
+    <Compile Include="Interfaces\IPusher.cs" />
     <Compile Include="Interfaces\IStager.cs" />
     <Compile Include="Internal\RepositoryBoundObject.cs" />
     <Compile Include="Stagers\Stager.cs" />

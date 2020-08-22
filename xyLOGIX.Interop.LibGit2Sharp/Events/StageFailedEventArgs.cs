@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace xyLOGIX.Interop.Git.Events
+namespace xyLOGIX.Interop.LibGit2Sharp.Events
 {
     /// <summary>
     /// Contains the data for a StageFailed event.
@@ -9,7 +9,7 @@ namespace xyLOGIX.Interop.Git.Events
     {
         /// <summary>
         /// Constructs a new instance of
-        /// <see cref="T:xyLOGIX.Interop.Git.Events.StageFailedEventArgs" /> and returns a
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.StageFailedEventArgs" /> and returns a
         /// reference to it.
         /// </summary>
         /// <param name="exception">

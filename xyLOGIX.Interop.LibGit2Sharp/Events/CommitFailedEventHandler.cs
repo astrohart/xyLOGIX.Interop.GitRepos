@@ -1,4 +1,4 @@
-﻿namespace xyLOGIX.Interop.Git.Events
+﻿namespace xyLOGIX.Interop.LibGit2Sharp.Events
 {
     /// <summary>
     /// Delegate for a CommitFailed event.
@@ -9,7 +9,7 @@
     /// </param>
     /// <param name="e">
     /// A
-    /// <see cref="T:xyLOGIX.Interop.Git.Events.CommitFailedEventArgs" /> that
+    /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.CommitFailedEventArgs" /> that
     /// contains the event data.
     /// </param>
     public delegate void CommitFailedEventHandler(object sender,
