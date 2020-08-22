@@ -29,6 +29,14 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
         public static Committer Instance { get; } = new Committer();
 
         /// <summary>
+        /// Gets a timestamp string for commits.  The string shows the local date and time
+        /// in UTC.
+        /// </summary>
+        /// <returns>String containing the timestamp.</returns>
+        private static string TheTimestamp
+            => $"\n\nOperation completed at {DateTime.UtcNow.ToShortTimeString()} on {DateTime.UtcNow.ToShortDateString()} UTC.";
+
+        /// <summary>
         /// Raised when a Commit operation has completed successfully.
         /// </summary>
         public event EventHandler CommitCompleted;
@@ -65,9 +73,11 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
         /// if either the
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubName" />
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubName" />
         /// or
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubEmail" />
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubEmail" />
         /// properties are blank.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
@@ -99,7 +109,10 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
                 var committer = author;
 
                 // Commit to the repository
-                Repository.Commit(commitMessage, author, committer);
+                Repository.Commit(
+                    commitMessage +
+                    (addTimestamp ? TheTimestamp : string.Empty), author,
+                    committer);
             }
             catch (Exception ex)
             {
@@ -111,7 +124,8 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
 
         /// <summary>
         /// Raises the
-        /// <see cref="E:xyLOGIX.Interop.LibGit2Sharp.Committers.Committer.CommitCompleted " />
+        /// <see
+        ///     cref="E:xyLOGIX.Interop.LibGit2Sharp.Committers.Committer.CommitCompleted " />
         /// event.
         /// </summary>
         protected virtual void OnCommitCompleted()
@@ -133,7 +147,8 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
 
         /// <summary>
         /// Raises the
-        /// <see cref="E:xyLOGIX.Interop.LibGit2Sharp.Committers.Committer.CommitStarted " /> event.
+        /// <see cref="E:xyLOGIX.Interop.LibGit2Sharp.Committers.Committer.CommitStarted " />
+        /// event.
         /// </summary>
         protected virtual void OnCommitStarted()
             => CommitStarted?.Invoke(this, EventArgs.Empty);
