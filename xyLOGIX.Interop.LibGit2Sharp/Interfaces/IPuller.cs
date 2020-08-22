@@ -3,14 +3,14 @@
     /// <summary>
     /// Defines the methods and properties for a Puller.
     /// </summary>
-    public interface IPuller
+    public interface IPuller : IRepositoryBoundObject
     {
         /// <summary>
         /// Pulls the latest commits from the origin remote to the local repository's
         /// master branch.
         /// </summary>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.Git.Exceptions.RepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.Git.Interfaces.IRepositoryBoundObject.AttachRepository" />

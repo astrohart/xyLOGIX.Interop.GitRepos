@@ -54,7 +54,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Stagers
         /// </summary>
         /// <returns>True if the stage operation succeeded; false otherwise.</returns>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.Git.Exceptions.RepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="T:xyLOGIX.Interop.Git.Interfaces.IRepositoryBoundObject.AttachRepository" />
@@ -94,7 +94,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Stagers
         /// </param>
         /// <returns>True if the stage operation succeeded; false otherwise.</returns>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.Git.Exceptions.RepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="T:xyLOGIX.Interop.Git.Interfaces.IRepositoryBoundObject.AttachRepository" />

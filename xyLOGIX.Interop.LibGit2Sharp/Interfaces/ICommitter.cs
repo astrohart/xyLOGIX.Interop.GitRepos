@@ -6,7 +6,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
     /// <summary>
     /// Defines the methods and properties for a Committer object.
     /// </summary>
-    public interface ICommitter
+    public interface ICommitter : IRepositoryBoundObject
     {
         /// <summary>
         /// Raised when a Commit operation has completed successfully.
@@ -35,14 +35,14 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// commit commitMessage.
         /// </param>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.Git.Exceptions.RepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.Git.Interfaces.IRepositoryBoundObject.AttachRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.Git.Exceptions.RepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
         /// if either the
         /// <see cref="P:xyLOGIX.Interop.Git.Internal.RepositoryBoundObject.GitHubName" />

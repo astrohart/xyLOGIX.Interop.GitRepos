@@ -67,7 +67,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
         /// Thrown if the
         /// <paramref name="repository" /> parameter is blank.
         /// </exception>
-        public void AttachRepository(IRepository repository)
+        public virtual void AttachRepository(IRepository repository)
         {
             Repository = repository ??
                          throw new ArgumentNullException(nameof(repository));
@@ -77,7 +77,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
         /// <summary>
         /// Disassociates this object with the repository.
         /// </summary>
-        public void DetachRepository()
+        public virtual void DetachRepository()
             => Repository = null;
 
         /// <summary>

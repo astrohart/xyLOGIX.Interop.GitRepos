@@ -4,28 +4,40 @@ using xyLOGIX.Interop.LibGit2Sharp.Events;
 namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
 {
     /// <summary>
-    /// Defines methods and properties for a Pusher.
+    /// Defines methods and properties for a Synchronizer object.
     /// </summary>
-    /// <remarks>Pusher objects push commits to a remote.</remarks>
-    public interface IPusher : IRepositoryBoundObject
+    public interface ISynchronizer : IRepositoryBoundObject
     {
         /// <summary>
-        /// Raised when a Push operation has been completed.
+        /// Raised when a Synchronization operation has completed.
         /// </summary>
-        event EventHandler PushCompleted;
+        event EventHandler SynchronizationCompleted;
 
         /// <summary>
-        /// Raised when a Push operation fails.
+        /// Raised when a Synchronization operation has failed.
         /// </summary>
-        event PushFailedEventHandler PushFailed;
+        event SynchronizationFailedEventHandler SynchronizationFailed;
 
         /// <summary>
-        /// Raised when a Push operation is started.
+        /// Raised when the Synchronization operation has started.
         /// </summary>
-        event EventHandler PushStarted;
+        event EventHandler SynchronizationStarted;
 
         /// <summary>
-        /// Pushes commits from the master branch to a remote called origin.
+        /// Gets a reference to an instance of an object that implements the
+        /// <see cref="xyLOGIX.Interop.LibGit2Sharp.Interfaces.IPuller" /> interface.
+        /// </summary>
+        IPuller Puller { get; }
+
+        /// <summary>
+        /// Gets a reference to an instance of an object that implements the
+        /// <see cref="xyLOGIX.Interop.LibGit2Sharp.Interfaces.IPusher" /> interface.
+        /// </summary>
+        IPusher Pusher { get; }
+
+        /// <summary>
+        /// Synchronizes (i.e., pulls, then pushes) the latest commits from the origin
+        /// remote to the local repository's master branch.
         /// </summary>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
@@ -52,6 +64,6 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// are blank.
         /// properties are blank.
         /// </exception>
-        void Push();
+        void Sync();
     }
 }

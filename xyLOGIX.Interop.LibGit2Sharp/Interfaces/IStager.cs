@@ -6,7 +6,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
     /// <summary>
     /// Defines the methods and properties for a Stager.
     /// </summary>
-    public interface IStager
+    public interface IStager : IRepositoryBoundObject
     {
         /// <summary>
         /// Raised when a Stage operation has completed successfully.
@@ -28,7 +28,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// </summary>
         /// <returns>True if the stage operation succeeded; false otherwise.</returns>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.Git.Exceptions.RepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="T:xyLOGIX.Interop.Git.Interfaces.IRepositoryBoundObject.AttachRepository" />
@@ -45,7 +45,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// </param>
         /// <returns>True if the stage operation succeeded; false otherwise.</returns>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.Git.Exceptions.RepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="T:xyLOGIX.Interop.Git.Interfaces.IRepositoryBoundObject.AttachRepository" />

@@ -87,12 +87,16 @@
     <Compile Include="Events\PushFailedEventHandler.cs" />
     <Compile Include="Events\StageFailedEventArgs.cs" />
     <Compile Include="Events\StageFailedEventHandler.cs" />
+    <Compile Include="Events\SynchronizationFailedEventArgs.cs" />
+    <Compile Include="Events\SynchronizationFailedEventHandler.cs" />
     <Compile Include="Exceptions\RepositoryNotAttachedException.cs" />
     <Compile Include="Exceptions\RepositoryNotConfiguredException.cs" />
     <Compile Include="Interfaces\ICommitter.cs" />
     <Compile Include="Interfaces\IPuller.cs" />
     <Compile Include="Interfaces\IPusher.cs" />
     <Compile Include="Interfaces\IStager.cs" />
+    <Compile Include="Interfaces\ISynchronizer.cs" />
+    <Compile Include="Interfaces\ITeam.cs" />
     <Compile Include="Internal\RepositoryBoundObject.cs" />
     <Compile Include="Pullers\Puller.cs" />
     <Compile Include="Pushers\Pusher.cs" />
@@ -106,6 +110,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Synchronizers\Synchronizer.cs" />
+    <Compile Include="Teams\Team.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
