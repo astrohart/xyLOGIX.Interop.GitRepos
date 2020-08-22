@@ -81,6 +81,8 @@
     <Compile Include="Committers\Committer.cs" />
     <Compile Include="Events\CommitFailedEventArgs.cs" />
     <Compile Include="Events\CommitFailedEventHandler.cs" />
+    <Compile Include="Events\PushFailedEventArgs.cs" />
+    <Compile Include="Events\PushFailedEventHandler.cs" />
     <Compile Include="Events\StageFailedEventArgs.cs" />
     <Compile Include="Events\StageFailedEventHandler.cs" />
     <Compile Include="Exceptions\RepositoryNotAttachedException.cs" />
@@ -89,6 +91,7 @@
     <Compile Include="Interfaces\IPusher.cs" />
     <Compile Include="Interfaces\IStager.cs" />
     <Compile Include="Internal\RepositoryBoundObject.cs" />
+    <Compile Include="Pushers\Pusher.cs" />
     <Compile Include="Stagers\Stager.cs" />
     <Compile Include="Events\RepositoryAttachedEventArgs.cs" />
     <Compile Include="Events\RepositoryAttachedEventHandler.cs" />
