@@ -33,15 +33,15 @@ namespace MyProject
             using (var team =
                 new Team(new Repository(@"/path/to/your/repo/.git")))
             {
-                var repositoryConfiguration = new RepositoryConfiguration
-                {
-                    Name = "Foo bar",
-                    Email = "@noneofyourbeeswax",
-                    RemoteUserName = "astrohart",
-                    RemotePassword = "xxxxx"
-                };
-                team.AddRepositoryConfiguration(repositoryConfiguration);
-                team.SetRepositoryConfigurationActive(repositoryConfiguration);
+                team.AddRepositoryConfiguration(
+                    new RepositoryConfiguration
+                    {
+                        Name = "Foo bar",
+                        Email = "@noneofyourbeeswax",
+                        RemoteUserName = "astrohart",
+                        RemotePassword = "xxxxx"
+                    }
+                );
 
                 team.CommitAllAndSync("Initial add");
             }
