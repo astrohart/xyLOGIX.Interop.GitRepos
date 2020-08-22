@@ -82,12 +82,12 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
 
         /// <summary>
         /// Raises the
-        /// <see cref="E:xyLOGIX.Interop.Git.Changes.Stager.RepositoryAttached" />
+        /// <see cref="E:xyLOGIX.Interop.LibGit2Sharp.Changes.Stager.RepositoryAttached" />
         /// event.
         /// </summary>
         /// <param name="e">
         /// A
-        /// <see cref="T:xyLOGIX.Interop.Git.Events.RepositoryAttachedEventArgs" /> that
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.RepositoryAttachedEventArgs" /> that
         /// contains the event data.
         /// </param>
         protected virtual void OnRepositoryAttached(
@@ -97,7 +97,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
         /// <summary>
         /// Raises the
         /// <see
-        ///     cref="E:xyLOGIX.Interop.Git.Changes.Stager.RepositoryDetached.RepositoryDetached" />
+        ///     cref="E:xyLOGIX.Interop.LibGit2Sharp.Changes.Stager.RepositoryDetached.RepositoryDetached" />
         /// event.
         /// </summary>
         protected virtual void OnRepositoryDetached()

@@ -58,16 +58,16 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.Git.Interfaces.IRepositoryBoundObject.AttachRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryBoundObject.AttachRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
         /// if either the
-        /// <see cref="P:xyLOGIX.Interop.Git.Internal.RepositoryBoundObject.GitHubName" />
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubName" />
         /// or
-        /// <see cref="P:xyLOGIX.Interop.Git.Internal.RepositoryBoundObject.GitHubEmail" />
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubEmail" />
         /// properties are blank.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
@@ -111,7 +111,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
 
         /// <summary>
         /// Raises the
-        /// <see cref="E:xyLOGIX.Interop.Git.Committers.Committer.CommitCompleted " />
+        /// <see cref="E:xyLOGIX.Interop.LibGit2Sharp.Committers.Committer.CommitCompleted " />
         /// event.
         /// </summary>
         protected virtual void OnCommitCompleted()
@@ -119,12 +119,12 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
 
         /// <summary>
         /// Raises the
-        /// <see cref="E:xyLOGIX.Interop.Git.Committers.Committer.CommitFailed " />
+        /// <see cref="E:xyLOGIX.Interop.LibGit2Sharp.Committers.Committer.CommitFailed " />
         /// event.
         /// </summary>
         /// <param name="e">
         /// A
-        /// <see cref="T:xyLOGIX.Interop.Git.Events.CommitFailedEventArgs" /> that
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.CommitFailedEventArgs" /> that
         /// contains the event data.
         /// </param>
         protected virtual void OnCommitFailed(
@@ -133,7 +133,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
 
         /// <summary>
         /// Raises the
-        /// <see cref="E:xyLOGIX.Interop.Git.Committers.Committer.CommitStarted " /> event.
+        /// <see cref="E:xyLOGIX.Interop.LibGit2Sharp.Committers.Committer.CommitStarted " /> event.
         /// </summary>
         protected virtual void OnCommitStarted()
             => CommitStarted?.Invoke(this, EventArgs.Empty);

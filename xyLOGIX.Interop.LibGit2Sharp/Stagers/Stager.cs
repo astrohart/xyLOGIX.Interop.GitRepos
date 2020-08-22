@@ -57,7 +57,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Stagers
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="T:xyLOGIX.Interop.Git.Interfaces.IRepositoryBoundObject.AttachRepository" />
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryBoundObject.AttachRepository" />
         /// method has not been called prior to calling this method.
         /// </exception>
         public bool StageAll()
@@ -97,7 +97,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Stagers
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="T:xyLOGIX.Interop.Git.Interfaces.IRepositoryBoundObject.AttachRepository" />
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryBoundObject.AttachRepository" />
         /// method has not been called prior to calling this method.
         /// </exception>
         /// <exception cref="T:System.IO.FileNotFoundException">
@@ -147,26 +147,26 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Stagers
         }
 
         /// <summary>
-        /// Raises the <see cref="E:xyLOGIX.Interop.Git.Stagers.Stager.StageCompleted " />
+        /// Raises the <see cref="E:xyLOGIX.Interop.LibGit2Sharp.Stagers.Stager.StageCompleted " />
         /// event.
         /// </summary>
         protected virtual void OnStageCompleted()
             => StageCompleted?.Invoke(this, EventArgs.Empty);
 
         /// <summary>
-        /// Raises the <see cref="E:xyLOGIX.Interop.Git.Stagers.Stager.StageFailed " />
+        /// Raises the <see cref="E:xyLOGIX.Interop.LibGit2Sharp.Stagers.Stager.StageFailed " />
         /// event.
         /// </summary>
         /// <param name="e">
         /// A
-        /// <see cref="T:xyLOGIX.Interop.Git.Events.StageFailedEventArgs" /> that contains
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.StageFailedEventArgs" /> that contains
         /// the event data.
         /// </param>
         protected virtual void OnStageFailed(StageFailedEventArgs e)
             => StageFailed?.Invoke(this, e);
 
         /// <summary>
-        /// Raises the <see cref="E:xyLOGIX.Interop.Git.Stagers.Stager.StageStarted " />
+        /// Raises the <see cref="E:xyLOGIX.Interop.LibGit2Sharp.Stagers.Stager.StageStarted " />
         /// event.
         /// </summary>
         protected virtual void OnStageStarted()
