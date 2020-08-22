@@ -14,8 +14,8 @@ namespace xyLOGIX.Interop.Git.Events
         /// and returns a reference to it.
         /// </summary>
         /// <param name="exception">
-        /// A <see cref="System.Exception" /> that contains the
-        /// event data.
+        /// An <see cref="System.Exception" /> that contains the
+        /// error data.
         /// </param>
         public CommitFailedEventArgs(Exception exception)
         {
@@ -23,7 +23,7 @@ namespace xyLOGIX.Interop.Git.Events
         }
 
         /// <summary>
-        /// Gets a <see cref="T:System.Exception" /> that contains the error data.
+        /// Gets an <see cref="T:System.Exception" /> that contains the error data.
         /// </summary>
         public Exception Exception { get; }
     }

@@ -20,6 +20,16 @@ namespace xyLOGIX.Interop.Git.Interfaces
         event EventHandler RepositoryDetached;
 
         /// <summary>
+        /// Gets or sets the email address and/or social media POC to utilize for operations.
+        /// </summary>
+        string GitHubEmail { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name to be utilized for operations.
+        /// </summary>
+        string GitHubName { get; set; }
+
+        /// <summary>
         /// Attaches an instance of an object that implements the
         /// <see cref="T:LibGit2Sharp.IRepository" /> interface to this object.
         /// </summary>

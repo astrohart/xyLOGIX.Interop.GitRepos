@@ -1,5 +1,7 @@
-﻿using System;
+﻿using LibGit2Sharp;
+using System;
 using xyLOGIX.Interop.Git.Events;
+using xyLOGIX.Interop.Git.Exceptions;
 using xyLOGIX.Interop.Git.Interfaces;
 using xyLOGIX.Interop.Git.Internal;
 
@@ -27,26 +29,6 @@ namespace xyLOGIX.Interop.Git.Committers
         public static Committer Instance { get; } = new Committer();
 
         /// <summary>
-        /// Occurs when a Commit operation has been started.
-        /// </summary>
-        public event EventHandler CommitStarted;
-
-        /// <summary>
-        /// Creates a commit with the specified <paramref name="commitMessage" />.
-        /// </summary>
-        /// <param name="commitMessage">(Required.)String containing the commit message.</param>
-        /// <param name="addTimestamp">
-        /// (Optional.) Set to true to add the timestamp to the
-        /// commit message.
-        /// </param>
-        /// <exception cref="T:System.ArgumentNullException">
-        /// Thrown if the required commit
-        /// message is blank.
-        /// </exception>
-        public void Commit(string commitMessage, bool addTimestamp = false)
-            => throw new NotImplementedException();
-
-        /// <summary>
         /// Occurs when a Commit operation has completed successfully.
         /// </summary>
         public event EventHandler CommitCompleted;
@@ -55,6 +37,77 @@ namespace xyLOGIX.Interop.Git.Committers
         /// Occurs when a Commit operation has failed.
         /// </summary>
         public event CommitFailedEventHandler CommitFailed;
+
+        /// <summary>
+        /// Occurs when a Commit operation has been started.
+        /// </summary>
+        public event EventHandler CommitStarted;
+
+        /// <summary>
+        /// Creates a commit with the specified <paramref name="commitMessage" />.
+        /// </summary>
+        /// <param name="commitMessage">
+        /// (Required.)String containing the commit
+        /// commitMessage.
+        /// </param>
+        /// <param name="addTimestamp">
+        /// (Optional.) Set to true to add the timestamp to the
+        /// commit commitMessage.
+        /// </param>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.Git.Exceptions.RepositoryNotAttachedException">
+        /// Thrown if the
+        /// <see
+        ///     cref="M:xyLOGIX.Interop.Git.Interfaces.IRepositoryBoundObject.AttachRepository" />
+        /// method has not been called.
+        /// </exception>
+        /// <exception cref="T:System.InvalidOperationException">
+        /// Thrown if the required commitMessage is blank.
+        /// </exception>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.Git.Exceptions.RepositoryNotConfiguredException">
+        /// Thrown
+        /// if either the
+        /// <see cref="P:xyLOGIX.Interop.Git.Internal.RepositoryBoundObject.GitHubName" />
+        /// or
+        /// <see cref="P:xyLOGIX.Interop.Git.Internal.RepositoryBoundObject.GitHubEmail" />
+        /// properties are blank.
+        /// </exception>
+        /// <remarks>
+        /// Use two
+        /// newline characters, '\n\n', in the message to separate the short commit message
+        /// from a detailed commit message.
+        /// </remarks>
+        public void Commit(string commitMessage, bool addTimestamp = false)
+        {
+            if (Repository == null)
+                throw new RepositoryNotAttachedException();
+
+            ValidateConfiguration();
+
+            if (string.IsNullOrWhiteSpace(commitMessage))
+                throw new InvalidOperationException(
+                    "ERROR (Commit): commitMessage is a required parameter.");
+
+            OnCommitStarted();
+
+            try
+            {
+                // Create the committer's signature and commit
+                var author = new Signature(GitHubName, GitHubEmail,
+                    DateTime.Now);
+                var committer = author;
+
+                // Commit to the repository
+                Repository.Commit(commitMessage, author, committer);
+            }
+            catch (Exception ex)
+            {
+                OnCommitFailed(new CommitFailedEventArgs(ex));
+            }
+
+            OnCommitCompleted();
+        }
 
         /// <summary>
         /// Raises the
@@ -74,7 +127,7 @@ namespace xyLOGIX.Interop.Git.Committers
         /// <see cref="T:xyLOGIX.Interop.Git.Events.CommitFailedEventArgs" /> that
         /// contains the event data.
         /// </param>
-        protected virtual void OnCommitFailedEventArgs(
+        protected virtual void OnCommitFailed(
             CommitFailedEventArgs e)
             => CommitFailed?.Invoke(this, e);
 

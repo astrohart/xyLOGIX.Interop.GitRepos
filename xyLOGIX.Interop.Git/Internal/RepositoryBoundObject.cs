@@ -2,6 +2,7 @@
 using LibGit2Sharp;
 using System;
 using xyLOGIX.Interop.Git.Events;
+using xyLOGIX.Interop.Git.Exceptions;
 using xyLOGIX.Interop.Git.Interfaces;
 
 namespace xyLOGIX.Interop.Git.Internal
@@ -27,6 +28,17 @@ namespace xyLOGIX.Interop.Git.Internal
         /// Occurs when a repository is detached from this object.
         /// </summary>
         public event EventHandler RepositoryDetached;
+
+        /// <summary>
+        /// Gets or sets the email address and/or social media POC to utilize for
+        /// operations.
+        /// </summary>
+        public string GitHubEmail { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name to be utilized for operations.
+        /// </summary>
+        public string GitHubName { get; set; }
 
         /// <summary>
         /// Attaches an instance of an object that implements the
@@ -124,6 +136,25 @@ namespace xyLOGIX.Interop.Git.Internal
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Determine whether the configuration is set up.
+        /// </summary>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.Git.Exceptions.RepositoryNotConfiguredException">
+        /// Thrown
+        /// if either the
+        /// <see cref="P:xyLOGIX.Interop.Git.Internal.RepositoryBoundObject.GitHubName" />
+        /// or
+        /// <see cref="P:xyLOGIX.Interop.Git.Internal.RepositoryBoundObject.GitHubEmail" />
+        /// properties are blank.
+        /// </exception>
+        protected void ValidateConfiguration()
+        {
+            if (string.IsNullOrWhiteSpace(GitHubName)
+                || string.IsNullOrWhiteSpace(GitHubEmail))
+            throw new RepositoryNotConfiguredException();
         }
     }
 }
