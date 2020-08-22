@@ -29,7 +29,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Pushers
         public static Pusher Instance { get; } = new Pusher();
 
         /// <summary>
-        /// Occurs when a Push operation has been completed.
+        /// Raised when a Push operation has been completed.
         /// </summary>
         public event EventHandler PushCompleted;
 

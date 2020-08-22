@@ -10,7 +10,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
     public interface IPusher
     {
         /// <summary>
-        /// Occurs when a Push operation has been completed.
+        /// Raised when a Push operation has been completed.
         /// </summary>
         event EventHandler PushCompleted;
 
