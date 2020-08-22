@@ -67,18 +67,25 @@
     <RootNamespace>xyLOGIX.Interop.Git</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AlphaFS, Version=2.2.0.0, Culture=neutral, PublicKeyToken=4d31a58f7d7ad5c9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AlphaFS.2.2.6\lib\net452\AlphaFS.dll</HintPath>
+    </Reference>
     <Reference Include="LibGit2Sharp, Version=0.26.0.0, Culture=neutral, PublicKeyToken=7cbde695407f0333, processorArchitecture=MSIL">
       <HintPath>..\packages\LibGit2Sharp.0.26.2\lib\net46\LibGit2Sharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Events\StageFailedEventArgs.cs" />
+    <Compile Include="Events\StageFailedEventHandler.cs" />
+    <Compile Include="Exceptions\RepositoryNotAttachedException.cs" />
+    <Compile Include="Internal\RepositoryBoundObject.cs" />
     <Compile Include="Stagers\Stager.cs" />
     <Compile Include="Events\RepositoryAttachedEventArgs.cs" />
     <Compile Include="Events\RepositoryAttachedEventHandler.cs" />
     <Compile Include="Interfaces\IRepositoryBoundObject.cs" />
-    <Compile Include="Interfaces\RepositoryBoundObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -1,14 +1,23 @@
-﻿using LibGit2Sharp;
+﻿using Alphaleonis.Win32.Filesystem;
+using LibGit2Sharp;
 using System;
 using xyLOGIX.Interop.Git.Events;
+using xyLOGIX.Interop.Git.Interfaces;
 
-namespace xyLOGIX.Interop.Git.Interfaces
+namespace xyLOGIX.Interop.Git.Internal
 {
     /// <summary>
     /// Defines methods and properties that are common to all repository-bound objects.
     /// </summary>
     public abstract class RepositoryBoundObject : IRepositoryBoundObject
     {
+        /// <summary>
+        /// Gets or sets a reference to an object that implements the
+        /// <see cref="T:LibGit2Sharp.IRepository" /> interface that this object is
+        /// currently working with.
+        /// </summary>
+        protected IRepository Repository { get; set; }
+
         /// <summary>
         /// Occurs when a new Repository is attached to this object.
         /// </summary>
@@ -18,13 +27,6 @@ namespace xyLOGIX.Interop.Git.Interfaces
         /// Occurs when a repository is detached from this object.
         /// </summary>
         public event EventHandler RepositoryDetached;
-
-        /// <summary>
-        /// Gets or sets a reference to an object that implements the
-        /// <see cref="T:LibGit2Sharp.IRepository" /> interface that this object is
-        /// currently working with.
-        /// </summary>
-        protected IRepository Repository { get; set; }
 
         /// <summary>
         /// Attaches an instance of an object that implements the
@@ -78,5 +80,50 @@ namespace xyLOGIX.Interop.Git.Interfaces
         /// </summary>
         protected virtual void OnRepositoryDetached()
             => RepositoryDetached?.Invoke(this, EventArgs.Empty);
+
+        /// <summary>
+        /// Strips the repository's working directory path from a full pathname, making it
+        /// relative to the tree root.
+        /// </summary>
+        /// <param name="path">
+        /// String containing the full path and filename of a repository
+        /// item.
+        /// </param>
+        /// <returns>
+        /// Path of the item, relative to the working tree root, or the empty
+        /// string if an error occurred.
+        /// </returns>
+        protected string StripRepoDirFromFilePath(string path)
+        {
+            var result = string.Empty;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(path)
+                    || !File.Exists(path)
+                    || Repository == null)
+                    return result;
+
+                var repoWorkingDir = Repository.Info.WorkingDirectory;
+                if (!path.StartsWith(repoWorkingDir))
+                    return result;
+
+                if (!Directory.Exists(repoWorkingDir))
+                    return result;
+
+                // replace up to the backslash
+                result =
+                    path.Replace(
+                        repoWorkingDir.EndsWith(@"\")
+                            ? repoWorkingDir
+                            : repoWorkingDir + @"\", string.Empty);
+            }
+            catch
+            {
+                result = string.Empty;
+            }
+
+            return result;
+        }
     }
 }
