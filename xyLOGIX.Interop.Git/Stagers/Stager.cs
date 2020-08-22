@@ -29,17 +29,17 @@ namespace xyLOGIX.Interop.Git.Stagers
         }
 
         /// <summary>
-        /// Occurs when a Stage operation has completed successfully.
+        /// Raised when a Stage operation has completed successfully.
         /// </summary>
         public event EventHandler StageCompleted;
 
         /// <summary>
-        /// Occurs when a Stage operation has failed.
+        /// Raised when a Stage operation has failed.
         /// </summary>
         public event StageFailedEventHandler StageFailed;
 
         /// <summary>
-        /// Occurs when a Stage operation has been started.
+        /// Raised when a Stage operation has been started.
         /// </summary>
         public event EventHandler StageStarted;
 

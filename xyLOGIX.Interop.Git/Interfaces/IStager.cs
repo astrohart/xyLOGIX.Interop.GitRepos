@@ -9,17 +9,17 @@ namespace xyLOGIX.Interop.Git.Interfaces
     public interface IStager
     {
         /// <summary>
-        /// Occurs when a Stage operation has completed successfully.
+        /// Raised when a Stage operation has completed successfully.
         /// </summary>
         event EventHandler StageCompleted;
 
         /// <summary>
-        /// Occurs when a Stage operation has failed.
+        /// Raised when a Stage operation has failed.
         /// </summary>
         event StageFailedEventHandler StageFailed;
 
         /// <summary>
-        /// Occurs when a Stage operation has been started.
+        /// Raised when a Stage operation has been started.
         /// </summary>
         event EventHandler StageStarted;
 

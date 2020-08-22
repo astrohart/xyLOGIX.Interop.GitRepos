@@ -29,17 +29,17 @@ namespace xyLOGIX.Interop.Git.Committers
         public static Committer Instance { get; } = new Committer();
 
         /// <summary>
-        /// Occurs when a Commit operation has completed successfully.
+        /// Raised when a Commit operation has completed successfully.
         /// </summary>
         public event EventHandler CommitCompleted;
 
         /// <summary>
-        /// Occurs when a Commit operation has failed.
+        /// Raised when a Commit operation has failed.
         /// </summary>
         public event CommitFailedEventHandler CommitFailed;
 
         /// <summary>
-        /// Occurs when a Commit operation has been started.
+        /// Raised when a Commit operation has been started.
         /// </summary>
         public event EventHandler CommitStarted;
 

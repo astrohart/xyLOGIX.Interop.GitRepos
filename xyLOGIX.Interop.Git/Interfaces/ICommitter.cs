@@ -9,17 +9,17 @@ namespace xyLOGIX.Interop.Git.Interfaces
     public interface ICommitter
     {
         /// <summary>
-        /// Occurs when a Commit operation has completed successfully.
+        /// Raised when a Commit operation has completed successfully.
         /// </summary>
         event EventHandler CommitCompleted;
 
         /// <summary>
-        /// Occurs when a Commit operation has failed.
+        /// Raised when a Commit operation has failed.
         /// </summary>
         event CommitFailedEventHandler CommitFailed;
 
         /// <summary>
-        /// Occurs when a Commit operation has been started.
+        /// Raised when a Commit operation has been started.
         /// </summary>
         event EventHandler CommitStarted;
 

@@ -10,12 +10,12 @@ namespace xyLOGIX.Interop.Git.Interfaces
     public interface IRepositoryBoundObject
     {
         /// <summary>
-        /// Occurs when a new Repository is attached to this object.
+        /// Raised when a new Repository is attached to this object.
         /// </summary>
         event RepositoryAttachedEventHandler RepositoryAttached;
 
         /// <summary>
-        /// Occurs when a repository is detached from this object.
+        /// Raised when a repository is detached from this object.
         /// </summary>
         event EventHandler RepositoryDetached;
 

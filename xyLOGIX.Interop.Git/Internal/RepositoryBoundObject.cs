@@ -20,12 +20,12 @@ namespace xyLOGIX.Interop.Git.Internal
         protected IRepository Repository { get; set; }
 
         /// <summary>
-        /// Occurs when a new Repository is attached to this object.
+        /// Raised when a new Repository is attached to this object.
         /// </summary>
         public event RepositoryAttachedEventHandler RepositoryAttached;
 
         /// <summary>
-        /// Occurs when a repository is detached from this object.
+        /// Raised when a repository is detached from this object.
         /// </summary>
         public event EventHandler RepositoryDetached;
 
