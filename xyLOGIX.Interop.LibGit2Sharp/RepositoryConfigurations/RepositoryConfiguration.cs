@@ -1,11 +1,11 @@
 ﻿using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Configurations
+namespace xyLOGIX.Interop.LibGit2Sharp.RepositoryConfigurations
 {
     /// <summary>
-    /// Configuration for a committer and remote.
+    /// RepositoryConfiguration for a committer and remote.
     /// </summary>
-    public class Configuration : IConfiguration
+    public class RepositoryConfiguration : IConfiguration
     {
         /// <summary>
         /// Gets or sets a string containing the email address or handle of the committer.
@@ -42,7 +42,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Configurations
         /// </summary>
         /// <param name="configuration">
         /// Reference to an instance of an object that implements the
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Configurations.Configuration" />, the
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.RepositoryConfigurations.RepositoryConfiguration" />, the
         /// values of whose properties are to be checked.
         /// </param>
         /// <param name="hasRemote">

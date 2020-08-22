@@ -1,7 +1,7 @@
 ﻿namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
 {
     /// <summary>
-    /// Defines methods and properties for a Configuration POCO.
+    /// Defines methods and properties for a RepositoryConfiguration POCO.
     /// </summary>
     public interface IConfiguration
     {
