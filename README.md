@@ -54,3 +54,6 @@ Using this wrapper library is literally that easy.
 
 **NOTE** When creating a new `RepositoryConfiguration` object, do not set the `IsActive` property by hand.  Call `Team.SetRepositoryConfigurationActive` on it instead.
 
+# 2. Further Work
+
+This library is very bare-bones. Issues and pull requests are welcome to flesh it out, although maintaining this library is not a priority for me.
