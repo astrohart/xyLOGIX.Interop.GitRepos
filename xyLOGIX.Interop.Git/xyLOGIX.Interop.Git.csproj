@@ -84,5 +84,9 @@
   <ItemGroup>
     <Content Include="1382_cogs.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Events\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
