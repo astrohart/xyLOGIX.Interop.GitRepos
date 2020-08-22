@@ -74,7 +74,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Changes\Stager.cs" />
+    <Compile Include="Stagers\Stager.cs" />
     <Compile Include="Events\RepositoryAttachedEventArgs.cs" />
     <Compile Include="Events\RepositoryAttachedEventHandler.cs" />
     <Compile Include="Interfaces\IRepositoryBoundObject.cs" />
