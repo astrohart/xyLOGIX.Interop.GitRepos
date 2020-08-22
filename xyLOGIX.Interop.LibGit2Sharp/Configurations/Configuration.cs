@@ -5,7 +5,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Configurations
     /// <summary>
     /// Configuration for a committer and remote.
     /// </summary>
-    public class Configuration  : IConfiguration
+    public class Configuration : IConfiguration
     {
         /// <summary>
         /// Gets or sets a string containing the email address or handle of the committer.
@@ -41,7 +41,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Configurations
         /// either a local or a local-and-remote repository(ies).
         /// </summary>
         /// <param name="configuration">
-        /// Reference to an instance of an object that implements the 
+        /// Reference to an instance of an object that implements the
         /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Configurations.Configuration" />, the
         /// values of whose properties are to be checked.
         /// </param>
