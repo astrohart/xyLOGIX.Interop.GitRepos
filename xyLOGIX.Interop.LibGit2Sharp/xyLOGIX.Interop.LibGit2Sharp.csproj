@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Committers\Committer.cs" />
+    <Compile Include="Configurations\Configuration.cs" />
     <Compile Include="Events\CommitFailedEventArgs.cs" />
     <Compile Include="Events\CommitFailedEventHandler.cs" />
     <Compile Include="Events\PullFailedEventArgs.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Exceptions\RepositoryNotAttachedException.cs" />
     <Compile Include="Exceptions\RepositoryNotConfiguredException.cs" />
     <Compile Include="Interfaces\ICommitter.cs" />
+    <Compile Include="Interfaces\IConfiguration.cs" />
     <Compile Include="Interfaces\IPuller.cs" />
     <Compile Include="Interfaces\IPusher.cs" />
     <Compile Include="Interfaces\IStager.cs" />
