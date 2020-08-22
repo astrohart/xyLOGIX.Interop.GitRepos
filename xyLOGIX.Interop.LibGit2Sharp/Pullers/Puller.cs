@@ -1,5 +1,7 @@
-﻿using System;
+﻿using LibGit2Sharp;
+using System;
 using xyLOGIX.Interop.LibGit2Sharp.Events;
+using xyLOGIX.Interop.LibGit2Sharp.Exceptions;
 using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
 using xyLOGIX.Interop.LibGit2Sharp.Internal;
 
@@ -56,7 +58,44 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Pullers
         /// properties are blank.
         /// </exception>
         public void Pull()
-            => throw new NotImplementedException();
+        {
+            if (Repository == null)
+                throw new RepositoryNotAttachedException();
+
+            ValidateConfiguration();
+
+            OnPullStarted();
+
+            try
+            {
+                // Credential information to fetch
+                var options = new PullOptions
+                {
+                    FetchOptions = new FetchOptions
+                    {
+                        CredentialsProvider = (url, usernameFromUrl, types) =>
+                            new UsernamePasswordCredentials
+                            {
+                                Username = GitHubUserName,
+                                Password = GitHubPassword
+                            }
+                    }
+                };
+
+                // User information to create a merge commit
+                var signature =
+                    new Signature(GitHubName, GitHubEmail, DateTime.Now);
+
+                // Pull
+                Commands.Pull((Repository) Repository, signature, options);
+            }
+            catch (Exception ex)
+            {
+                OnPullFailed(new PullFailedEventArgs(ex));
+            }
+
+            OnPullCompleted();
+        }
 
         /// <summary>
         /// Raised when a Pull operation has completed successfully.
