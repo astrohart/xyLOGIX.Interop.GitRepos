@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using xyLOGIX.Interop.Git.Events;
 using xyLOGIX.Interop.Git.Exceptions;
+using xyLOGIX.Interop.Git.Interfaces;
 using xyLOGIX.Interop.Git.Internal;
 using File = Alphaleonis.Win32.Filesystem.File;
 
@@ -11,7 +12,7 @@ namespace xyLOGIX.Interop.Git.Stagers
     /// <summary>
     /// Stages changes in the working tree to a local Git repository.
     /// </summary>
-    public class Stager : RepositoryBoundObject
+    public class Stager : RepositoryBoundObject, IStager
     {
         /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.
@@ -28,12 +29,6 @@ namespace xyLOGIX.Interop.Git.Stagers
         }
 
         /// <summary>
-        /// Gets a reference to the one and only instance of
-        /// <see cref="T:xyLOGIX.Interop.Git.Stagers.Stager" />.
-        /// </summary>
-        public static Stager Instance { get; } = new Stager();
-
-        /// <summary>
         /// Occurs when a Stage operation has completed successfully.
         /// </summary>
         public event EventHandler StageCompleted;
@@ -47,6 +42,12 @@ namespace xyLOGIX.Interop.Git.Stagers
         /// Occurs when a Stage operation has been started.
         /// </summary>
         public event EventHandler StageStarted;
+
+        /// <summary>
+        /// Gets a reference to the one and only instance of
+        /// <see cref="T:xyLOGIX.Interop.Git.Stagers.Stager" />.
+        /// </summary>
+        public static Stager Instance { get; } = new Stager();
 
         /// <summary>
         /// Stages all pending changes in the repository.

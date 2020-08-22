@@ -81,6 +81,7 @@
     <Compile Include="Events\StageFailedEventArgs.cs" />
     <Compile Include="Events\StageFailedEventHandler.cs" />
     <Compile Include="Exceptions\RepositoryNotAttachedException.cs" />
+    <Compile Include="Interfaces\IStager.cs" />
     <Compile Include="Internal\RepositoryBoundObject.cs" />
     <Compile Include="Stagers\Stager.cs" />
     <Compile Include="Events\RepositoryAttachedEventArgs.cs" />
