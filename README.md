@@ -1,7 +1,9 @@
 # xyLOGIX.Interop.LibGit2Sharp
 This library serves as a user-friendly wrapper for some common Git operations supported by the [libgit2
 /
-libgit2sharp](https://github.com/libgit2/libgit2sharp) project, such as `git add` (known as Staging), `git commit`, `git pull` and `git push`.  I wanted a way to encapsulate the Wiki-provided examples for these common operations so I could just call them over and over again from code.
+libgit2sharp](https://github.com/libgit2/libgit2sharp) project, such as `git add` (known as Staging), `git commit`, `git pull` and `git push`.  
+
+I wanted a way to encapsulate the Wiki-provided examples for these common operations so I could just call them over and over again from code.
 ## License
 This library is released under the MIT License.
 # 1. How to Use
@@ -18,19 +20,37 @@ The `Team` class is called as such because it's designed to mimic the user inter
 Here's an example that commits and synchronizes (i.e., pulls, then pushes) all the modified, but not ignored, items in a working directory.  The path to the working directory's `.git` folder is in the variable `WorkingDirectoryRepo`:
 
 ```
+using LibGit2Sharp;
+using xyLOGIX.Interop.LibGit2Sharp.RepositoryConfigurations;
 using xyLOGIX.Interop.LibGit2Sharp.Teams;
-using System;
 
 namespace MyProject
 {
     public static class Program
     {
-        private const string WorkingDirectoryRepo = @"C:/Test/MyRepo/.git";
-
         public static void Main(string[] args)
         {
-            
+            using (var team =
+                new Team(new Repository(@"/path/to/your/repo/.git")))
+            {
+                var repositoryConfiguration = new RepositoryConfiguration
+                {
+                    Name = "Foo bar",
+                    Email = "@noneofyourbeeswax",
+                    RemoteUserName = "astrohart",
+                    RemotePassword = "xxxxx"
+                };
+                team.AddRepositoryConfiguration(repositoryConfiguration);
+                team.SetRepositoryConfigurationActive(repositoryConfiguration);
+
+                team.CommitAllAndSync("Initial add");
+            }
         }
     }
 }
 ```
+
+Using this wrapper library is literally that easy. 
+
+**NOTE** When creating a new `RepositoryConfiguration` object, do not set the `IsActive` property by hand.  Call `Team.SetRepositoryConfigurationActive` on it instead.
+

@@ -1,6 +1,6 @@
 ﻿using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.RepositoryConfigurations
+namespace xyLOGIX.Interop.LibGit2Sharp.Configurations
 {
     /// <summary>
     /// RepositoryConfiguration for a committer and remote.
@@ -10,12 +10,13 @@ namespace xyLOGIX.Interop.LibGit2Sharp.RepositoryConfigurations
         /// <summary>
         /// Constructs a new instance of
         /// <see
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.RepositoryConfigurations.RepositoryConfiguration" />
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Configurations.RepositoryConfiguration" />
         /// and returns a reference to it.
         /// </summary>
         /// <remarks>This constructor sets default values for some of the properties.</remarks>
         public RepositoryConfiguration()
         {
+            HasRemote = true;   // by default
             IsActive = false;
             IsCommitMessageMandatory = true;
             RemoteName = "origin";
@@ -25,6 +26,11 @@ namespace xyLOGIX.Interop.LibGit2Sharp.RepositoryConfigurations
         /// Gets or sets a string containing the email address or handle of the committer.
         /// </summary>
         public string Email { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value that specifies whether this repository has a remote.
+        /// </summary>
+        public bool HasRemote { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this is the active

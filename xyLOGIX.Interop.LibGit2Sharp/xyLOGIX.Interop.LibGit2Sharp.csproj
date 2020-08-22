@@ -80,7 +80,7 @@
   <ItemGroup>
     <Compile Include="Committers\Committer.cs" />
     <Compile Include="Extensions\RepositoryConfigurationHelpers.cs" />
-    <Compile Include="RepositoryConfigurations\RepositoryConfiguration.cs" />
+    <Compile Include="Configurations\RepositoryConfiguration.cs" />
     <Compile Include="Events\CommitFailedEventArgs.cs" />
     <Compile Include="Events\CommitFailedEventHandler.cs" />
     <Compile Include="Events\PullFailedEventArgs.cs" />

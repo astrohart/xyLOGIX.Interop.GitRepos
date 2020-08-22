@@ -11,6 +11,11 @@
         string Email { get; set; }
 
         /// <summary>
+        /// Gets or sets a value that specifies whether this repository has a remote.
+        /// </summary>
+        bool HasRemote { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether this is the active
         /// repositoryConfiguration --
         /// like Highlander, there can be only one!
