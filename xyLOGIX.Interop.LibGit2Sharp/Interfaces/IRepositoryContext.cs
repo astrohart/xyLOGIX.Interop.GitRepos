@@ -7,29 +7,8 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
     /// <summary>
     /// Defines methods and properties for an object that is bound to a Git repository.
     /// </summary>
-    public interface IRepositoryBoundObject
+    public interface IRepositoryContext
     {
-        /// <summary>
-        /// Gets or sets the email address and/or social media POC to utilize for
-        /// operations.
-        /// </summary>
-        string GitHubEmail { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name to be utilized for operations.
-        /// </summary>
-        string GitHubName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the user's GitHub password.
-        /// </summary>
-        string GitHubPassword { get; set; }
-
-        /// <summary>
-        /// Gets or sets the user's GitHub login username.
-        /// </summary>
-        string GitHubUserName { get; set; }
-
         /// <summary>
         /// Raised when a new Repository is attached to this object.
         /// </summary>

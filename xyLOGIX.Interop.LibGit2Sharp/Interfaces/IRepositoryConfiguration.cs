@@ -1,7 +1,7 @@
 ﻿namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
 {
     /// <summary>
-    /// Defines methods and properties for a RepositoryRepositoryConfiguration POCO.
+    /// Defines methods and properties for a RepositoryConfiguration POCO.
     /// </summary>
     public interface IRepositoryConfiguration
     {
@@ -11,15 +11,27 @@
         string Email { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether this is the active repositoryConfiguration --
+        /// Gets or sets a value indicating whether this is the active
+        /// repositoryConfiguration --
         /// like Highlander, there can be only one!
         /// </summary>
         bool IsActive { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether a non-blank commit message is
+        /// mandatory.
+        /// </summary>
+        bool IsCommitMessageMandatory { get; set; }
+
+        /// <summary>
         /// Gets or sets a string containing the name of the committer.
         /// </summary>
         string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets name of the remote.  Usually set to 'origin' by default.
+        /// </summary>
+        string RemoteName { get; set; }
 
         /// <summary>
         /// Gets or sets a string containing the password utilized to sign in to the

@@ -10,7 +10,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Synchronizers
     /// <summary>
     /// Synchronizes a Git local repository with a remote.
     /// </summary>
-    public sealed class Synchronizer : RepositoryBoundObject, ISynchronizer
+    public sealed class Synchronizer : RepositoryContext, ISynchronizer
     {
         /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.
@@ -21,12 +21,6 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Synchronizers
         /// Empty, protected constructor to prohibit direct allocation of this class.
         /// </summary>
         private Synchronizer() { }
-
-        /// <summary>
-        /// Gets a reference to the one and only instance of
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Synchronizers.Synchronizer" />.
-        /// </summary>
-        public static Synchronizer Instance { get; } = new Synchronizer();
 
         /// <summary>
         /// Raised when a Synchronization operation has completed.
@@ -42,6 +36,12 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Synchronizers
         /// Raised when the Synchronization operation has started.
         /// </summary>
         public event EventHandler SynchronizationStarted;
+
+        /// <summary>
+        /// Gets a reference to the one and only instance of
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Synchronizers.Synchronizer" />.
+        /// </summary>
+        public static Synchronizer Instance { get; } = new Synchronizer();
 
         /// <summary>
         /// Gets a reference to an instance of an object that implements the
@@ -99,26 +99,13 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Synchronizers
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryBoundObject.AttachRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
-        /// Thrown
-        /// if either the
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubName" />
-        /// ,
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubEmail" />
-        /// ,
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubUserName" />
-        /// , or
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubPassword" />
-        /// are blank.
-        /// properties are blank.
+        /// Thrown if the repository currently in use does not have a valid configuration
+        /// associated with it.
         /// </exception>
         public void Sync()
         {

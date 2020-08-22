@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Committers\Committer.cs" />
+    <Compile Include="Extensions\RepositoryConfigurationHelpers.cs" />
     <Compile Include="RepositoryConfigurations\RepositoryConfiguration.cs" />
     <Compile Include="Events\CommitFailedEventArgs.cs" />
     <Compile Include="Events\CommitFailedEventHandler.cs" />
@@ -99,13 +100,13 @@
     <Compile Include="Interfaces\IStager.cs" />
     <Compile Include="Interfaces\ISynchronizer.cs" />
     <Compile Include="Interfaces\ITeam.cs" />
-    <Compile Include="Internal\RepositoryBoundObject.cs" />
+    <Compile Include="Internal\RepositoryContext.cs" />
     <Compile Include="Pullers\Puller.cs" />
     <Compile Include="Pushers\Pusher.cs" />
     <Compile Include="Stagers\Stager.cs" />
     <Compile Include="Events\RepositoryAttachedEventArgs.cs" />
     <Compile Include="Events\RepositoryAttachedEventHandler.cs" />
-    <Compile Include="Interfaces\IRepositoryBoundObject.cs" />
+    <Compile Include="Interfaces\IRepositoryContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -114,6 +115,7 @@
     </Compile>
     <Compile Include="Synchronizers\Synchronizer.cs" />
     <Compile Include="Teams\Team.cs" />
+    <Compile Include="Validators\RepositoryConfigurationValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

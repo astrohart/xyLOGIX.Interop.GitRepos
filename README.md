@@ -10,3 +10,27 @@ This section covers a basic example of how to utilize this library.  It's broken
 The `Team` class is called as such because it's designed to mimic the user interface nomenclature of the Team Explorer in editions of Visual Studio that have the GitHub extension installed.
 
 **NOTE** Just because we mentioned GitHub just now, don't think that this library works only with GitHub.  Far from it.  It works with any remote that is accessible via git -- well, at least it's designed to :-)
+
+**NOTE** The library assumes that whatever local repository you're working on has already been configured in advance with ignores, remotes etc.
+
+**NOTE** In order to utilize this library, not only should you reference it, but you must install the ```LibGit2Sharp``` NuGet package to the project that consumes this library.
+
+Here's an example that commits and synchronizes (i.e., pulls, then pushes) all the modified, but not ignored, items in a working directory.  The path to the working directory's `.git` folder is in the variable `WorkingDirectoryRepo`:
+
+```
+using xyLOGIX.Interop.LibGit2Sharp.Teams;
+using System;
+
+namespace MyProject
+{
+    public static class Program
+    {
+        private const string WorkingDirectoryRepo = @"C:/Test/MyRepo/.git";
+
+        public static void Main(string[] args)
+        {
+            
+        }
+    }
+}
+```

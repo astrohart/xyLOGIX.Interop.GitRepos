@@ -3,22 +3,17 @@ using LibGit2Sharp;
 using System;
 using xyLOGIX.Interop.LibGit2Sharp.Events;
 using xyLOGIX.Interop.LibGit2Sharp.Exceptions;
+using xyLOGIX.Interop.LibGit2Sharp.Extensions;
 using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Validators;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Internal
 {
     /// <summary>
     /// Defines methods and properties that are common to all repository-bound objects.
     /// </summary>
-    public abstract class RepositoryBoundObject : IRepositoryBoundObject
+    public abstract class RepositoryContext : IRepositoryContext
     {
-        /// <summary>
-        /// Gets or sets a reference to an object that implements the
-        /// <see cref="T:LibGit2Sharp.IRepository" /> interface that this object is
-        /// currently working with.
-        /// </summary>
-        protected IRepository Repository { get; set; }
-
         /// <summary>
         /// Raised when a new Repository is attached to this object.
         /// </summary>
@@ -30,25 +25,11 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
         public event EventHandler RepositoryDetached;
 
         /// <summary>
-        /// Gets or sets the email address and/or social media POC to utilize for
-        /// operations.
+        /// Gets or sets a reference to an object that implements the
+        /// <see cref="T:LibGit2Sharp.IRepository" /> interface that this object is
+        /// currently working with.
         /// </summary>
-        public string GitHubEmail { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name to be utilized for operations.
-        /// </summary>
-        public string GitHubName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the user's GitHub password.
-        /// </summary>
-        public string GitHubPassword { get; set; }
-
-        /// <summary>
-        /// Gets or sets the user's GitHub login username.
-        /// </summary>
-        public string GitHubUserName { get; set; }
+        protected IRepository Repository { get; set; }
 
         /// <summary>
         /// Attaches an instance of an object that implements the
@@ -87,7 +68,8 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
         /// </summary>
         /// <param name="e">
         /// A
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.RepositoryAttachedEventArgs" /> that
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.RepositoryAttachedEventArgs" />
+        /// that
         /// contains the event data.
         /// </param>
         protected virtual void OnRepositoryAttached(
@@ -154,27 +136,17 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
-        /// if either the
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubName" />
-        /// ,
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubEmail" />
-        /// ,
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubUserName" />
-        /// , or
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubPassword" />
-        /// are blank.
-        /// properties are blank.
+        /// if the repository does not have a valid object that implements the
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// interface associated with it.
         /// </exception>
         protected void ValidateConfiguration()
         {
-            if (string.IsNullOrWhiteSpace(GitHubName)
-                || string.IsNullOrWhiteSpace(GitHubEmail)
-                || string.IsNullOrWhiteSpace(GitHubUserName)
-                || string.IsNullOrWhiteSpace(GitHubPassword))
+            var repositoryConfiguration = Repository.GetConfiguration();
+
+            if (repositoryConfiguration == null
+                || !RepositoryConfigurationValidator.IsValid(
+                    repositoryConfiguration))
                 throw new RepositoryNotConfiguredException();
         }
     }

@@ -9,7 +9,6 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Exceptions
         /// </summary>
         public RepositoryNotConfiguredException() : base("You must supply values for the GitHubName and GitHubEmail properties before calling this method.")
         {
-            
         }
     }
 }

@@ -52,16 +52,16 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryBoundObject.AttachRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
         /// if either the
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubName" />
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
         /// or
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubEmail" />
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
         /// properties are blank.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
@@ -93,16 +93,16 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryBoundObject.AttachRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
         /// if either the
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubName" />
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
         /// or
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubEmail" />
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
         /// properties are blank.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
@@ -130,16 +130,16 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryBoundObject.AttachRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
         /// if either the
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubName" />
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
         /// or
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubEmail" />
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
         /// properties are blank.
         /// </exception>
         void CommitAllAndPush(string commitMessage,
@@ -162,16 +162,16 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryBoundObject.AttachRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
         /// if either the
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubName" />
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
         /// or
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubEmail" />
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
         /// properties are blank.
         /// </exception>
         void CommitAllAndSync(string commitMessage,
@@ -199,16 +199,16 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryBoundObject.AttachRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
         /// if either the
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubName" />
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
         /// or
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubEmail" />
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
         /// properties are blank.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
@@ -247,16 +247,16 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryBoundObject.AttachRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
         /// if either the
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubName" />
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
         /// or
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubEmail" />
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
         /// properties are blank.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">

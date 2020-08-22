@@ -6,7 +6,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
     /// <summary>
     /// Defines the methods and properties for a Committer object.
     /// </summary>
-    public interface ICommitter : IRepositoryBoundObject
+    public interface ICommitter : IRepositoryContext
     {
         /// <summary>
         /// Raised when a Commit operation has completed successfully.
@@ -34,30 +34,28 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// (Optional.) Set to true to add the timestamp to the
         /// commit message.
         /// </param>
-        /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
-        /// Thrown if the
-        /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryBoundObject.AttachRepository" />
-        /// method has not been called.
-        /// </exception>
-        /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
-        /// Thrown
-        /// if either the
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubName" />
-        /// or
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubEmail" />
-        /// properties are blank.
-        /// </exception>
-        /// <exception cref="T:System.InvalidOperationException">
-        /// Thrown if the required <paramref name="commitMessage" /> is blank.
-        /// </exception>
         /// <remarks>
         /// Use two
         /// newline characters, '\n\n', in the message to separate the short commit message
         /// from a detailed commit message.
         /// </remarks>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
+        /// Thrown if the
+        /// <see
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
+        /// method has not been called.
+        /// </exception>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
+        /// Thrown
+        /// if the repository currently in use does not have a valid configuration
+        /// associated with it.
+        /// </exception>
+        /// <exception cref="T:System.InvalidOperationException">
+        /// Thrown if the <paramref name="commitMessage" /> is blank for a repository where
+        /// it is configured to be mandatory.
+        /// </exception>
         void Commit(string commitMessage, bool addTimestamp = false);
     }
 }

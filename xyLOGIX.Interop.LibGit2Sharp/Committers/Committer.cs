@@ -2,6 +2,7 @@
 using System;
 using xyLOGIX.Interop.LibGit2Sharp.Events;
 using xyLOGIX.Interop.LibGit2Sharp.Exceptions;
+using xyLOGIX.Interop.LibGit2Sharp.Extensions;
 using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
 using xyLOGIX.Interop.LibGit2Sharp.Internal;
 
@@ -10,7 +11,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
     /// <summary>
     /// Commits staged items to a Git repository.
     /// </summary>
-    public class Committer : RepositoryBoundObject, ICommitter
+    public class Committer : RepositoryContext, ICommitter
     {
         /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.
@@ -62,32 +63,28 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
         /// (Optional.) Set to true to add the timestamp to the
         /// commit message.
         /// </param>
-        /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
-        /// Thrown if the
-        /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryBoundObject.AttachRepository" />
-        /// method has not been called.
-        /// </exception>
-        /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
-        /// Thrown
-        /// if either the
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubName" />
-        /// or
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubEmail" />
-        /// properties are blank.
-        /// </exception>
-        /// <exception cref="T:System.InvalidOperationException">
-        /// Thrown if the required <paramref name="commitMessage" /> is blank.
-        /// </exception>
         /// <remarks>
         /// Use two
         /// newline characters, '\n\n', in the message to separate the short commit message
         /// from a detailed commit message.
         /// </remarks>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
+        /// Thrown if the
+        /// <see
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
+        /// method has not been called.
+        /// </exception>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
+        /// Thrown
+        /// if the repository currently in use does not have a valid configuration
+        /// associated with it.
+        /// </exception>
+        /// <exception cref="T:System.InvalidOperationException">
+        /// Thrown if the <paramref name="commitMessage" /> is blank for a repository where
+        /// it is configured to be mandatory.
+        /// </exception>
         public void Commit(string commitMessage, bool addTimestamp = false)
         {
             if (Repository == null)
@@ -95,7 +92,9 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
 
             ValidateConfiguration();
 
-            if (string.IsNullOrWhiteSpace(commitMessage))
+            var repositoryConfiguration = Repository.GetConfiguration();
+            if (repositoryConfiguration.IsCommitMessageMandatory
+                && string.IsNullOrWhiteSpace(commitMessage))
                 throw new InvalidOperationException(
                     "ERROR (Commit): commitMessage is a required parameter.");
 
@@ -104,8 +103,8 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
             try
             {
                 // Create the committer's signature and commit
-                var author = new Signature(GitHubName, GitHubEmail,
-                    DateTime.Now);
+                var author = new Signature(repositoryConfiguration.Name,
+                    repositoryConfiguration.Email, DateTime.UtcNow);
                 var committer = author;
 
                 // Commit to the repository

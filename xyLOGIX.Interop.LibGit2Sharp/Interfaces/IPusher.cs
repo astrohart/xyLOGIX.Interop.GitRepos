@@ -7,7 +7,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
     /// Defines methods and properties for a Pusher.
     /// </summary>
     /// <remarks>Pusher objects push commits to a remote.</remarks>
-    public interface IPusher : IRepositoryBoundObject
+    public interface IPusher : IRepositoryContext
     {
         /// <summary>
         /// Raised when a Push operation has been completed.
@@ -31,26 +31,14 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryBoundObject.AttachRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
-        /// if either the
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubName" />
-        /// ,
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubEmail" />
-        /// ,
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubUserName" />
-        /// , or
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubPassword" />
-        /// are blank.
-        /// properties are blank.
+        /// if the repository currently in use does not have a valid configuration
+        /// associated with it.
         /// </exception>
         void Push();
     }

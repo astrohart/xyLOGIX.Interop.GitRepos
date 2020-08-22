@@ -6,7 +6,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
     /// <summary>
     /// Defines the methods and properties for a Stager.
     /// </summary>
-    public interface IStager : IRepositoryBoundObject
+    public interface IStager : IRepositoryContext
     {
         /// <summary>
         /// Raised when a Stage operation has completed successfully.
@@ -31,8 +31,8 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryBoundObject.AttachRepository" />
-        /// method has not been called prior to calling this method.
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
+        /// method has not been called.
         /// </exception>
         bool StageAll();
 
@@ -48,8 +48,8 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryBoundObject.AttachRepository" />
-        /// method has not been called prior to calling this method.
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
+        /// method has not been called.
         /// </exception>
         /// <exception cref="T:System.IO.FileNotFoundException">
         /// The item to be staged,

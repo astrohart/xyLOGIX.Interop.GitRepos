@@ -3,25 +3,51 @@
 namespace xyLOGIX.Interop.LibGit2Sharp.RepositoryConfigurations
 {
     /// <summary>
-    /// RepositoryRepositoryConfiguration for a committer and remote.
+    /// RepositoryConfiguration for a committer and remote.
     /// </summary>
-    public class RepositoryRepositoryConfiguration : IRepositoryConfiguration
+    public class RepositoryConfiguration : IRepositoryConfiguration
     {
+        /// <summary>
+        /// Constructs a new instance of
+        /// <see
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.RepositoryConfigurations.RepositoryConfiguration" />
+        /// and returns a reference to it.
+        /// </summary>
+        /// <remarks>This constructor sets default values for some of the properties.</remarks>
+        public RepositoryConfiguration()
+        {
+            IsActive = false;
+            IsCommitMessageMandatory = true;
+            RemoteName = "origin";
+        }
+
         /// <summary>
         /// Gets or sets a string containing the email address or handle of the committer.
         /// </summary>
         public string Email { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether this is the active repositoryConfiguration --
+        /// Gets or sets a value indicating whether this is the active
+        /// repositoryConfiguration --
         /// like Highlander, there can be only one!
         /// </summary>
         public bool IsActive { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether a non-blank commit message is
+        /// mandatory.
+        /// </summary>
+        public bool IsCommitMessageMandatory { get; set; }
+
+        /// <summary>
         /// Gets or sets a string containing the name of the committer.
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets name of the remote.  Usually set to 'origin' by default.
+        /// </summary>
+        public string RemoteName { get; set; }
 
         /// <summary>
         /// Gets or sets a string containing the password utilized to sign in to the
@@ -34,29 +60,5 @@ namespace xyLOGIX.Interop.LibGit2Sharp.RepositoryConfigurations
         /// remote.
         /// </summary>
         public string RemoteUserName { get; set; }
-
-        /// <summary>
-        /// Determines whether the specified <paramref name="repositoryConfiguration" /> object has
-        /// valid values for its properties.  By valid we mean to say, can be utilized with
-        /// either a local or a local-and-remote repository(ies).
-        /// </summary>
-        /// <param name="repositoryConfiguration">
-        /// Reference to an instance of an object that implements the
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.RepositoryConfigurations.RepositoryRepositoryConfiguration" />, the
-        /// values of whose properties are to be checked.
-        /// </param>
-        /// <param name="hasRemote">
-        /// True if the remote user name and remote password should
-        /// be checked; false otherwise.
-        /// </param>
-        /// <returns>True if the values of the properties are valid; false otherwise.</returns>
-        public static bool IsValid(IRepositoryConfiguration repositoryConfiguration,
-            bool hasRemote = true)
-            => repositoryConfiguration != null && (!hasRemote ||
-                                         !string.IsNullOrWhiteSpace(
-                                             repositoryConfiguration.RemoteUserName)
-                                         && !string.IsNullOrWhiteSpace(
-                                             repositoryConfiguration
-                                                 .RemotePassword));
     }
 }
