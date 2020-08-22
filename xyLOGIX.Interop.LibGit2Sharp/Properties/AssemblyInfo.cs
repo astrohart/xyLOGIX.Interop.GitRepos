@@ -4,17 +4,17 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("xyLOGIX Support Library for xyLOGIX.Interop.LibGit2Sharp")]
-[assembly: AssemblyDescription("Provides objects and functionality for ")]
+[assembly: AssemblyTitle("Wrapper for the LibGit2Sharp Library")]
+[assembly: AssemblyDescription("Provides objects and functionality for working with LibGit2Sharp in a way that mimics the user-interface of the Team Explorer tab in newer editions of Microsoft Visual Studio that also have the GitHub Extension installed.  This library is compatible with LibGit2Sharp and is not limited to GitHub.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]
-[assembly: AssemblyProduct("xyLOGIX Support Library for xyLOGIX.Interop.LibGit2Sharp")]
+[assembly: AssemblyProduct("Wrapper for the LibGit2Sharp Library")]
 [assembly:
     AssemblyCopyright(
-        "Copyright © 2020 by xyLOGIX, LLC.  All rights reserved.")]
+"Copyright © 2020 by xyLOGIX, LLC.  All rights reserved, except those granted by the MIT License.")]
 [assembly:
     AssemblyTrademark(
-        "This software is a component of xyLOGIX xyLOGIX.Interop.LibGit2Sharp.  xyLOGIX.Interop.LibGit2Sharp is a trademark of xyLOGIX, LLC.  All rights reserved, especially those granted by international treaties.")]
+"This code is in the public domain.")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
