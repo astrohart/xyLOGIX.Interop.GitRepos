@@ -31,7 +31,7 @@ namespace MyProject
         public static void Main(string[] args)
         {
             using (var team =
-                new Team(new Repository(@"/path/to/your/repo/.git")))
+                new Team(new Repository("/path/to/your/repo/.git")))
             {
                 team.AddRepositoryConfiguration(
                     new RepositoryConfiguration
