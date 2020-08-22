@@ -42,7 +42,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// </param>
         /// <param name="addTimestamp">
         /// (Optional.) Set to true to add the timestamp to the
-        /// commit commitMessage.
+        /// commit message.
         /// </param>
         /// <param name="files">
         /// Collection of path names, either absolute or relative, of
@@ -87,7 +87,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// </param>
         /// <param name="addTimestamp">
         /// (Optional.) Set to true to add the timestamp to the
-        /// commit commitMessage.
+        /// commit message.
         /// </param>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
@@ -124,7 +124,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// </param>
         /// <param name="addTimestamp">
         /// (Optional.) Set to true to add the timestamp to the
-        /// commit commitMessage.
+        /// commit message.
         /// </param>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
@@ -156,7 +156,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// </param>
         /// <param name="addTimestamp">
         /// (Optional.) Set to true to add the timestamp to the
-        /// commit commitMessage.
+        /// commit message.
         /// </param>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
@@ -189,7 +189,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// </param>
         /// <param name="addTimestamp">
         /// (Optional.) Set to true to add the timestamp to the
-        /// commit commitMessage.
+        /// commit message.
         /// </param>
         /// <param name="files">
         /// Collection of path names, either absolute or relative, of
@@ -237,7 +237,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// </param>
         /// <param name="addTimestamp">
         /// (Optional.) Set to true to add the timestamp to the
-        /// commit commitMessage.
+        /// commit message.
         /// </param>
         /// <param name="files">
         /// Collection of path names, either absolute or relative, of

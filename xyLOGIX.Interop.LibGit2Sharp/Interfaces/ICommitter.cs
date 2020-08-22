@@ -32,7 +32,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// </param>
         /// <param name="addTimestamp">
         /// (Optional.) Set to true to add the timestamp to the
-        /// commit commitMessage.
+        /// commit message.
         /// </param>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
