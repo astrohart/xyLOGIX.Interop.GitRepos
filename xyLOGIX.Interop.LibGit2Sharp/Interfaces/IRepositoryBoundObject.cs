@@ -10,6 +10,27 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
     public interface IRepositoryBoundObject
     {
         /// <summary>
+        /// Gets or sets the email address and/or social media POC to utilize for
+        /// operations.
+        /// </summary>
+        string GitHubEmail { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name to be utilized for operations.
+        /// </summary>
+        string GitHubName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the user's GitHub password.
+        /// </summary>
+        string GitHubPassword { get; set; }
+
+        /// <summary>
+        /// Gets or sets the user's GitHub login username.
+        /// </summary>
+        string GitHubUserName { get; set; }
+
+        /// <summary>
         /// Raised when a new Repository is attached to this object.
         /// </summary>
         event RepositoryAttachedEventHandler RepositoryAttached;
@@ -18,16 +39,6 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// Raised when a repository is detached from this object.
         /// </summary>
         event EventHandler RepositoryDetached;
-
-        /// <summary>
-        /// Gets or sets the email address and/or social media POC to utilize for operations.
-        /// </summary>
-        string GitHubEmail { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name to be utilized for operations.
-        /// </summary>
-        string GitHubName { get; set; }
 
         /// <summary>
         /// Attaches an instance of an object that implements the

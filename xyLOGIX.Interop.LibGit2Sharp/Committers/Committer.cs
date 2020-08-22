@@ -61,9 +61,6 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
         ///     cref="M:xyLOGIX.Interop.Git.Interfaces.IRepositoryBoundObject.AttachRepository" />
         /// method has not been called.
         /// </exception>
-        /// <exception cref="T:System.InvalidOperationException">
-        /// Thrown if the required commitMessage is blank.
-        /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.Git.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
@@ -72,6 +69,9 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
         /// or
         /// <see cref="P:xyLOGIX.Interop.Git.Internal.RepositoryBoundObject.GitHubEmail" />
         /// properties are blank.
+        /// </exception>
+        /// <exception cref="T:System.InvalidOperationException">
+        /// Thrown if the required <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <remarks>
         /// Use two

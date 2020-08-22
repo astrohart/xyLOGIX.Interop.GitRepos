@@ -41,6 +41,16 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
         public string GitHubName { get; set; }
 
         /// <summary>
+        /// Gets or sets the user's GitHub password.
+        /// </summary>
+        public string GitHubPassword { get; set; }
+
+        /// <summary>
+        /// Gets or sets the user's GitHub login username.
+        /// </summary>
+        public string GitHubUserName { get; set; }
+
+        /// <summary>
         /// Attaches an instance of an object that implements the
         /// <see cref="T:LibGit2Sharp.IRepository" /> interface to this object.
         /// </summary>
@@ -145,16 +155,27 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
         /// if either the
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubName" />
-        /// or
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubEmail" />
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubName" />
+        /// ,
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubEmail" />
+        /// ,
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubUserName" />
+        /// , or
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryBoundObject.GitHubPassword" />
+        /// are blank.
         /// properties are blank.
         /// </exception>
         protected void ValidateConfiguration()
         {
             if (string.IsNullOrWhiteSpace(GitHubName)
-                || string.IsNullOrWhiteSpace(GitHubEmail))
-            throw new RepositoryNotConfiguredException();
+                || string.IsNullOrWhiteSpace(GitHubEmail)
+                || string.IsNullOrWhiteSpace(GitHubUserName)
+                || string.IsNullOrWhiteSpace(GitHubPassword))
+                throw new RepositoryNotConfiguredException();
         }
     }
 }
