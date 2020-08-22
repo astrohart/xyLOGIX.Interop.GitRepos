@@ -1,9 +1,9 @@
 ﻿namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
 {
     /// <summary>
-    /// Defines methods and properties for a RepositoryConfiguration POCO.
+    /// Defines methods and properties for a RepositoryRepositoryConfiguration POCO.
     /// </summary>
-    public interface IConfiguration
+    public interface IRepositoryConfiguration
     {
         /// <summary>
         /// Gets or sets a string containing the email address or handle of the committer.
@@ -11,7 +11,7 @@
         string Email { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether this is the active configuration --
+        /// Gets or sets a value indicating whether this is the active repositoryConfiguration --
         /// like Highlander, there can be only one!
         /// </summary>
         bool IsActive { get; set; }
