@@ -30,7 +30,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Validators
         /// configuration; false otherwise.
         /// </returns>
         public static bool HasOnlyOneActiveRepoConfig(
-            List<IRepositoryConfiguration> configurations)
+            IReadOnlyCollection<IRepositoryConfiguration> configurations)
         {
             var result = false;
 

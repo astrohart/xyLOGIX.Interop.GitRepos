@@ -87,6 +87,46 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
             Synchronizers.Synchronizer.Instance;
 
         /// <summary>
+        /// Adds an instance of an object that implements the
+        /// <see cref="T:xyLGOIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// interface to the list that this object maintains and optionally sets it active.
+        /// </summary>
+        /// <param name="configuration">
+        /// Reference to an instance of an object that
+        /// implements the
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// interface that is to be added to the list of configurations.
+        /// </param>
+        /// <param name="setActive">
+        /// True to set the new configuration as active; false
+        /// otherwise.
+        /// </param>
+        /// <remarks>
+        /// Merely setting the <paramref name="configuration" /> object's IsActive property
+        /// to be true is not enough to actually associate the configuration with the
+        /// repository this Team is using.  To associate it, either pass true for the
+        /// <paramref name="setActive" /> parameter (which is the default), or call the
+        /// <see
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.SetRepositoryConfigurationActive" />
+        /// next.  If this method's <paramref name="setActive" /> parameter is set to true,
+        /// then this method will
+        /// set the added configuration active for the caller.
+        /// </remarks>
+        /// <exception cref="T:System.ArgumentNullException">
+        /// Thrown if the
+        /// <paramref name="configuration" /> parameter has as null reference.
+        /// </exception>
+        public void AddRepositoryConfiguration(
+            IRepositoryConfiguration configuration, bool setActive = true)
+        {
+            if (configuration == null)
+                throw new ArgumentNullException(nameof(configuration));
+
+            _repositoryConfigurations.Add(configuration);
+            if (setActive) SetRepositoryConfigurationActive(configuration);
+        }
+
+        /// <summary>
         /// Stages all the modified (but not ignored) files in <paramref name="files" />,
         /// and then creates a new Commit with the specified
         /// <paramref name="commitMessage" /> and optional timestamp.
@@ -128,9 +168,17 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// in use is configured to make commit messages mandatory, yet the
         /// <paramref name="commitMessage" /> is blank.
         /// </exception>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
+        /// Thrown
+        /// if a validation error is encountered due to improper configuration of this
+        /// Team.
+        /// </exception>
         public void Commit(string commitMessage, bool addTimestamp = false,
             params string[] files)
         {
+            Validate();
+
             if (_repository.GetConfiguration() == null
                 || !RepositoryConfigurationValidator.IsValid(
                     _repository.GetConfiguration()))
@@ -188,8 +236,16 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// in use is configured to make commit messages mandatory, yet the
         /// <paramref name="commitMessage" /> is blank.
         /// </exception>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
+        /// Thrown
+        /// if a validation error is encountered due to improper configuration of this
+        /// Team.
+        /// </exception>
         public void CommitAll(string commitMessage, bool addTimestamp = false)
         {
+            Validate();
+
             if (_repository.GetConfiguration() == null
                 || !RepositoryConfigurationValidator.IsValid(
                     _repository.GetConfiguration()))
@@ -235,6 +291,12 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// in use is configured to make commit messages mandatory, yet the
         /// <paramref name="commitMessage" /> is blank.
         /// </exception>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
+        /// Thrown
+        /// if a validation error is encountered due to improper configuration of this
+        /// Team.
+        /// </exception>
         public void CommitAllAndPush(string commitMessage,
             bool addTimestamp = false)
         {
@@ -273,6 +335,12 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// Thrown when the repository
         /// in use is configured to make commit messages mandatory, yet the
         /// <paramref name="commitMessage" /> is blank.
+        /// </exception>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
+        /// Thrown
+        /// if a validation error is encountered due to improper configuration of this
+        /// Team.
         /// </exception>
         public void CommitAllAndSync(string commitMessage,
             bool addTimestamp = false)
@@ -324,6 +392,12 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// Thrown when the repository
         /// in use is configured to make commit messages mandatory, yet the
         /// <paramref name="commitMessage" /> is blank.
+        /// </exception>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
+        /// Thrown
+        /// if a validation error is encountered due to improper configuration of this
+        /// Team.
         /// </exception>
         public void CommitAndPush(string commitMessage,
             bool addTimestamp = false,
@@ -383,6 +457,12 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// in use is configured to make commit messages mandatory, yet the
         /// <paramref name="commitMessage" /> is blank.
         /// </exception>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
+        /// Thrown
+        /// if a validation error is encountered due to improper configuration of this
+        /// Team.
+        /// </exception>
         public void CommitAndSync(string commitMessage,
             bool addTimestamp = false,
             params string[] files)
@@ -395,59 +475,6 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
 
             Commit(commitMessage, addTimestamp, files);
             Synchronizer.Sync();
-        }
-
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing,
-        /// or resetting unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            DeactivateAllConfigurations();
-            DetachRepositoryFromDependencies();
-
-            _repository?.Dispose();
-            _repository = null;
-        }
-
-        /// <summary>
-        /// Adds an instance of an object that implements the
-        /// <see cref="T:xyLGOIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
-        /// interface to the list that this object maintains and optionally sets it active.
-        /// </summary>
-        /// <param name="configuration">
-        /// Reference to an instance of an object that
-        /// implements the
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
-        /// interface that is to be added to the list of configurations.
-        /// </param>
-        /// <param name="setActive">
-        /// True to set the new configuration as active; false
-        /// otherwise.
-        /// </param>
-        /// <remarks>
-        /// Merely setting the <paramref name="configuration" /> object's IsActive property
-        /// to be true is not enough to actually associate the configuration with the
-        /// repository this Team is using.  To associate it, either pass true for the
-        /// <paramref name="setActive" /> parameter (which is the default), or call the
-        /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.SetRepositoryConfigurationActive" />
-        /// next.  If this method's <paramref name="setActive" /> parameter is set to true,
-        /// then this method will
-        /// set the added configuration active for the caller.
-        /// </remarks>
-        /// <exception cref="T:System.ArgumentNullException">
-        /// Thrown if the
-        /// <paramref name="configuration" /> parameter has as null reference.
-        /// </exception>
-        public void AddRepositoryConfiguration(
-            IRepositoryConfiguration configuration, bool setActive = true)
-        {
-            if (configuration == null)
-                throw new ArgumentNullException(nameof(configuration));
-
-            _repositoryConfigurations.Add(configuration);
-            if (setActive) SetRepositoryConfigurationActive(configuration);
         }
 
         /// <summary>
@@ -469,6 +496,19 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
 
             _repositoryConfigurations.ForEach(DeactivateConfiguration);
             _repository.DetachConfiguration();
+        }
+
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing,
+        /// or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            DeactivateAllConfigurations();
+            DetachRepositoryFromDependencies();
+
+            _repository?.Dispose();
+            _repository = null;
         }
 
         /// <summary>
@@ -561,6 +601,26 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
             Synchronizer.DetachRepository();
             Stager.DetachRepository();
             Committer.DetachRepository();
+        }
+
+        /// <summary>
+        /// This method runs validation rules against the
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.RepositoryConfigurations" />
+        /// collection.
+        /// </summary>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
+        /// Thrown
+        /// if a validation error is encountered due to improper configuration of this
+        /// Team.
+        /// </exception>
+        private void Validate()
+        {
+            if (RepositoryConfigurations.Any()
+                && !TeamConfigurationValidator.HasOnlyOneActiveRepoConfig(
+                    RepositoryConfigurations))
+                throw new TeamConfigurationException(this,
+                    "The Team has more than one configuration marked as active.");
         }
     }
 }

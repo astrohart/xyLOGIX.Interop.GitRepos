@@ -44,6 +44,39 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         ISynchronizer Synchronizer { get; }
 
         /// <summary>
+        /// Adds an instance of an object that implements the
+        /// <see cref="T:xyLGOIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// interface to the list that this object maintains and optionally sets it active.
+        /// </summary>
+        /// <param name="configuration">
+        /// Reference to an instance of an object that
+        /// implements the
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// interface that is to be added to the list of configurations.
+        /// </param>
+        /// <param name="setActive">
+        /// True to set the new configuration as active; false
+        /// otherwise.
+        /// </param>
+        /// <remarks>
+        /// Merely setting the <paramref name="configuration" /> object's IsActive property
+        /// to be true is not enough to actually associate the configuration with the
+        /// repository this Team is using.  To associate it, either pass true for the
+        /// <paramref name="setActive" /> parameter (which is the default), or call the
+        /// <see
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.SetRepositoryConfigurationActive" />
+        /// next.  If this method's <paramref name="setActive" /> parameter is set to true,
+        /// then this method will
+        /// set the added configuration active for the caller.
+        /// </remarks>
+        /// <exception cref="T:System.ArgumentNullException">
+        /// Thrown if the
+        /// <paramref name="configuration" /> parameter has as null reference.
+        /// </exception>
+        void AddRepositoryConfiguration(
+            IRepositoryConfiguration configuration, bool setActive = true);
+
+        /// <summary>
         /// Stages all the modified (but not ignored) files in <paramref name="files" />,
         /// and then creates a new Commit with the specified
         /// <paramref name="commitMessage" /> and optional timestamp.
@@ -60,6 +93,12 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// Collection of path names, either absolute or relative, of
         /// files to be staged as part of this commit.
         /// </param>
+        /// <remarks>
+        /// Use two newline characters, '\n\n', in the message to separate the short commit
+        /// message from a detailed commit message.  This method simply calls the
+        /// <see cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.CommitAll" /> method if no
+        /// <paramref name="files" /> are specified.
+        /// </remarks>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
@@ -69,24 +108,22 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
-        /// Thrown
-        /// if either the
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
-        /// or
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
-        /// properties are blank.
+        /// An
+        /// active and valid
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// is not associated with the repository.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
-        /// Thrown if the required <paramref name="commitMessage" /> is blank.
+        /// Thrown when the repository
+        /// in use is configured to make commit messages mandatory, yet the
+        /// <paramref name="commitMessage" /> is blank.
         /// </exception>
-        /// <remarks>
-        /// Use two newline characters, '\n\n', in the message to separate the short commit
-        /// message from a detailed commit message.  This method simply calls the
-        /// <see cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.CommitAll" /> method if no
-        /// <paramref name="files" /> are specified.
-        /// </remarks>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
+        /// Thrown
+        /// if a validation error is encountered due to improper configuration of this
+        /// Team.
+        /// </exception>
         void Commit(string commitMessage, bool addTimestamp = false,
             params string[] files);
 
@@ -103,6 +140,10 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// (Optional.) Set to true to add the timestamp to the
         /// commit message.
         /// </param>
+        /// <remarks>
+        /// Use two newline characters, '\n\n', in the message to separate the short commit
+        /// message from a detailed commit message.
+        /// </remarks>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
@@ -112,22 +153,22 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
-        /// Thrown
-        /// if either the
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
-        /// or
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
-        /// properties are blank.
+        /// An
+        /// active and valid
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// is not associated with the repository.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
-        /// Thrown if the required <paramref name="commitMessage" /> is blank.
+        /// Thrown when the repository
+        /// in use is configured to make commit messages mandatory, yet the
+        /// <paramref name="commitMessage" /> is blank.
         /// </exception>
-        /// <remarks>
-        /// Use two newline characters, '\n\n', in the message to separate the short commit
-        /// message from a detailed commit message.
-        /// </remarks>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
+        /// Thrown
+        /// if a validation error is encountered due to improper configuration of this
+        /// Team.
+        /// </exception>
         void CommitAll(string commitMessage, bool addTimestamp = false);
 
         /// <summary>
@@ -151,14 +192,21 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
+        /// An
+        /// active and valid
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// is not associated with the repository.
+        /// </exception>
+        /// <exception cref="T:System.InvalidOperationException">
+        /// Thrown when the repository
+        /// in use is configured to make commit messages mandatory, yet the
+        /// <paramref name="commitMessage" /> is blank.
+        /// </exception>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
         /// Thrown
-        /// if either the
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
-        /// or
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
-        /// properties are blank.
+        /// if a validation error is encountered due to improper configuration of this
+        /// Team.
         /// </exception>
         void CommitAllAndPush(string commitMessage,
             bool addTimestamp = false);
@@ -185,14 +233,21 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
+        /// An
+        /// active and valid
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// is not associated with the repository.
+        /// </exception>
+        /// <exception cref="T:System.InvalidOperationException">
+        /// Thrown when the repository
+        /// in use is configured to make commit messages mandatory, yet the
+        /// <paramref name="commitMessage" /> is blank.
+        /// </exception>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
         /// Thrown
-        /// if either the
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
-        /// or
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
-        /// properties are blank.
+        /// if a validation error is encountered due to improper configuration of this
+        /// Team.
         /// </exception>
         void CommitAllAndSync(string commitMessage,
             bool addTimestamp = false);
@@ -215,6 +270,13 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// Collection of path names, either absolute or relative, of
         /// files to be staged as part of this commit.
         /// </param>
+        /// <remarks>
+        /// Use two newline characters, '\n\n', in the message to separate the short commit
+        /// message from a detailed commit message.  This method simply calls the
+        /// <see cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.CommitAllAndPush" />
+        /// method if no
+        /// <paramref name="files" /> are specified.
+        /// </remarks>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
@@ -224,25 +286,22 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
-        /// Thrown
-        /// if either the
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
-        /// or
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
-        /// properties are blank.
+        /// An
+        /// active and valid
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// is not associated with the repository.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
-        /// Thrown if the required <paramref name="commitMessage" /> is blank.
+        /// Thrown when the repository
+        /// in use is configured to make commit messages mandatory, yet the
+        /// <paramref name="commitMessage" /> is blank.
         /// </exception>
-        /// <remarks>
-        /// Use two newline characters, '\n\n', in the message to separate the short commit
-        /// message from a detailed commit message.  This method simply calls the
-        /// <see cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.CommitAllAndPush" />
-        /// method if no
-        /// <paramref name="files" /> are specified.
-        /// </remarks>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
+        /// Thrown
+        /// if a validation error is encountered due to improper configuration of this
+        /// Team.
+        /// </exception>
         void CommitAndPush(string commitMessage,
             bool addTimestamp = false,
             params string[] files);
@@ -265,6 +324,13 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// Collection of path names, either absolute or relative, of
         /// files to be staged as part of this commit.
         /// </param>
+        /// <remarks>
+        /// Use two newline characters, '\n\n', in the message to separate the short commit
+        /// message from a detailed commit message.  This method simply calls the
+        /// <see cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.CommitAllAndSync" />
+        /// method if no
+        /// <paramref name="files" /> are specified.
+        /// </remarks>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
         /// Thrown if the
@@ -274,27 +340,49 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
-        /// Thrown
-        /// if either the
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
-        /// or
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
-        /// properties are blank.
+        /// An
+        /// active and valid
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// is not associated with the repository.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
-        /// Thrown if the required <paramref name="commitMessage" /> is blank.
+        /// Thrown when the repository
+        /// in use is configured to make commit messages mandatory, yet the
+        /// <paramref name="commitMessage" /> is blank.
         /// </exception>
-        /// <remarks>
-        /// Use two newline characters, '\n\n', in the message to separate the short commit
-        /// message from a detailed commit message.  This method simply calls the
-        /// <see cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.CommitAllAndSync" />
-        /// method if no
-        /// <paramref name="files" /> are specified.
-        /// </remarks>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
+        /// Thrown
+        /// if a validation error is encountered due to improper configuration of this
+        /// Team.
+        /// </exception>
         void CommitAndSync(string commitMessage,
             bool addTimestamp = false,
             params string[] files);
+
+        /// <summary>
+        /// Deactivates all this team's Git configurations.
+        /// </summary>
+        /// <remarks>
+        /// After this method is called, the
+        /// <see
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.SetRepositoryConfigurationActive" />
+        /// method must be called prior to any Git methods being called again.
+        /// </remarks>
+        void DeactivateAllConfigurations();
+
+        /// <summary>
+        /// Sets the specified <paramref name="configuration" /> as active, and associates
+        /// it with the Repository object that this Team is using.
+        /// </summary>
+        /// <param name="configuration">
+        /// Reference to the instance of the object that
+        /// implements the
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// interface that is to be made active.  This is also attached to the repository
+        /// currently in use.
+        /// </param>
+        void SetRepositoryConfigurationActive(
+            IRepositoryConfiguration configuration);
     }
 }
