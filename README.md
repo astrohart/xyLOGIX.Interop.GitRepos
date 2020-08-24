@@ -52,7 +52,7 @@ namespace MyProject
 
 Using this wrapper library is literally that easy. 
 
-**NOTE** When creating a new `RepositoryConfiguration` object, do not set the `IsActive` property by hand.  Call `Team.SetRepositoryConfigurationActive` on it instead.  It should be noted that the `AddRepositoryConfiguration` method sets the configuration passed to it as active by default.  Only one configuration can be marked as active at a time.
+**NOTE** When creating a new `RepositoryConfiguration` object, do not set the `IsActive` property by hand.  Call `Team.SetRepositoryConfigurationActive` on it instead.  It should be noted that the `AddRepositoryConfiguration` method sets the configuration passed to it as active by default.  Only one configuration can be marked as active at a time.  If a `Team` method is called when more than one configuration is set active, a `TeamConfigurationException` will be thrown.
 
 # 2. Further Work
 
