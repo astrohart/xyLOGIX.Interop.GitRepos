@@ -116,6 +116,7 @@
     <Compile Include="Synchronizers\Synchronizer.cs" />
     <Compile Include="Teams\Team.cs" />
     <Compile Include="Validators\RepositoryConfigurationValidator.cs" />
+    <Compile Include="Validators\TeamConfigurationValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
