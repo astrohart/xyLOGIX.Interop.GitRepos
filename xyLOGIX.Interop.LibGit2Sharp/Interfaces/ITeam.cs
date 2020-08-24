@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
 {
@@ -17,6 +18,17 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.ICommitter" /> interface.
         /// </summary>
         ICommitter Committer { get; }
+
+        /// <summary>
+        /// Gets a reference to a read-only collection of references to instances of
+        /// objects that implement the
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// interface.
+        /// </summary>
+        IReadOnlyCollection<IRepositoryConfiguration> RepositoryConfigurations
+        {
+            get;
+        }
 
         /// <summary>
         /// Gets a reference to an instance of an object that implements the
@@ -59,9 +71,11 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
         /// if either the
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
         /// or
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
         /// properties are blank.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
@@ -100,9 +114,11 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
         /// if either the
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
         /// or
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
         /// properties are blank.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
@@ -137,9 +153,11 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
         /// if either the
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
         /// or
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
         /// properties are blank.
         /// </exception>
         void CommitAllAndPush(string commitMessage,
@@ -169,9 +187,11 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
         /// if either the
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
         /// or
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
         /// properties are blank.
         /// </exception>
         void CommitAllAndSync(string commitMessage,
@@ -206,9 +226,11 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
         /// if either the
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
         /// or
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
         /// properties are blank.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
@@ -254,9 +276,11 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
         /// Thrown
         /// if either the
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubName" />
         /// or
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.RepositoryContext.GitHubEmail" />
         /// properties are blank.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
