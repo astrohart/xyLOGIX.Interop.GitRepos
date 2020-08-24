@@ -63,11 +63,13 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         public ICommitter Committer { get; } = Committers.Committer.Instance;
 
         /// <summary>
-        /// Gets a reference to a read-only collection of references to instances of objects that implement the
+        /// Gets a reference to a read-only collection of references to instances of
+        /// objects that implement the
         /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
         /// interface.
         /// </summary>
-        public IReadOnlyCollection<IRepositoryConfiguration> RepositoryConfigurations
+        public IReadOnlyCollection<IRepositoryConfiguration>
+            RepositoryConfigurations
             => _repositoryConfigurations;
 
         /// <summary>
@@ -83,44 +85,6 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// </summary>
         public ISynchronizer Synchronizer { get; } =
             Synchronizers.Synchronizer.Instance;
-
-        /// <summary>
-        /// Adds an instance of an object that implements the
-        /// <see cref="T:xyLGOIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
-        /// interface to the list that this object maintains and optionally sets it active.
-        /// </summary>
-        /// <param name="configuration">
-        /// Reference to an instance of an object that
-        /// implements the
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
-        /// interface that is to be added to the list of configurations.
-        /// </param>
-        /// <param name="setActive">
-        /// True to set the new configuration as active; false
-        /// otherwise.
-        /// </param>
-        /// <exception cref="T:System.ArgumentNullException">
-        /// Thrown if the
-        /// <paramref name="configuration" /> parameter has as null reference.
-        /// </exception>
-        /// <remarks>
-        /// Merely setting the <paramref name="configuration" /> object's IsActive property
-        /// to be true is not enough to actually associate the configuration with the
-        /// repository this Team is using.  To associate it, either pass true for the
-        /// <paramref name="setActive" /> parameter (which is the default), or call the
-        /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.SetRepositoryConfigurationActive" />
-        /// next.
-        /// </remarks>
-        public void AddRepositoryConfiguration(
-            IRepositoryConfiguration configuration, bool setActive = true)
-        {
-            if (configuration == null)
-                throw new ArgumentNullException(nameof(configuration));
-
-            _repositoryConfigurations.Add(configuration);
-            if (setActive) SetRepositoryConfigurationActive(configuration);
-        }
 
         /// <summary>
         /// Stages all the modified (but not ignored) files in <paramref name="files" />,
@@ -434,6 +398,59 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         }
 
         /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing,
+        /// or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            DeactivateAllConfigurations();
+            DetachRepositoryFromDependencies();
+
+            _repository?.Dispose();
+            _repository = null;
+        }
+
+        /// <summary>
+        /// Adds an instance of an object that implements the
+        /// <see cref="T:xyLGOIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// interface to the list that this object maintains and optionally sets it active.
+        /// </summary>
+        /// <param name="configuration">
+        /// Reference to an instance of an object that
+        /// implements the
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// interface that is to be added to the list of configurations.
+        /// </param>
+        /// <param name="setActive">
+        /// True to set the new configuration as active; false
+        /// otherwise.
+        /// </param>
+        /// <remarks>
+        /// Merely setting the <paramref name="configuration" /> object's IsActive property
+        /// to be true is not enough to actually associate the configuration with the
+        /// repository this Team is using.  To associate it, either pass true for the
+        /// <paramref name="setActive" /> parameter (which is the default), or call the
+        /// <see
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.SetRepositoryConfigurationActive" />
+        /// next.  If this method's <paramref name="setActive" /> parameter is set to true,
+        /// then this method will
+        /// set the added configuration active for the caller.
+        /// </remarks>
+        /// <exception cref="T:System.ArgumentNullException">
+        /// Thrown if the
+        /// <paramref name="configuration" /> parameter has as null reference.
+        /// </exception>
+        public void AddRepositoryConfiguration(
+            IRepositoryConfiguration configuration, bool setActive = true)
+        {
+            if (configuration == null)
+                throw new ArgumentNullException(nameof(configuration));
+
+            _repositoryConfigurations.Add(configuration);
+            if (setActive) SetRepositoryConfigurationActive(configuration);
+        }
+
+        /// <summary>
         /// Deactivates all this team's Git configurations.
         /// </summary>
         /// <remarks>
@@ -452,19 +469,6 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
 
             _repositoryConfigurations.ForEach(DeactivateConfiguration);
             _repository.DetachConfiguration();
-        }
-
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing,
-        /// or resetting unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            DeactivateAllConfigurations();
-            DetachRepositoryFromDependencies();
-
-            _repository?.Dispose();
-            _repository = null;
         }
 
         /// <summary>
