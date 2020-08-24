@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Committers\Committer.cs" />
+    <Compile Include="Exceptions\TeamConfigurationException.cs" />
     <Compile Include="Extensions\RepositoryConfigurationHelpers.cs" />
     <Compile Include="Configurations\RepositoryConfiguration.cs" />
     <Compile Include="Events\CommitFailedEventArgs.cs" />
