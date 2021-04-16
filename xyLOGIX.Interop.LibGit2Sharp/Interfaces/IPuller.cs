@@ -6,7 +6,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
     /// <summary>
     /// Defines the methods and properties for a Puller.
     /// </summary>
-    public interface IPuller : IGitRepositoryContext
+    public interface IPuller : IGitRepositoryAction
     {
         /// <summary>
         /// Raised when a Pull operation has completed successfully.
@@ -31,7 +31,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryContext.AttachGitRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception

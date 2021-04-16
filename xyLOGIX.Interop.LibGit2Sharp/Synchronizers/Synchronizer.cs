@@ -10,7 +10,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Synchronizers
     /// <summary>
     /// Synchronizes a Git local repository with a remote.
     /// </summary>
-    public sealed class Synchronizer : GitRepositoryContext, ISynchronizer
+    public sealed class Synchronizer : GitRepositoryAction, ISynchronizer
     {
         /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.
@@ -99,7 +99,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Synchronizers
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryContext.AttachGitRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception

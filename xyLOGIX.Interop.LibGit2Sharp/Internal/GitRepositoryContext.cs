@@ -17,7 +17,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
     /// for performing actions, such as Commit, Push, Pull, Synchronize, Stage
     /// etc., on a repository's items.
     /// </remarks>
-    public abstract class GitRepositoryContext : IGitRepositoryContext
+    public abstract class GitRepositoryAction : IGitRepositoryAction
     {
         /// <summary>
         /// Gets or sets a reference to an object that implements the
@@ -113,7 +113,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
         /// string or refers to the pathname of a file that does not exist, or
         /// if the
         /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.GitRepositoryContext.GitRepository" />
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.GitRepositoryAction.GitRepository" />
         /// property has a <see langword="null" /> value, then this method does
         /// nothing and returns the blank string as the result.
         /// </remarks>

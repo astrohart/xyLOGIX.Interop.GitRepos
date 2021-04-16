@@ -6,7 +6,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
     /// <summary>
     /// Defines methods and properties for a Synchronizer object.
     /// </summary>
-    public interface ISynchronizer : IGitRepositoryContext
+    public interface ISynchronizer : IGitRepositoryAction
     {
         /// <summary>
         /// Raised when a Synchronization operation has completed.
@@ -43,7 +43,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryContext.AttachGitRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception

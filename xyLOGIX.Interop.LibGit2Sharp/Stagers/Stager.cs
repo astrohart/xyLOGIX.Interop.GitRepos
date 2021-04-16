@@ -12,7 +12,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Stagers
     /// <summary>
     /// Stages changes in the working tree to a local Git repository.
     /// </summary>
-    public class Stager : GitRepositoryContext, IStager
+    public class Stager : GitRepositoryAction, IStager
     {
         /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.
@@ -57,7 +57,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Stagers
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryContext.AttachGitRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         public bool StageAll()
@@ -97,7 +97,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Stagers
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryContext.AttachGitRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception cref="T:System.IO.FileNotFoundException">

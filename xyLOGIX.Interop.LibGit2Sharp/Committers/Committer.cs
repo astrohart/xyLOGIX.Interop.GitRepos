@@ -11,7 +11,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
     /// <summary>
     /// Commits staged items to a Git repository.
     /// </summary>
-    public class Committer : GitRepositoryContext, ICommitter
+    public class Committer : GitRepositoryAction, ICommitter
     {
         /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.
@@ -72,7 +72,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryContext.AttachGitRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception

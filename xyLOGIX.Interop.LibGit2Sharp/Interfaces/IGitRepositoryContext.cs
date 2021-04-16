@@ -12,7 +12,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
     /// for performing actions, such as Commit, Push, Pull, Synchronize, Stage
     /// etc., on a repository's items.
     /// </remarks>
-    public interface IGitRepositoryContext
+    public interface IGitRepositoryAction
     {
         /// <summary>
         /// Raised when a new GitRepository is attached to this object.

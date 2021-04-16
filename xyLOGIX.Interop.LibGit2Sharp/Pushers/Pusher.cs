@@ -11,7 +11,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Pushers
     /// <summary>
     /// Pushes commits to a remote.
     /// </summary>
-    public class Pusher : GitRepositoryContext, IPusher
+    public class Pusher : GitRepositoryAction, IPusher
     {
         /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.
@@ -51,7 +51,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Pushers
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryContext.AttachGitRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
