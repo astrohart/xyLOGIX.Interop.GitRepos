@@ -11,6 +11,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp", "xyLOGIX.Interop.LibGit2Sharp\xyLOGIX.Interop.LibGit2Sharp.csproj", "{84C1F71A-AAA4-4A08-9728-19E710965E4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Exceptions", "xyLOGIX.Interop.LibGit2Sharp.Exceptions\xyLOGIX.Interop.LibGit2Sharp.Exceptions.csproj", "{8802EB52-7346-4084-953C-80B1C6CBB619}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Events", "xyLOGIX.Interop.LibGit2Sharp.Events\xyLOGIX.Interop.LibGit2Sharp.Events.csproj", "{D864DB0A-1A11-45B4-8B7C-CEF252E1010B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces.csproj", "{180A869D-9A16-4085-BF0A-16D079CADC5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +37,36 @@ Global
 		{84C1F71A-AAA4-4A08-9728-19E710965E4D}.Release|x64.Build.0 = Release|x64
 		{84C1F71A-AAA4-4A08-9728-19E710965E4D}.Release|x86.ActiveCfg = Release|x86
 		{84C1F71A-AAA4-4A08-9728-19E710965E4D}.Release|x86.Build.0 = Release|x86
+		{8802EB52-7346-4084-953C-80B1C6CBB619}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{8802EB52-7346-4084-953C-80B1C6CBB619}.Debug|x64.ActiveCfg = Debug|x64
+		{8802EB52-7346-4084-953C-80B1C6CBB619}.Debug|x64.Build.0 = Debug|x64
+		{8802EB52-7346-4084-953C-80B1C6CBB619}.Debug|x86.ActiveCfg = Debug|x86
+		{8802EB52-7346-4084-953C-80B1C6CBB619}.Debug|x86.Build.0 = Debug|x86
+		{8802EB52-7346-4084-953C-80B1C6CBB619}.Release|Any CPU.ActiveCfg = Release|x86
+		{8802EB52-7346-4084-953C-80B1C6CBB619}.Release|x64.ActiveCfg = Release|x64
+		{8802EB52-7346-4084-953C-80B1C6CBB619}.Release|x64.Build.0 = Release|x64
+		{8802EB52-7346-4084-953C-80B1C6CBB619}.Release|x86.ActiveCfg = Release|x86
+		{8802EB52-7346-4084-953C-80B1C6CBB619}.Release|x86.Build.0 = Release|x86
+		{D864DB0A-1A11-45B4-8B7C-CEF252E1010B}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{D864DB0A-1A11-45B4-8B7C-CEF252E1010B}.Debug|x64.ActiveCfg = Debug|x64
+		{D864DB0A-1A11-45B4-8B7C-CEF252E1010B}.Debug|x64.Build.0 = Debug|x64
+		{D864DB0A-1A11-45B4-8B7C-CEF252E1010B}.Debug|x86.ActiveCfg = Debug|x86
+		{D864DB0A-1A11-45B4-8B7C-CEF252E1010B}.Debug|x86.Build.0 = Debug|x86
+		{D864DB0A-1A11-45B4-8B7C-CEF252E1010B}.Release|Any CPU.ActiveCfg = Release|x86
+		{D864DB0A-1A11-45B4-8B7C-CEF252E1010B}.Release|x64.ActiveCfg = Release|x64
+		{D864DB0A-1A11-45B4-8B7C-CEF252E1010B}.Release|x64.Build.0 = Release|x64
+		{D864DB0A-1A11-45B4-8B7C-CEF252E1010B}.Release|x86.ActiveCfg = Release|x86
+		{D864DB0A-1A11-45B4-8B7C-CEF252E1010B}.Release|x86.Build.0 = Release|x86
+		{180A869D-9A16-4085-BF0A-16D079CADC5F}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{180A869D-9A16-4085-BF0A-16D079CADC5F}.Debug|x64.ActiveCfg = Debug|x64
+		{180A869D-9A16-4085-BF0A-16D079CADC5F}.Debug|x64.Build.0 = Debug|x64
+		{180A869D-9A16-4085-BF0A-16D079CADC5F}.Debug|x86.ActiveCfg = Debug|x86
+		{180A869D-9A16-4085-BF0A-16D079CADC5F}.Debug|x86.Build.0 = Debug|x86
+		{180A869D-9A16-4085-BF0A-16D079CADC5F}.Release|Any CPU.ActiveCfg = Release|x86
+		{180A869D-9A16-4085-BF0A-16D079CADC5F}.Release|x64.ActiveCfg = Release|x64
+		{180A869D-9A16-4085-BF0A-16D079CADC5F}.Release|x64.Build.0 = Release|x64
+		{180A869D-9A16-4085-BF0A-16D079CADC5F}.Release|x86.ActiveCfg = Release|x86
+		{180A869D-9A16-4085-BF0A-16D079CADC5F}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

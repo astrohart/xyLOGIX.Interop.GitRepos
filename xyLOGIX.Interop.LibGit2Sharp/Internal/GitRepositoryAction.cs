@@ -2,9 +2,8 @@
 using LibGit2Sharp;
 using System;
 using xyLOGIX.Interop.LibGit2Sharp.Events;
-using xyLOGIX.Interop.LibGit2Sharp.Exceptions;
 using xyLOGIX.Interop.LibGit2Sharp.Extensions;
-using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
 using xyLOGIX.Interop.LibGit2Sharp.Validators;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Internal
@@ -20,15 +19,6 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
     public abstract class GitRepositoryAction : IGitRepositoryAction
     {
         /// <summary>
-        /// Gets or sets a reference to an object that implements the
-        /// <see
-        ///     cref="T:LibGit2Sharp.IGitRepository" />
-        /// interface that this object is
-        /// currently working with.
-        /// </summary>
-        protected IRepository GitRepository { get; set; }
-
-        /// <summary>
         /// Raised when a new GitRepository is attached to this object.
         /// </summary>
         public event GitRepositoryAttachedEventHandler GitRepositoryAttached;
@@ -39,23 +29,26 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
         public event EventHandler GitRepositoryDetached;
 
         /// <summary>
-        /// Attaches an instance of an object that implements the
-        /// <see
-        ///     cref="T:LibGit2Sharp.IGitRepository" />
-        /// interface to this object.
+        /// Gets or sets a reference to an object that implements the <see
+        /// cref="T:LibGit2Sharp.IGitRepository"/> interface that this object is
+        /// currently working with.
+        /// </summary>
+        protected IRepository GitRepository { get; set; }
+
+        /// <summary>
+        /// Attaches an instance of an object that implements the <see
+        /// cref="T:LibGit2Sharp.IGitRepository"/> interface to this object.
         /// </summary>
         /// <param name="repository">
-        /// Reference to an instance of an object that implements the
-        /// <see
-        ///     cref="T:LibGit2Sharp.IGitRepository" />
-        /// interface that is to be
+        /// Reference to an instance of an object that implements the <see
+        /// cref="T:LibGit2Sharp.IGitRepository"/> interface that is to be
         /// attached to this object.
         /// </param>
         /// <remarks>
         /// A repository object must be attached to this object object prior to use.
         /// </remarks>
         /// <exception cref="T:System.ArgumentNullException">
-        /// Thrown if the <paramref name="repository" /> parameter is blank.
+        /// Thrown if the <paramref name="repository"/> parameter is blank.
         /// </exception>
         public virtual void AttachGitRepository(IRepository repository)
         {
@@ -73,15 +66,12 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
             => GitRepository = null;
 
         /// <summary>
-        /// Raises the
-        /// <see
-        ///     cref="E:xyLOGIX.Interop.LibGit2Sharp.Changes.Stager.GitRepositoryAttached" />
-        /// event.
+        /// Raises the <see
+        /// cref="E:xyLOGIX.Interop.LibGit2Sharp.Changes.Stager.GitRepositoryAttached"/> event.
         /// </summary>
         /// <param name="e">
-        /// A
-        /// <see
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.GitRepositoryAttachedEventArgs" />
+        /// A <see
+        /// cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.GitRepositoryAttachedEventArgs"/>
         /// that contains the event data.
         /// </param>
         protected virtual void OnGitRepositoryAttached(
@@ -89,10 +79,8 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
             => GitRepositoryAttached?.Invoke(this, e);
 
         /// <summary>
-        /// Raises the
-        /// <see
-        ///     cref="E:xyLOGIX.Interop.LibGit2Sharp.Changes.Stager.GitRepositoryDetached.GitRepositoryDetached" />
-        /// event.
+        /// Raises the <see
+        /// cref="E:xyLOGIX.Interop.LibGit2Sharp.Changes.Stager.GitRepositoryDetached.GitRepositoryDetached"/> event.
         /// </summary>
         protected virtual void OnGitRepositoryDetached()
             => GitRepositoryDetached?.Invoke(this, EventArgs.Empty);
@@ -109,12 +97,11 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
         /// string if an error occurred.
         /// </returns>
         /// <remarks>
-        /// If the required parameter, <paramref name="path" />, is a blank
+        /// If the required parameter, <paramref name="path"/>, is a blank
         /// string or refers to the pathname of a file that does not exist, or
-        /// if the
-        /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.GitRepositoryAction.GitRepository" />
-        /// property has a <see langword="null" /> value, then this method does
+        /// if the <see
+        /// cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.GitRepositoryAction.GitRepository"/>
+        /// property has a <see langword="null"/> value, then this method does
         /// nothing and returns the blank string as the result.
         /// </remarks>
         protected string StripRepoDirFromFilePath(string path)
@@ -152,12 +139,10 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
         /// <summary>
         /// Determine whether the configuration is set up.
         /// </summary>
-        /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotConfiguredException">
+        /// <exception cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotConfiguredException">
         /// Thrown if the repository does not have a valid object that
-        /// implements the
-        /// <see
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
+        /// implements the <see
+        /// cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration"/>
         /// interface associated with it.
         /// </exception>
         protected void ValidateConfiguration()

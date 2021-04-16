@@ -2,7 +2,7 @@
 using System;
 using xyLOGIX.Interop.LibGit2Sharp.Events;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
+namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces
 {
     /// <summary>
     /// Defines methods and properties for an object that is bound to a Git repository.
