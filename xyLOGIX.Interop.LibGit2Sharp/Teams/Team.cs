@@ -20,8 +20,8 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
     ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.Dispose" />
     /// method when
     /// done utilizing it. You must pass an instance of an object that
-    /// implements the <see cref="T:LibGit2Sharp.IRepository" /> interface to
-    /// its constructor.
+    /// implements the <see cref="T:LibGit2Sharp.IRepository" /> interface to its
+    /// constructor.
     /// </remarks>
     public class Team : ITeam
     {
@@ -570,6 +570,10 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// <remarks>
         /// This method exists purely for fluent use in LINQ queries.
         /// </remarks>
+        /// <exception cref="T:System.ArgumentNullException">
+        /// Thrown if the required parameter, <paramref name="configuration" />,
+        /// is passed a <see langword="null" /> value.
+        /// </exception>
         private static void DeactivateConfiguration(
             IGitRepositoryConfiguration configuration)
         {
@@ -583,8 +587,24 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// Associates the instance of the object in the _repository field with
         /// the Committer, Stager, and Synchronizer.
         /// </summary>
+        /// <exception cref="T:System.InvalidOperationException">
+        /// Thrown if the
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.Committer" />
+        /// ,
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.Stager" />
+        /// , or the
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.Synchronizer" />
+        /// property are <see langword="null" />.
+        /// </exception>
         private void AttachGitRepositoryToDependencies()
         {
+            if (Committer == null || Stager == null || Synchronizer == null)
+                throw new InvalidOperationException(
+                    "Either the Committer, the Stager, or the Synchronizer components are not initialized, or all three."
+                );
+
             Committer.AttachGitRepository(_repository);
             Stager.AttachGitRepository(_repository);
             Synchronizer.AttachGitRepository(_repository);
@@ -594,8 +614,24 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// Disassociates the instance of the object in the _repository field
         /// from the Committer, Stager, and Synchronizer.
         /// </summary>
+        /// <exception cref="T:System.InvalidOperationException">
+        /// Thrown if the
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.Committer" />
+        /// ,
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.Stager" />
+        /// , or the
+        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.Synchronizer" />
+        /// property are <see langword="null" />.
+        /// </exception>
         private void DetachGitRepositoryFromDependencies()
         {
+            if (Committer == null || Stager == null || Synchronizer == null)
+                throw new InvalidOperationException(
+                    "Either the Committer, the Stager, or the Synchronizer components are not initialized, or all three."
+                );
+
             Synchronizer.DetachGitRepository();
             Stager.DetachGitRepository();
             Committer.DetachGitRepository();
