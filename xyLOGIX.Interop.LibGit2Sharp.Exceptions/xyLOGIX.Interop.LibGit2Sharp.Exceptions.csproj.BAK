@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <ApplicationIcon>1382_cogs.ico</ApplicationIcon>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
-    <ProjectGuid>{D864DB0A-1A11-45B4-8B7C-CEF252E1010B}</ProjectGuid>
+    <ProjectGuid>{8802EB52-7346-4084-953C-80B1C6CBB619}</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -58,35 +58,25 @@
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyName>xyLOGIX.Interop.LibGit2Sharp.Events</AssemblyName>
+    <AssemblyName>xyLOGIX.Interop.LibGit2Sharp.Exceptions</AssemblyName>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>xyLOGIX.Interop.LibGit2Sharp.Events</RootNamespace>
+    <RootNamespace>xyLOGIX.Interop.LibGit2Sharp.Exceptions</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GlobalAspects.cs" />
-    <Compile Include="CommitFailedEventArgs.cs" />
-    <Compile Include="CommitFailedEventHandler.cs" />
-    <Compile Include="GitRepositoryAttachedEventArgs.cs" />
-    <Compile Include="GitRepositoryAttachedEventHandler.cs" />
+    <Compile Include="GitRepositoryNotAttachedException.cs" />
+    <Compile Include="GitRepositoryNotConfiguredException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="PullFailedEventArgs.cs" />
-    <Compile Include="PullFailedEventHandler.cs" />
-    <Compile Include="PushFailedEventArgs.cs" />
-    <Compile Include="PushFailedEventHandler.cs" />
-    <Compile Include="StageFailedEventArgs.cs" />
-    <Compile Include="StageFailedEventHandler.cs" />
-    <Compile Include="SynchronizationFailedEventArgs.cs" />
-    <Compile Include="SynchronizationFailedEventHandler.cs" />
+    <Compile Include="TeamConfigurationException.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
