@@ -96,7 +96,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Pullers
                         repositoryConfiguration.Email, DateTime.UtcNow);
 
                 // Pull
-                Commands.Pull((GitRepository)GitRepository, signature, options);
+                Commands.Pull((Repository)GitRepository, signature, options);
             }
             catch (Exception ex)
             {

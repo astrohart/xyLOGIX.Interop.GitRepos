@@ -15,7 +15,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Extensions
         /// Dictionary that associates repositories to configurations.
         /// </summary>
         private static readonly
-            IDictionary<IGitRepository, IGitRepositoryConfiguration>
+            IDictionary<IRepository, IGitRepositoryConfiguration>
             _repositoryConfigurations;
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Extensions
         static GitRepositoryConfigurationHelpers()
         {
             _repositoryConfigurations =
-                new Dictionary<IGitRepository, IGitRepositoryConfiguration>();
+                new Dictionary<IRepository, IGitRepositoryConfiguration>();
         }
 
         /// <summary>

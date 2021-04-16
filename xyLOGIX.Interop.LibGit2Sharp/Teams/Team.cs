@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using xyLOGIX.Interop.LibGit2Sharp.Exceptions;
+using xyLOGIX.Interop.LibGit2Sharp.Extensions;
 using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
 using xyLOGIX.Interop.LibGit2Sharp.Validators;
 
@@ -556,24 +557,6 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
             configuration.IsActive = true;
             _repository.AttachConfiguration(configuration);
         }
-
-        /// <summary>
-        /// Returns a value specifying whether the provided
-        /// <paramref
-        ///     name="configuration" />
-        /// is active.
-        /// </summary>
-        /// <param name="configuration">
-        /// Reference to an instance of an object that implements the
-        /// <see
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
-        /// interface.
-        /// </param>
-        /// <remarks>
-        /// This method is purely to be used fluently with LINQ queries.
-        /// </remarks>
-        private static bool AreAcive(IGitRepositoryConfiguration configuration)
-            => configuration.IsActive;
 
         /// <summary>
         /// Deactivates the specified repository <paramref name="configuration" />.
