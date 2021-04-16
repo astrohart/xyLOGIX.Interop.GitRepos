@@ -7,6 +7,11 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
     /// <summary>
     /// Defines methods and properties for an object that is bound to a Git repository.
     /// </summary>
+    /// <remarks>
+    /// A repository-bound object is defined as an object that is responsible
+    /// for performing actions, such as Commit, Push, Pull, Synchronize, Stage
+    /// etc., on a repository's items.
+    /// </remarks>
     public interface IGitRepositoryContext
     {
         /// <summary>
