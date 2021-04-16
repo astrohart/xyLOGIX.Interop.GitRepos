@@ -7,25 +7,25 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
     /// <summary>
     /// Defines methods and properties for an object that is bound to a Git repository.
     /// </summary>
-    public interface IRepositoryContext
+    public interface IGitRepositoryContext
     {
         /// <summary>
-        /// Raised when a new Repository is attached to this object.
+        /// Raised when a new GitRepository is attached to this object.
         /// </summary>
-        event RepositoryAttachedEventHandler RepositoryAttached;
+        event GitRepositoryAttachedEventHandler GitRepositoryAttached;
 
         /// <summary>
         /// Raised when a repository is detached from this object.
         /// </summary>
-        event EventHandler RepositoryDetached;
+        event EventHandler GitRepositoryDetached;
 
         /// <summary>
         /// Attaches an instance of an object that implements the
-        /// <see cref="T:LibGit2Sharp.IRepository" /> interface to this object.
+        /// <see cref="T:LibGit2Sharp.IGitRepository" /> interface to this object.
         /// </summary>
         /// <param name="repository">
         /// Reference to an instance of an object that implements
-        /// the <see cref="T:LibGit2Sharp.IRepository" /> interface that is to be attached
+        /// the <see cref="T:LibGit2Sharp.IGitRepository" /> interface that is to be attached
         /// to this object.
         /// </param>
         /// <remarks>
@@ -36,11 +36,11 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// Thrown if the
         /// <paramref name="repository" /> parameter is blank.
         /// </exception>
-        void AttachRepository(IRepository repository);
+        void AttachGitRepository(IRepository repository);
 
         /// <summary>
         /// Disassociates this object with the repository.
         /// </summary>
-        void DetachRepository();
+        void DetachGitRepository();
     }
 }

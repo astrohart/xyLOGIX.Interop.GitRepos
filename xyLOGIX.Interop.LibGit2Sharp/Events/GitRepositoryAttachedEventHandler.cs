@@ -1,7 +1,7 @@
 ﻿namespace xyLOGIX.Interop.LibGit2Sharp.Events
 {
     /// <summary>
-    /// Delegate for a RepositoryAttached event.
+    /// Delegate for a GitRepositoryAttached event.
     /// </summary>
     /// <param name="sender">
     /// Reference to the instance of the object that raised the
@@ -9,9 +9,9 @@
     /// </param>
     /// <param name="e">
     /// A
-    /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.RepositoryAttachedEventArgs" /> that
+    /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.GitRepositoryAttachedEventArgs" /> that
     /// contains the event data.
     /// </param>
-    public delegate void RepositoryAttachedEventHandler(object sender,
-        RepositoryAttachedEventArgs e);
+    public delegate void GitRepositoryAttachedEventHandler(object sender,
+        GitRepositoryAttachedEventArgs e);
 }

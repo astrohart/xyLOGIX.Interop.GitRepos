@@ -9,25 +9,25 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Extensions
     /// <summary>
     /// Extension methods to manage repository configurations.
     /// </summary>
-    public static class RepositoryConfigurationHelpers
+    public static class GitRepositoryConfigurationHelpers
     {
         /// <summary>
         /// Dictionary that associates repositories to configurations.
         /// </summary>
         private static readonly
-            IDictionary<IRepository, IRepositoryConfiguration>
+            IDictionary<IGitRepository, IGitRepositoryConfiguration>
             _repositoryConfigurations;
 
         /// <summary>
         /// Constructs a new instance of
         /// <see
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Extensions.RepositoryConfigurationHelpers" />
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Extensions.GitRepositoryConfigurationHelpers" />
         /// and returns a reference to it.
         /// </summary>
-        static RepositoryConfigurationHelpers()
+        static GitRepositoryConfigurationHelpers()
         {
             _repositoryConfigurations =
-                new Dictionary<IRepository, IRepositoryConfiguration>();
+                new Dictionary<IGitRepository, IGitRepositoryConfiguration>();
         }
 
         /// <summary>
@@ -36,14 +36,14 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Extensions
         /// </summary>
         /// <param name="repository">
         /// Reference to an instance of an object that implements
-        /// the <see cref="T:LibGit2Sharp.IRepository" /> interface.
+        /// the <see cref="T:LibGit2Sharp.IGitRepository" /> interface.
         /// </param>
         /// <param name="configuration">
         /// Reference to an instance of an object that implements the
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
         /// interface.  In order to be attached, its
         /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration.IsActive" />
+        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration.IsActive" />
         /// property must be set to true, and the static method
         /// </param>
         /// <param name="useRemote">
@@ -56,14 +56,14 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Extensions
         /// attach a configuration to this repository that is either invalid or inactive.
         /// </exception>
         public static void AttachConfiguration(this IRepository repository,
-            IRepositoryConfiguration configuration, bool useRemote = true)
+            IGitRepositoryConfiguration configuration, bool useRemote = true)
         {
             if (repository == null)
                 throw new ArgumentNullException(nameof(repository));
             if (configuration == null)
                 throw new ArgumentNullException(nameof(configuration));
 
-            if (!RepositoryConfigurationValidator.IsValid(configuration,
+            if (!GitRepositoryConfigurationValidator.IsValid(configuration,
                     useRemote)
                 || !configuration.IsActive)
                 throw new InvalidOperationException(
@@ -79,12 +79,12 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Extensions
         /// </summary>
         /// <param name="repository">
         /// Reference to an instance of an object that implements
-        /// the <see cref="T:LibGit2Sharp.IRepository" /> interface that is to have its
+        /// the <see cref="T:LibGit2Sharp.IGitRepository" /> interface that is to have its
         /// configuration detached.
         /// </param>
         /// <returns>
         /// Reference to the instance of the object that implements the
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
         /// that was detached, or null if there was nothing attached in the first place, or
         /// a problem occurred.
         /// </returns>
@@ -97,13 +97,13 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Extensions
         /// <paramref name="repository" /> does not have an associated configuration
         /// currently.
         /// </exception>
-        public static IRepositoryConfiguration DetachConfiguration(
+        public static IGitRepositoryConfiguration DetachConfiguration(
             this IRepository repository)
         {
             if (repository == null)
                 throw new ArgumentNullException(nameof(repository));
 
-            IRepositoryConfiguration result;
+            IGitRepositoryConfiguration result;
 
             if (!_repositoryConfigurations.ContainsKey(repository))
                 throw new InvalidOperationException(
@@ -124,18 +124,18 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Extensions
 
         /// <summary>
         /// Obtains a reference to the instance of the object that implements the
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
         /// interface that is currently associated with this <paramref name="repository" />
         /// , or null if there is none.
         /// </summary>
         /// <param name="repository">
         /// Reference to the instance of the object that
-        /// implements the <see cref="T:LibGit2Sharp.IRepository" /> interface for which
+        /// implements the <see cref="T:LibGit2Sharp.IGitRepository" /> interface for which
         /// whose corresponding associated configuration should be obtained.
         /// </param>
         /// <returns>
         /// Reference to the the instance of the object that implements the
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
         /// interface that is currently associated with this <paramref name="repository" />
         /// , or null if there is none.
         /// </returns>
@@ -143,13 +143,13 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Extensions
         /// Thrown if the required
         /// <paramref name="repository" /> parameter is passed a null reference.
         /// </exception>
-        public static IRepositoryConfiguration GetConfiguration(
+        public static IGitRepositoryConfiguration GetConfiguration(
             this IRepository repository)
         {
             if (repository == null)
                 throw new ArgumentNullException(nameof(repository));
 
-            IRepositoryConfiguration result = null;
+            IGitRepositoryConfiguration result = null;
 
             try
             {

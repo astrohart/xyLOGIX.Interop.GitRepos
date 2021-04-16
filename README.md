@@ -21,7 +21,7 @@ Here's an example that commits and synchronizes (i.e., pulls, then pushes) all t
 
 ```
 using LibGit2Sharp;
-using xyLOGIX.Interop.LibGit2Sharp.RepositoryConfigurations;
+using xyLOGIX.Interop.LibGit2Sharp.GitRepositoryConfigurations;
 using xyLOGIX.Interop.LibGit2Sharp.Teams;
 
 namespace MyProject
@@ -31,10 +31,10 @@ namespace MyProject
         public static void Main(string[] args)
         {
             using (var team =
-                new Team(new Repository("/path/to/your/repo/.git")))
+                new Team(new GitRepository("/path/to/your/repo/.git")))
             {
-                team.AddRepositoryConfiguration(
-                    new RepositoryConfiguration
+                team.AddGitRepositoryConfiguration(
+                    new GitRepositoryConfiguration
                     {
                         Name = "Foo bar",
                         Email = "@noneofyourbeeswax",
@@ -52,7 +52,7 @@ namespace MyProject
 
 Using this wrapper library is literally that easy. 
 
-**NOTE** When creating a new `RepositoryConfiguration` object, do not set the `IsActive` property by hand.  Call `Team.SetRepositoryConfigurationActive` on it instead.  It should be noted that the `AddRepositoryConfiguration` method sets the configuration passed to it as active by default.  Only one configuration can be marked as active at a time.  If a `Team` method is called when more than one configuration is set active, a `TeamConfigurationException` will be thrown.
+**NOTE** When creating a new `GitRepositoryConfiguration` object, do not set the `IsActive` property by hand.  Call `Team.SetGitRepositoryConfigurationActive` on it instead.  It should be noted that the `AddGitRepositoryConfiguration` method sets the configuration passed to it as active by default.  Only one configuration can be marked as active at a time.  If a `Team` method is called when more than one configuration is set active, a `TeamConfigurationException` will be thrown.
 
 # 2. Further Work
 

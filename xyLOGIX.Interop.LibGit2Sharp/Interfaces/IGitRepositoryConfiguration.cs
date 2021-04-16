@@ -1,9 +1,9 @@
 ﻿namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
 {
     /// <summary>
-    /// Defines methods and properties for a RepositoryConfiguration POCO.
+    /// Defines methods and properties for a GitRepositoryConfiguration POCO.
     /// </summary>
-    public interface IRepositoryConfiguration
+    public interface IGitRepositoryConfiguration
     {
         /// <summary>
         /// Gets or sets a string containing the email address or handle of the committer.

@@ -11,7 +11,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
     /// <summary>
     /// Commits staged items to a Git repository.
     /// </summary>
-    public class Committer : RepositoryContext, ICommitter
+    public class Committer : GitRepositoryContext, ICommitter
     {
         /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.
@@ -69,14 +69,14 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
         /// from a detailed commit message.
         /// </remarks>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryContext.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotConfiguredException">
         /// Thrown
         /// if the repository currently in use does not have a valid configuration
         /// associated with it.
@@ -87,12 +87,12 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
         /// </exception>
         public void Commit(string commitMessage, bool addTimestamp = false)
         {
-            if (Repository == null)
-                throw new RepositoryNotAttachedException();
+            if (GitRepository == null)
+                throw new GitRepositoryNotAttachedException();
 
             ValidateConfiguration();
 
-            var repositoryConfiguration = Repository.GetConfiguration();
+            var repositoryConfiguration = GitRepository.GetConfiguration();
             if (repositoryConfiguration.IsCommitMessageMandatory
                 && string.IsNullOrWhiteSpace(commitMessage))
                 throw new InvalidOperationException(
@@ -108,7 +108,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
                 var committer = author;
 
                 // Commit to the repository
-                Repository.Commit(
+                GitRepository.Commit(
                     commitMessage +
                     (addTimestamp ? TheTimestamp : string.Empty), author,
                     committer);

@@ -3,18 +3,18 @@
 namespace xyLOGIX.Interop.LibGit2Sharp.Configurations
 {
     /// <summary>
-    /// RepositoryConfiguration for a committer and remote.
+    /// GitRepositoryConfiguration for a committer and remote.
     /// </summary>
-    public class RepositoryConfiguration : IRepositoryConfiguration
+    public class GitRepositoryConfiguration : IGitRepositoryConfiguration
     {
         /// <summary>
         /// Constructs a new instance of
         /// <see
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Configurations.RepositoryConfiguration" />
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Configurations.GitRepositoryConfiguration" />
         /// and returns a reference to it.
         /// </summary>
         /// <remarks>This constructor sets default values for some of the properties.</remarks>
-        public RepositoryConfiguration()
+        public GitRepositoryConfiguration()
         {
             HasRemote = true; // by default
             IsActive = false;

@@ -6,7 +6,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
     /// <summary>
     /// Defines the methods and properties for a Stager.
     /// </summary>
-    public interface IStager : IRepositoryContext
+    public interface IStager : IGitRepositoryContext
     {
         /// <summary>
         /// Raised when a Stage operation has completed successfully.
@@ -28,10 +28,10 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// </summary>
         /// <returns>True if the stage operation succeeded; false otherwise.</returns>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryContext.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         bool StageAll();
@@ -45,10 +45,10 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
         /// </param>
         /// <returns>True if the stage operation succeeded; false otherwise.</returns>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryContext.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception cref="T:System.IO.FileNotFoundException">

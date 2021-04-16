@@ -9,20 +9,20 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Validators
     /// </summary>
     /// <remarks>
     /// Examples of such validation include making sure that a Team has only
-    /// one (1) active Repository Configuration at a given time.
+    /// one (1) active GitRepository Configuration at a given time.
     /// </remarks>
     public static class TeamConfigurationValidator
     {
         /// <summary>
         /// Determines whether the collection of
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
         /// s passed in the <paramref name="configurations" /> parameter contains exactly
         /// one element that is marked as active.
         /// </summary>
         /// <param name="configurations">
         /// Collection of references to objects that implement
         /// the
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
         /// interface.
         /// </param>
         /// <returns>
@@ -30,7 +30,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Validators
         /// configuration; false otherwise.
         /// </returns>
         public static bool HasOnlyOneActiveRepoConfig(
-            IReadOnlyCollection<IRepositoryConfiguration> configurations)
+            IReadOnlyCollection<IGitRepositoryConfiguration> configurations)
         {
             var result = false;
 

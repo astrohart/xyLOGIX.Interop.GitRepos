@@ -4,30 +4,30 @@ using System;
 namespace xyLOGIX.Interop.LibGit2Sharp.Events
 {
     /// <summary>
-    /// Contains the data for a RepositoryAttached event.
+    /// Contains the data for a GitRepositoryAttached event.
     /// </summary>
-    public class RepositoryAttachedEventArgs : EventArgs
+    public class GitRepositoryAttachedEventArgs : EventArgs
     {
         /// <summary>
         /// Constructs a new instance of
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.RepositoryAttachedEventArgs" /> and
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.GitRepositoryAttachedEventArgs" /> and
         /// returns a reference to it.
         /// </summary>
         /// <param name="repository">
         /// Reference to the instance of the object that
-        /// implements the <see cref="T:LibGit2Sharp.IRepository" /> interface to which the
+        /// implements the <see cref="T:LibGit2Sharp.IGitRepository" /> interface to which the
         /// sending object has just been attached.
         /// </param>
-        public RepositoryAttachedEventArgs(IRepository repository)
+        public GitRepositoryAttachedEventArgs(IRepository repository)
         {
-            Repository = repository;
+            GitRepository = repository;
         }
 
         /// <summary>
         /// Gets a reference to the instance of the object that implements the
-        /// <see cref="T:LibGit2Sharp.IRepository" /> interface to which the sending object
+        /// <see cref="T:LibGit2Sharp.IGitRepository" /> interface to which the sending object
         /// has just been attached.
         /// </summary>
-        public IRepository Repository { get; }
+        public IRepository GitRepository { get; }
     }
 }

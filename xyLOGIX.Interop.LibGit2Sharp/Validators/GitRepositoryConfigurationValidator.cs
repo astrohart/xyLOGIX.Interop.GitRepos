@@ -6,10 +6,10 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Validators
     /// Methods to validate the values of the properties of objects that are instances
     /// of those which implement the
     /// <see
-    ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryRepositoryConfiguration" />
+    ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryGitRepositoryConfiguration" />
     /// interface.
     /// </summary>
-    public static class RepositoryConfigurationValidator
+    public static class GitRepositoryConfigurationValidator
     {
         /// <summary>
         /// Determines whether the specified <paramref name="configuration" />
@@ -20,7 +20,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Validators
         /// <param name="configuration">
         /// Reference to an instance of an object that implements the
         /// <see
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.RepositoryConfigurations.RepositoryConfiguration" />
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.GitRepositoryConfigurations.GitRepositoryConfiguration" />
         /// , the
         /// values of whose properties are to be checked.
         /// </param>
@@ -30,7 +30,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Validators
         /// </param>
         /// <returns>True if the values of the properties are valid; false otherwise.</returns>
         public static bool IsValid(
-            IRepositoryConfiguration configuration,
+            IGitRepositoryConfiguration configuration,
             bool hasRemote = true)
             => configuration != null && (!hasRemote ||
                                          !string.IsNullOrWhiteSpace(

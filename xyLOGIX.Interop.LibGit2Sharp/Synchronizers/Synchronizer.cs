@@ -10,7 +10,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Synchronizers
     /// <summary>
     /// Synchronizes a Git local repository with a remote.
     /// </summary>
-    public sealed class Synchronizer : RepositoryContext, ISynchronizer
+    public sealed class Synchronizer : GitRepositoryContext, ISynchronizer
     {
         /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.
@@ -57,11 +57,11 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Synchronizers
 
         /// <summary>
         /// Attaches an instance of an object that implements the
-        /// <see cref="T:LibGit2Sharp.IRepository" /> interface to this object.
+        /// <see cref="T:LibGit2Sharp.IGitRepository" /> interface to this object.
         /// </summary>
         /// <param name="repository">
         /// Reference to an instance of an object that implements
-        /// the <see cref="T:LibGit2Sharp.IRepository" /> interface that is to be attached
+        /// the <see cref="T:LibGit2Sharp.IGitRepository" /> interface that is to be attached
         /// to this object.
         /// </param>
         /// <remarks>
@@ -72,23 +72,23 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Synchronizers
         /// Thrown if the
         /// <paramref name="repository" /> parameter is blank.
         /// </exception>
-        public override void AttachRepository(IRepository repository)
+        public override void AttachGitRepository(IRepository repository)
         {
-            Pusher.AttachRepository(repository);
-            Puller.AttachRepository(repository);
+            Pusher.AttachGitRepository(repository);
+            Puller.AttachGitRepository(repository);
 
-            base.AttachRepository(repository);
+            base.AttachGitRepository(repository);
         }
 
         /// <summary>
         /// Disassociates this object with the repository.
         /// </summary>
-        public override void DetachRepository()
+        public override void DetachGitRepository()
         {
-            Puller.DetachRepository();
-            Pusher.DetachRepository();
+            Puller.DetachGitRepository();
+            Pusher.DetachGitRepository();
 
-            base.DetachRepository();
+            base.DetachGitRepository();
         }
 
         /// <summary>
@@ -96,21 +96,21 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Synchronizers
         /// remote to the local repository's master branch.
         /// </summary>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryContext.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotConfiguredException">
         /// Thrown if the repository currently in use does not have a valid configuration
         /// associated with it.
         /// </exception>
         public void Sync()
         {
-            if (Repository == null)
-                throw new RepositoryNotAttachedException();
+            if (GitRepository == null)
+                throw new GitRepositoryNotAttachedException();
 
             ValidateConfiguration();
 

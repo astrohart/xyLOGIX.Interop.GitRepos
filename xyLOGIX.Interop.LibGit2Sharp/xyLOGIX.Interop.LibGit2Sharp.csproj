@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\LibGit2Sharp.NativeBinaries.2.0.306\build\net46\LibGit2Sharp.NativeBinaries.props" Condition="Exists('..\packages\LibGit2Sharp.NativeBinaries.2.0.306\build\net46\LibGit2Sharp.NativeBinaries.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -80,8 +80,8 @@
   <ItemGroup>
     <Compile Include="Committers\Committer.cs" />
     <Compile Include="Exceptions\TeamConfigurationException.cs" />
-    <Compile Include="Extensions\RepositoryConfigurationHelpers.cs" />
-    <Compile Include="Configurations\RepositoryConfiguration.cs" />
+    <Compile Include="Extensions\GitRepositoryConfigurationHelpers.cs" />
+    <Compile Include="Configurations\GitRepositoryConfiguration.cs" />
     <Compile Include="Events\CommitFailedEventArgs.cs" />
     <Compile Include="Events\CommitFailedEventHandler.cs" />
     <Compile Include="Events\PullFailedEventArgs.cs" />
@@ -92,22 +92,22 @@
     <Compile Include="Events\StageFailedEventHandler.cs" />
     <Compile Include="Events\SynchronizationFailedEventArgs.cs" />
     <Compile Include="Events\SynchronizationFailedEventHandler.cs" />
-    <Compile Include="Exceptions\RepositoryNotAttachedException.cs" />
-    <Compile Include="Exceptions\RepositoryNotConfiguredException.cs" />
+    <Compile Include="Exceptions\GitRepositoryNotAttachedException.cs" />
+    <Compile Include="Exceptions\GitRepositoryNotConfiguredException.cs" />
     <Compile Include="Interfaces\ICommitter.cs" />
-    <Compile Include="Interfaces\IRepositoryConfiguration.cs" />
+    <Compile Include="Interfaces\IGitRepositoryConfiguration.cs" />
     <Compile Include="Interfaces\IPuller.cs" />
     <Compile Include="Interfaces\IPusher.cs" />
     <Compile Include="Interfaces\IStager.cs" />
     <Compile Include="Interfaces\ISynchronizer.cs" />
     <Compile Include="Interfaces\ITeam.cs" />
-    <Compile Include="Internal\RepositoryContext.cs" />
+    <Compile Include="Internal\GitRepositoryContext.cs" />
     <Compile Include="Pullers\Puller.cs" />
     <Compile Include="Pushers\Pusher.cs" />
     <Compile Include="Stagers\Stager.cs" />
-    <Compile Include="Events\RepositoryAttachedEventArgs.cs" />
-    <Compile Include="Events\RepositoryAttachedEventHandler.cs" />
-    <Compile Include="Interfaces\IRepositoryContext.cs" />
+    <Compile Include="Events\GitRepositoryAttachedEventArgs.cs" />
+    <Compile Include="Events\GitRepositoryAttachedEventHandler.cs" />
+    <Compile Include="Interfaces\IGitRepositoryContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -116,7 +116,7 @@
     </Compile>
     <Compile Include="Synchronizers\Synchronizer.cs" />
     <Compile Include="Teams\Team.cs" />
-    <Compile Include="Validators\RepositoryConfigurationValidator.cs" />
+    <Compile Include="Validators\GitRepositoryConfigurationValidator.cs" />
     <Compile Include="Validators\TeamConfigurationValidator.cs" />
   </ItemGroup>
   <ItemGroup>

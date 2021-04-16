@@ -12,7 +12,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Stagers
     /// <summary>
     /// Stages changes in the working tree to a local Git repository.
     /// </summary>
-    public class Stager : RepositoryContext, IStager
+    public class Stager : GitRepositoryContext, IStager
     {
         /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.
@@ -24,7 +24,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Stagers
         /// </summary>
         protected Stager()
         {
-            Repository =
+            GitRepository =
                 null; // initialize this object as unattached by default
         }
 
@@ -54,23 +54,23 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Stagers
         /// </summary>
         /// <returns>True if the stage operation succeeded; false otherwise.</returns>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryContext.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         public bool StageAll()
         {
-            if (Repository == null)
-                throw new RepositoryNotAttachedException();
+            if (GitRepository == null)
+                throw new GitRepositoryNotAttachedException();
 
             OnStageStarted();
 
             try
             {
                 Commands.Stage(
-                    Repository, "*"
+                    GitRepository, "*"
                 );
             }
             catch (Exception ex)
@@ -94,10 +94,10 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Stagers
         /// </param>
         /// <returns>True if the stage operation succeeded; false otherwise.</returns>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryContext.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception cref="T:System.IO.FileNotFoundException">
@@ -107,8 +107,8 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Stagers
         /// </exception>
         public bool StageFile(string file)
         {
-            if (Repository == null)
-                throw new RepositoryNotAttachedException();
+            if (GitRepository == null)
+                throw new GitRepositoryNotAttachedException();
 
             Console.WriteLine($"Staging changes to '{file}' to local repo...");
 
@@ -126,15 +126,15 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Stagers
                 if (string.IsNullOrWhiteSpace(repoFile))
                     return false;
 
-                Repository.Index.Add(file);
-                Repository.Index.Write();
+                GitRepository.Index.Add(file);
+                GitRepository.Index.Write();
 
                 Console.WriteLine($"*** Staged file '{file}' successfully.");
             }
             catch (Exception ex)
             {
                 Console.WriteLine(
-                    $"ERROR: Failed to stage file '{file}' to Git repository '{Repository.Info.WorkingDirectory}'.\r\n{ex.Message}\r\n\t{ex.StackTrace}");
+                    $"ERROR: Failed to stage file '{file}' to Git repository '{GitRepository.Info.WorkingDirectory}'.\r\n{ex.Message}\r\n\t{ex.StackTrace}");
 
                 OnStageFailed(new StageFailedEventArgs(ex));
 

@@ -11,7 +11,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Pullers
     /// <summary>
     /// Pulls changes from the remote to the local repository.
     /// </summary>
-    public class Puller : RepositoryContext, IPuller
+    public class Puller : GitRepositoryContext, IPuller
     {
         /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.
@@ -49,26 +49,26 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Pullers
         /// master branch.
         /// </summary>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryContext.AttachRepository" />
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryContext.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotConfiguredException">
         /// Thrown
         /// if the repository currently in use does not have a valid configuration
         /// associated with it.
         /// </exception>
         public void Pull()
         {
-            if (Repository == null)
-                throw new RepositoryNotAttachedException();
+            if (GitRepository == null)
+                throw new GitRepositoryNotAttachedException();
 
             ValidateConfiguration();
 
-            var repositoryConfiguration = Repository.GetConfiguration();
+            var repositoryConfiguration = GitRepository.GetConfiguration();
 
             OnPullStarted();
 
@@ -96,7 +96,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Pullers
                         repositoryConfiguration.Email, DateTime.UtcNow);
 
                 // Pull
-                Commands.Pull((Repository)Repository, signature, options);
+                Commands.Pull((GitRepository)GitRepository, signature, options);
             }
             catch (Exception ex)
             {

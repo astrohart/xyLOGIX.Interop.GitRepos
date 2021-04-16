@@ -12,32 +12,32 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
     /// <summary>
     /// Defines methods and properties that are common to all repository-bound objects.
     /// </summary>
-    public abstract class RepositoryContext : IRepositoryContext
+    public abstract class GitRepositoryContext : IGitRepositoryContext
     {
         /// <summary>
-        /// Raised when a new Repository is attached to this object.
+        /// Raised when a new GitRepository is attached to this object.
         /// </summary>
-        public event RepositoryAttachedEventHandler RepositoryAttached;
+        public event GitRepositoryAttachedEventHandler GitRepositoryAttached;
 
         /// <summary>
         /// Raised when a repository is detached from this object.
         /// </summary>
-        public event EventHandler RepositoryDetached;
+        public event EventHandler GitRepositoryDetached;
 
         /// <summary>
         /// Gets or sets a reference to an object that implements the
-        /// <see cref="T:LibGit2Sharp.IRepository" /> interface that this object is
+        /// <see cref="T:LibGit2Sharp.IGitRepository" /> interface that this object is
         /// currently working with.
         /// </summary>
-        protected IRepository Repository { get; set; }
+        protected IRepository GitRepository { get; set; }
 
         /// <summary>
         /// Attaches an instance of an object that implements the
-        /// <see cref="T:LibGit2Sharp.IRepository" /> interface to this object.
+        /// <see cref="T:LibGit2Sharp.IGitRepository" /> interface to this object.
         /// </summary>
         /// <param name="repository">
         /// Reference to an instance of an object that implements
-        /// the <see cref="T:LibGit2Sharp.IRepository" /> interface that is to be attached
+        /// the <see cref="T:LibGit2Sharp.IGitRepository" /> interface that is to be attached
         /// to this object.
         /// </param>
         /// <remarks>
@@ -48,42 +48,42 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
         /// Thrown if the
         /// <paramref name="repository" /> parameter is blank.
         /// </exception>
-        public virtual void AttachRepository(IRepository repository)
+        public virtual void AttachGitRepository(IRepository repository)
         {
-            Repository = repository ??
+            GitRepository = repository ??
                          throw new ArgumentNullException(nameof(repository));
-            OnRepositoryAttached(new RepositoryAttachedEventArgs(repository));
+            OnGitRepositoryAttached(new GitRepositoryAttachedEventArgs(repository));
         }
 
         /// <summary>
         /// Disassociates this object with the repository.
         /// </summary>
-        public virtual void DetachRepository()
-            => Repository = null;
+        public virtual void DetachGitRepository()
+            => GitRepository = null;
 
         /// <summary>
         /// Raises the
-        /// <see cref="E:xyLOGIX.Interop.LibGit2Sharp.Changes.Stager.RepositoryAttached" />
+        /// <see cref="E:xyLOGIX.Interop.LibGit2Sharp.Changes.Stager.GitRepositoryAttached" />
         /// event.
         /// </summary>
         /// <param name="e">
         /// A
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.RepositoryAttachedEventArgs" />
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.GitRepositoryAttachedEventArgs" />
         /// that
         /// contains the event data.
         /// </param>
-        protected virtual void OnRepositoryAttached(
-            RepositoryAttachedEventArgs e)
-            => RepositoryAttached?.Invoke(this, e);
+        protected virtual void OnGitRepositoryAttached(
+            GitRepositoryAttachedEventArgs e)
+            => GitRepositoryAttached?.Invoke(this, e);
 
         /// <summary>
         /// Raises the
         /// <see
-        ///     cref="E:xyLOGIX.Interop.LibGit2Sharp.Changes.Stager.RepositoryDetached.RepositoryDetached" />
+        ///     cref="E:xyLOGIX.Interop.LibGit2Sharp.Changes.Stager.GitRepositoryDetached.GitRepositoryDetached" />
         /// event.
         /// </summary>
-        protected virtual void OnRepositoryDetached()
-            => RepositoryDetached?.Invoke(this, EventArgs.Empty);
+        protected virtual void OnGitRepositoryDetached()
+            => GitRepositoryDetached?.Invoke(this, EventArgs.Empty);
 
         /// <summary>
         /// Strips the repository's working directory path from a full pathname, making it
@@ -105,10 +105,10 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
             {
                 if (string.IsNullOrWhiteSpace(path)
                     || !File.Exists(path)
-                    || Repository == null)
+                    || GitRepository == null)
                     return result;
 
-                var repoWorkingDir = Repository.Info.WorkingDirectory;
+                var repoWorkingDir = GitRepository.Info.WorkingDirectory;
                 if (!path.StartsWith(repoWorkingDir))
                     return result;
 
@@ -134,20 +134,20 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
         /// Determine whether the configuration is set up.
         /// </summary>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.RepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotConfiguredException">
         /// Thrown
         /// if the repository does not have a valid object that implements the
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IRepositoryConfiguration" />
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
         /// interface associated with it.
         /// </exception>
         protected void ValidateConfiguration()
         {
-            var repositoryConfiguration = Repository.GetConfiguration();
+            var repositoryConfiguration = GitRepository.GetConfiguration();
 
             if (repositoryConfiguration == null
-                || !RepositoryConfigurationValidator.IsValid(
+                || !GitRepositoryConfigurationValidator.IsValid(
                     repositoryConfiguration))
-                throw new RepositoryNotConfiguredException();
+                throw new GitRepositoryNotConfiguredException();
         }
     }
 }
