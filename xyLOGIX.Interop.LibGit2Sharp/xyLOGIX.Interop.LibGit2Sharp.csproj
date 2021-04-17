@@ -87,12 +87,6 @@
     <Compile Include="Committers\Committer.cs" />
     <Compile Include="Extensions\GitRepositoryConfigurationHelpers.cs" />
     <Compile Include="Configurations\GitRepositoryConfiguration.cs" />
-    <Compile Include="Interfaces\ICommitter.cs" />
-    <Compile Include="Interfaces\IGitRepositoryConfiguration.cs" />
-    <Compile Include="Interfaces\IPuller.cs" />
-    <Compile Include="Interfaces\IPusher.cs" />
-    <Compile Include="Interfaces\IStager.cs" />
-    <Compile Include="Interfaces\ISynchronizer.cs" />
     <Compile Include="Interfaces\ITeam.cs" />
     <Compile Include="Internal\GitRepositoryAction.cs" />
     <Compile Include="Pullers\Puller.cs" />
