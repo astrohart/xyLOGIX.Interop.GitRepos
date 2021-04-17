@@ -1,7 +1,7 @@
 ﻿using System;
 using xyLOGIX.Interop.LibGit2Sharp.Events;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
+namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces
 {
     /// <summary>
     /// Defines methods and properties for a Synchronizer object.
@@ -25,13 +25,13 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
 
         /// <summary>
         /// Gets a reference to an instance of an object that implements the
-        /// <see cref="xyLOGIX.Interop.LibGit2Sharp.Interfaces.IPuller" /> interface.
+        /// <see cref="IPuller" /> interface.
         /// </summary>
         IPuller Puller { get; }
 
         /// <summary>
         /// Gets a reference to an instance of an object that implements the
-        /// <see cref="xyLOGIX.Interop.LibGit2Sharp.Interfaces.IPusher" /> interface.
+        /// <see cref="IPusher" /> interface.
         /// </summary>
         IPusher Pusher { get; }
 

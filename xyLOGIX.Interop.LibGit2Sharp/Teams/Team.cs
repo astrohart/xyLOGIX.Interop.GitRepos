@@ -5,6 +5,7 @@ using System.Linq;
 using xyLOGIX.Interop.LibGit2Sharp.Exceptions;
 using xyLOGIX.Interop.LibGit2Sharp.Extensions;
 using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
 using xyLOGIX.Interop.LibGit2Sharp.Validators;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Teams

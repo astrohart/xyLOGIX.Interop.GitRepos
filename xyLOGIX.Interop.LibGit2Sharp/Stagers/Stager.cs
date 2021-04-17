@@ -5,6 +5,7 @@ using xyLOGIX.Interop.LibGit2Sharp.Events;
 using xyLOGIX.Interop.LibGit2Sharp.Exceptions;
 using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
 using xyLOGIX.Interop.LibGit2Sharp.Internal;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
 using File = Alphaleonis.Win32.Filesystem.File;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Stagers

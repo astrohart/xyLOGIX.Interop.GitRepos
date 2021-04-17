@@ -5,6 +5,7 @@ using xyLOGIX.Interop.LibGit2Sharp.Exceptions;
 using xyLOGIX.Interop.LibGit2Sharp.Extensions;
 using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
 using xyLOGIX.Interop.LibGit2Sharp.Internal;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Committers
 {

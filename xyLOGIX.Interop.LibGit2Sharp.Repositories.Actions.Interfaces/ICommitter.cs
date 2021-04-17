@@ -1,8 +1,7 @@
 ﻿using System;
 using xyLOGIX.Interop.LibGit2Sharp.Events;
-using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
+namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces
 {
     /// <summary>
     /// Defines the methods and properties for a Committer object.

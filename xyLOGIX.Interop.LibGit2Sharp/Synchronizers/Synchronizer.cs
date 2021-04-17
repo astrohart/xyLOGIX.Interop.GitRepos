@@ -4,6 +4,7 @@ using xyLOGIX.Interop.LibGit2Sharp.Events;
 using xyLOGIX.Interop.LibGit2Sharp.Exceptions;
 using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
 using xyLOGIX.Interop.LibGit2Sharp.Internal;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Synchronizers
 {
@@ -45,13 +46,13 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Synchronizers
 
         /// <summary>
         /// Gets a reference to an instance of an object that implements the
-        /// <see cref="xyLOGIX.Interop.LibGit2Sharp.Interfaces.IPuller" /> interface.
+        /// <see cref="IPuller" /> interface.
         /// </summary>
         public IPuller Puller { get; } = Pullers.Puller.Instance;
 
         /// <summary>
         /// Gets a reference to an instance of an object that implements the
-        /// <see cref="xyLOGIX.Interop.LibGit2Sharp.Interfaces.IPusher" /> interface.
+        /// <see cref="IPusher" /> interface.
         /// </summary>
         public IPusher Pusher { get; } = Pushers.Pusher.Instance;
 

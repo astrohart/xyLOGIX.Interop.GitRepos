@@ -1,4 +1,4 @@
-﻿namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
+﻿namespace xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces
 {
     /// <summary>
     /// Defines methods and properties for a GitRepositoryConfiguration POCO.
