@@ -1,10 +1,9 @@
 ﻿using LibGit2Sharp;
 using System;
 using System.Collections.Generic;
-using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
-using xyLOGIX.Interop.LibGit2Sharp.Validators;
+using xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Extensions
+namespace xyLOGIX.Interop.LibGit2Sharp.Helpers
 {
     /// <summary>
     /// Extension methods to manage repository configurations.
@@ -21,7 +20,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Extensions
         /// <summary>
         /// Constructs a new instance of
         /// <see
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Extensions.GitRepositoryConfigurationHelpers" />
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Helpers.GitRepositoryConfigurationHelpers" />
         /// and returns a reference to it.
         /// </summary>
         static GitRepositoryConfigurationHelpers()
