@@ -5,7 +5,7 @@
     <ApplicationIcon>1382_cogs.ico</ApplicationIcon>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
-    <ProjectGuid>{84C1F71A-AAA4-4A08-9728-19E710965E4D}</ProjectGuid>
+    <ProjectGuid>{E1004EE0-928A-4CCE-8016-64F3D260AF80}</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -58,10 +58,10 @@
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyName>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces</AssemblyName>
+    <AssemblyName>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers</AssemblyName>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces</RootNamespace>
+    <RootNamespace>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
