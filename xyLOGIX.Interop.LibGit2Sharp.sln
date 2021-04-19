@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Shar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces.csproj", "{5141A303-C55D-40BF-870C-AAC091FB56FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foo", "Foo\Foo.csproj", "{470E3CC9-9676-4342-82C6-D2BF7762969E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -138,6 +140,16 @@ Global
 		{5141A303-C55D-40BF-870C-AAC091FB56FD}.Release|x64.Build.0 = Release|x64
 		{5141A303-C55D-40BF-870C-AAC091FB56FD}.Release|x86.ActiveCfg = Release|x86
 		{5141A303-C55D-40BF-870C-AAC091FB56FD}.Release|x86.Build.0 = Release|x86
+		{470E3CC9-9676-4342-82C6-D2BF7762969E}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{470E3CC9-9676-4342-82C6-D2BF7762969E}.Debug|x64.ActiveCfg = Debug|x64
+		{470E3CC9-9676-4342-82C6-D2BF7762969E}.Debug|x64.Build.0 = Debug|x64
+		{470E3CC9-9676-4342-82C6-D2BF7762969E}.Debug|x86.ActiveCfg = Debug|x86
+		{470E3CC9-9676-4342-82C6-D2BF7762969E}.Debug|x86.Build.0 = Debug|x86
+		{470E3CC9-9676-4342-82C6-D2BF7762969E}.Release|Any CPU.ActiveCfg = Release|x86
+		{470E3CC9-9676-4342-82C6-D2BF7762969E}.Release|x64.ActiveCfg = Release|x64
+		{470E3CC9-9676-4342-82C6-D2BF7762969E}.Release|x64.Build.0 = Release|x64
+		{470E3CC9-9676-4342-82C6-D2BF7762969E}.Release|x86.ActiveCfg = Release|x86
+		{470E3CC9-9676-4342-82C6-D2BF7762969E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
