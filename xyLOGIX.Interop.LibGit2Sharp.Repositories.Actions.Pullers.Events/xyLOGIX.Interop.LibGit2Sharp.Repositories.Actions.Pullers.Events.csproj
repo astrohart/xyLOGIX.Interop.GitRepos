@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <ApplicationIcon>1382_cogs.ico</ApplicationIcon>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
-    <ProjectGuid>{A9F322DD-1095-4BBA-B89F-C487BFF495BA}</ProjectGuid>
+    <ProjectGuid>{F0E6B6C6-5BE6-48F0-A2BA-6A331F2D6376}</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -58,10 +58,10 @@
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyName>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Interfaces</AssemblyName>
+    <AssemblyName>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Events</AssemblyName>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Interfaces</RootNamespace>
+    <RootNamespace>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Events</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
