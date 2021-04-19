@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <ApplicationIcon>1382_cogs.ico</ApplicationIcon>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
-    <ProjectGuid>{5141A303-C55D-40BF-870C-AAC091FB56FD}</ProjectGuid>
+    <ProjectGuid>{84C1F71A-AAA4-4A08-9728-19E710965E4D}</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -58,10 +58,10 @@
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyName>Foo</AssemblyName>
+    <AssemblyName>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces</AssemblyName>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>Foo</RootNamespace>
+    <RootNamespace>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
