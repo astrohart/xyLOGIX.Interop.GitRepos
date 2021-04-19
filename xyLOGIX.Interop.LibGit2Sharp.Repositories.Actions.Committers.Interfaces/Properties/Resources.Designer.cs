@@ -8,7 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces.Properties
+using System;
+
+namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces.Properties
 {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.

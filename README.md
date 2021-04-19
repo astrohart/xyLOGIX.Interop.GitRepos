@@ -36,7 +36,7 @@ namespace MyProject
                 team.AddGitRepositoryConfiguration(
                     new GitRepositoryConfiguration
                     {
-                        Name = "Foo bar",
+                        Name = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces bar",
                         Email = "@noneofyourbeeswax",
                         RemoteUserName = "astrohart",
                         RemotePassword = "xxxxx"

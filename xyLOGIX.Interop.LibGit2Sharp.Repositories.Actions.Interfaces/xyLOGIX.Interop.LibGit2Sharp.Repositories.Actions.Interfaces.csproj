@@ -80,7 +80,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GlobalAspects.cs" />
-    <Compile Include="ICommitter.cs" />
     <Compile Include="IGitRepositoryAction.cs" />
     <Compile Include="IPuller.cs" />
     <Compile Include="IPusher.cs" />
