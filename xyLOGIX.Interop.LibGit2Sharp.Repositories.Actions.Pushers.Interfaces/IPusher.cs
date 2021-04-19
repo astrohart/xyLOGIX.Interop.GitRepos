@@ -1,7 +1,6 @@
 ﻿using System;
-using xyLOGIX.Interop.LibGit2Sharp.Events;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces
+namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces
 {
     /// <summary>
     /// Defines methods and properties for a Pusher.
