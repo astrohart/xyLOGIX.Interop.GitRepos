@@ -80,8 +80,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GlobalAspects.cs" />
-    <Compile Include="CommitFailedEventArgs.cs" />
-    <Compile Include="CommitFailedEventHandler.cs" />
     <Compile Include="GitRepositoryAttachedEventArgs.cs" />
     <Compile Include="GitRepositoryAttachedEventHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

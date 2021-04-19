@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Events
+namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Events
 {
     /// <summary>
     /// Contains the data for a CommitFailed event.
@@ -10,7 +10,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Events
         /// <summary>
         /// Constructs a new instance of
         /// <see
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.CommitFailedEventArgs" />
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Events.CommitFailedEventArgs" />
         /// and returns a reference to it.
         /// </summary>
         /// <param name="exception">
