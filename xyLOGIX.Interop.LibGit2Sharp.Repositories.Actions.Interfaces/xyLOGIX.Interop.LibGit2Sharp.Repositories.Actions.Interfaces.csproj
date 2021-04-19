@@ -81,7 +81,6 @@
   <ItemGroup>
     <Compile Include="GlobalAspects.cs" />
     <Compile Include="IGitRepositoryAction.cs" />
-    <Compile Include="IPuller.cs" />
     <Compile Include="IPusher.cs" />
     <Compile Include="IStager.cs" />
     <Compile Include="ISynchronizer.cs" />
