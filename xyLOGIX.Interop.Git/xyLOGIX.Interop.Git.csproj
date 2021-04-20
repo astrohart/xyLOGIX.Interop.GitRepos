@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\LibGit2Sharp.NativeBinaries.2.0.306\build\net46\LibGit2Sharp.NativeBinaries.props" Condition="Exists('..\packages\LibGit2Sharp.NativeBinaries.2.0.306\build\net46\LibGit2Sharp.NativeBinaries.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -92,57 +92,57 @@
     <Content Include="1382_cogs.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers\xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers.csproj">
+    <ProjectReference Include="..\xyLOGIX.Interop.Git.Configuration.Helpers\xyLOGIX.Interop.Git.Configuration.Helpers.csproj">
       <Project>{D419F75D-4277-4D66-92D8-CE81EB2A5B2F}</Project>
-      <Name>xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers</Name>
+      <Name>xyLOGIX.Interop.Git.Configuration.Helpers</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces.csproj">
+    <ProjectReference Include="..\xyLOGIX.Interop.Git.Configuration.Interfaces\xyLOGIX.Interop.Git.Configuration.Interfaces.csproj">
       <Project>{14D206F0-F02A-4A5A-9882-92553D03663D}</Project>
-      <Name>xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces</Name>
+      <Name>xyLOGIX.Interop.Git.Configuration.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Configuration.Validators\xyLOGIX.Interop.LibGit2Sharp.Configuration.Validators.csproj">
+    <ProjectReference Include="..\xyLOGIX.Interop.Git.Configuration.Validators\xyLOGIX.Interop.Git.Configuration.Validators.csproj">
       <Project>{B7B55702-8E90-4E9F-97D0-F5778297FC24}</Project>
-      <Name>xyLOGIX.Interop.LibGit2Sharp.Configuration.Validators</Name>
+      <Name>xyLOGIX.Interop.Git.Configuration.Validators</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Factories\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Factories.csproj">
+    <ProjectReference Include="..\xyLOGIX.Interop.Git.Repositories.Actions.Committers.Factories\xyLOGIX.Interop.Git.Repositories.Actions.Committers.Factories.csproj">
       <Project>{B56BE734-293D-427D-8DF9-3177F65A95FC}</Project>
-      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Factories</Name>
+      <Name>xyLOGIX.Interop.Git.Repositories.Actions.Committers.Factories</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces.csproj">
+    <ProjectReference Include="..\xyLOGIX.Interop.Git.Repositories.Actions.Committers.Interfaces\xyLOGIX.Interop.Git.Repositories.Actions.Committers.Interfaces.csproj">
       <Project>{A17FD436-3781-4C20-BA32-E6425D650A74}</Project>
-      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces</Name>
+      <Name>xyLOGIX.Interop.Git.Repositories.Actions.Committers.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\xyLOGIX.Interop.Git.Interfaces\xyLOGIX.Interop.Git.Interfaces.csproj">
       <Project>{065F3287-831F-4A7F-A552-FED28A188121}</Project>
       <Name>xyLOGIX.Interop.Git.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.csproj">
+    <ProjectReference Include="..\xyLOGIX.Interop.Git.Repositories.Actions.Exceptions\xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.csproj">
       <Project>{8802EB52-7346-4084-953C-80B1C6CBB619}</Project>
-      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions</Name>
+      <Name>xyLOGIX.Interop.Git.Repositories.Actions.Exceptions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces.csproj">
+    <ProjectReference Include="..\xyLOGIX.Interop.Git.Repositories.Actions.Interfaces\xyLOGIX.Interop.Git.Repositories.Actions.Interfaces.csproj">
       <Project>{180A869D-9A16-4085-BF0A-16D079CADC5F}</Project>
-      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces</Name>
+      <Name>xyLOGIX.Interop.Git.Repositories.Actions.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces.csproj">
+    <ProjectReference Include="..\xyLOGIX.Interop.Git.Repositories.Actions.Pushers.Interfaces\xyLOGIX.Interop.Git.Repositories.Actions.Pushers.Interfaces.csproj">
       <Project>{5141A303-C55D-40BF-870C-AAC091FB56FD}</Project>
-      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces</Name>
+      <Name>xyLOGIX.Interop.Git.Repositories.Actions.Pushers.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Factories\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Factories.csproj">
+    <ProjectReference Include="..\xyLOGIX.Interop.Git.Repositories.Actions.Stagers.Factories\xyLOGIX.Interop.Git.Repositories.Actions.Stagers.Factories.csproj">
       <Project>{84C1F71A-AAA4-4A08-9728-19E710965E4D}</Project>
-      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Factories</Name>
+      <Name>xyLOGIX.Interop.Git.Repositories.Actions.Stagers.Factories</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces.csproj">
+    <ProjectReference Include="..\xyLOGIX.Interop.Git.Repositories.Actions.Stagers.Interfaces\xyLOGIX.Interop.Git.Repositories.Actions.Stagers.Interfaces.csproj">
       <Project>{470E3CC9-9676-4342-82C6-D2BF7762969E}</Project>
-      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces</Name>
+      <Name>xyLOGIX.Interop.Git.Repositories.Actions.Stagers.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Factories\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Factories.csproj">
+    <ProjectReference Include="..\xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers.Factories\xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers.Factories.csproj">
       <Project>{1C3E396C-C568-4BEC-B42D-6E0AB6F03BC2}</Project>
-      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Factories</Name>
+      <Name>xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers.Factories</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces.csproj">
+    <ProjectReference Include="..\xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers.Interfaces\xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers.Interfaces.csproj">
       <Project>{EFDA4ED8-7E59-43BF-A945-523A6823BC03}</Project>
-      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces</Name>
+      <Name>xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

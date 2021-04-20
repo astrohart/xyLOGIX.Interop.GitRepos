@@ -8,65 +8,65 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.csproj", "{8802EB52-7346-4084-953C-80B1C6CBB619}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Exceptions", "xyLOGIX.Interop.Git.Repositories.Actions.Exceptions\xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.csproj", "{8802EB52-7346-4084-953C-80B1C6CBB619}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces.csproj", "{180A869D-9A16-4085-BF0A-16D079CADC5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Interfaces", "xyLOGIX.Interop.Git.Repositories.Actions.Interfaces\xyLOGIX.Interop.Git.Repositories.Actions.Interfaces.csproj", "{180A869D-9A16-4085-BF0A-16D079CADC5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces", "xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces.csproj", "{14D206F0-F02A-4A5A-9882-92553D03663D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Configuration.Interfaces", "xyLOGIX.Interop.Git.Configuration.Interfaces\xyLOGIX.Interop.Git.Configuration.Interfaces.csproj", "{14D206F0-F02A-4A5A-9882-92553D03663D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers", "xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers\xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers.csproj", "{D419F75D-4277-4D66-92D8-CE81EB2A5B2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Configuration.Helpers", "xyLOGIX.Interop.Git.Configuration.Helpers\xyLOGIX.Interop.Git.Configuration.Helpers.csproj", "{D419F75D-4277-4D66-92D8-CE81EB2A5B2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Configuration.Validators", "xyLOGIX.Interop.LibGit2Sharp.Configuration.Validators\xyLOGIX.Interop.LibGit2Sharp.Configuration.Validators.csproj", "{B7B55702-8E90-4E9F-97D0-F5778297FC24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Configuration.Validators", "xyLOGIX.Interop.Git.Configuration.Validators\xyLOGIX.Interop.Git.Configuration.Validators.csproj", "{B7B55702-8E90-4E9F-97D0-F5778297FC24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces.csproj", "{A17FD436-3781-4C20-BA32-E6425D650A74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Committers.Interfaces", "xyLOGIX.Interop.Git.Repositories.Actions.Committers.Interfaces\xyLOGIX.Interop.Git.Repositories.Actions.Committers.Interfaces.csproj", "{A17FD436-3781-4C20-BA32-E6425D650A74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Interfaces", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Interfaces.csproj", "{A9F322DD-1095-4BBA-B89F-C487BFF495BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Pullers.Interfaces", "xyLOGIX.Interop.Git.Repositories.Actions.Pullers.Interfaces\xyLOGIX.Interop.Git.Repositories.Actions.Pullers.Interfaces.csproj", "{A9F322DD-1095-4BBA-B89F-C487BFF495BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces.csproj", "{5141A303-C55D-40BF-870C-AAC091FB56FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Pushers.Interfaces", "xyLOGIX.Interop.Git.Repositories.Actions.Pushers.Interfaces\xyLOGIX.Interop.Git.Repositories.Actions.Pushers.Interfaces.csproj", "{5141A303-C55D-40BF-870C-AAC091FB56FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces.csproj", "{470E3CC9-9676-4342-82C6-D2BF7762969E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Stagers.Interfaces", "xyLOGIX.Interop.Git.Repositories.Actions.Stagers.Interfaces\xyLOGIX.Interop.Git.Repositories.Actions.Stagers.Interfaces.csproj", "{470E3CC9-9676-4342-82C6-D2BF7762969E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces.csproj", "{EFDA4ED8-7E59-43BF-A945-523A6823BC03}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers.Interfaces", "xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers.Interfaces\xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers.Interfaces.csproj", "{EFDA4ED8-7E59-43BF-A945-523A6823BC03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Events", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Events\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Events.csproj", "{86BF12E9-FCAF-4B12-A928-F1E5828FB055}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Committers.Events", "xyLOGIX.Interop.Git.Repositories.Actions.Committers.Events\xyLOGIX.Interop.Git.Repositories.Actions.Committers.Events.csproj", "{86BF12E9-FCAF-4B12-A928-F1E5828FB055}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.csproj", "{E1004EE0-928A-4CCE-8016-64F3D260AF80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Committers", "xyLOGIX.Interop.Git.Repositories.Actions.Committers\xyLOGIX.Interop.Git.Repositories.Actions.Committers.csproj", "{E1004EE0-928A-4CCE-8016-64F3D260AF80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Events", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Events\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Events.csproj", "{F0E6B6C6-5BE6-48F0-A2BA-6A331F2D6376}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Pullers.Events", "xyLOGIX.Interop.Git.Repositories.Actions.Pullers.Events\xyLOGIX.Interop.Git.Repositories.Actions.Pullers.Events.csproj", "{F0E6B6C6-5BE6-48F0-A2BA-6A331F2D6376}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.csproj", "{56909587-2574-4098-8D15-57B08B0C0C7C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions", "xyLOGIX.Interop.Git.Repositories.Actions\xyLOGIX.Interop.Git.Repositories.Actions.csproj", "{56909587-2574-4098-8D15-57B08B0C0C7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Events", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Events\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Events.csproj", "{F4D04E9A-E420-47F1-90E1-860F15EF09BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Events", "xyLOGIX.Interop.Git.Repositories.Actions.Events\xyLOGIX.Interop.Git.Repositories.Actions.Events.csproj", "{F4D04E9A-E420-47F1-90E1-860F15EF09BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Interfaces", "xyLOGIX.Interop.Git.Interfaces\xyLOGIX.Interop.Git.Interfaces.csproj", "{065F3287-831F-4A7F-A552-FED28A188121}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git", "xyLOGIX.Interop.Git\xyLOGIX.Interop.Git.csproj", "{CB510BC7-7DCC-4D7D-A41E-DE99E82CAB0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Factories", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Factories\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Factories.csproj", "{B56BE734-293D-427D-8DF9-3177F65A95FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Committers.Factories", "xyLOGIX.Interop.Git.Repositories.Actions.Committers.Factories\xyLOGIX.Interop.Git.Repositories.Actions.Committers.Factories.csproj", "{B56BE734-293D-427D-8DF9-3177F65A95FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.csproj", "{77A4E037-A706-4FCD-BCD1-37C54FB10994}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers", "xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers\xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers.csproj", "{77A4E037-A706-4FCD-BCD1-37C54FB10994}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Events", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Events\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Events.csproj", "{8E3F95AB-FA8D-483C-9F92-8545E2A908CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers.Events", "xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers.Events\xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers.Events.csproj", "{8E3F95AB-FA8D-483C-9F92-8545E2A908CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.csproj", "{7DB91784-63E9-46C0-92FD-AF8EFF8A90BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Stagers", "xyLOGIX.Interop.Git.Repositories.Actions.Stagers\xyLOGIX.Interop.Git.Repositories.Actions.Stagers.csproj", "{7DB91784-63E9-46C0-92FD-AF8EFF8A90BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Events", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Events\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Events.csproj", "{9967E06D-FF1E-4B00-A0D3-0CC6F8E41050}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Stagers.Events", "xyLOGIX.Interop.Git.Repositories.Actions.Stagers.Events\xyLOGIX.Interop.Git.Repositories.Actions.Stagers.Events.csproj", "{9967E06D-FF1E-4B00-A0D3-0CC6F8E41050}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Configuration", "xyLOGIX.Interop.LibGit2Sharp.Configuration\xyLOGIX.Interop.LibGit2Sharp.Configuration.csproj", "{BCD5BEAB-88BC-430A-BC9F-345BAFC5CDDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Configuration", "xyLOGIX.Interop.Git.Configuration\xyLOGIX.Interop.Git.Configuration.csproj", "{BCD5BEAB-88BC-430A-BC9F-345BAFC5CDDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.csproj", "{09EA6716-FCD7-4CC9-9D04-973980E5830D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Pushers", "xyLOGIX.Interop.Git.Repositories.Actions.Pushers\xyLOGIX.Interop.Git.Repositories.Actions.Pushers.csproj", "{09EA6716-FCD7-4CC9-9D04-973980E5830D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Events", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Events\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Events.csproj", "{60A09E43-6E20-4BD5-A6DE-17972E6ED4E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Pushers.Events", "xyLOGIX.Interop.Git.Repositories.Actions.Pushers.Events\xyLOGIX.Interop.Git.Repositories.Actions.Pushers.Events.csproj", "{60A09E43-6E20-4BD5-A6DE-17972E6ED4E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.csproj", "{0DE24E06-80DE-42DF-9E14-804464BBF3F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Pullers", "xyLOGIX.Interop.Git.Repositories.Actions.Pullers\xyLOGIX.Interop.Git.Repositories.Actions.Pullers.csproj", "{0DE24E06-80DE-42DF-9E14-804464BBF3F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Factories", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Factories\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Factories.csproj", "{84C1F71A-AAA4-4A08-9728-19E710965E4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Stagers.Factories", "xyLOGIX.Interop.Git.Repositories.Actions.Stagers.Factories\xyLOGIX.Interop.Git.Repositories.Actions.Stagers.Factories.csproj", "{84C1F71A-AAA4-4A08-9728-19E710965E4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Factories", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Factories\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Factories.csproj", "{526E8BE6-2E6E-442F-A337-F5996003B342}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Pushers.Factories", "xyLOGIX.Interop.Git.Repositories.Actions.Pushers.Factories\xyLOGIX.Interop.Git.Repositories.Actions.Pushers.Factories.csproj", "{526E8BE6-2E6E-442F-A337-F5996003B342}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Factories", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Factories\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Factories.csproj", "{0D0C3AA5-DEBF-4E67-9D56-0883479AC6AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Pullers.Factories", "xyLOGIX.Interop.Git.Repositories.Actions.Pullers.Factories\xyLOGIX.Interop.Git.Repositories.Actions.Pullers.Factories.csproj", "{0D0C3AA5-DEBF-4E67-9D56-0883479AC6AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Factories", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Factories\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Factories.csproj", "{1C3E396C-C568-4BEC-B42D-6E0AB6F03BC2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers.Factories", "xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers.Factories\xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers.Factories.csproj", "{1C3E396C-C568-4BEC-B42D-6E0AB6F03BC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -21,7 +21,7 @@ Here's an example that commits and synchronizes (i.e., pulls, then pushes) all t
 
 ```
 using LibGit2Sharp;
-using xyLOGIX.Interop.LibGit2Sharp.GitRepositoryConfigurations;
+using xyLOGIX.Interop.Git.GitRepositoryConfigurations;
 using xyLOGIX.Interop.Git;
 
 namespace MyProject
@@ -36,7 +36,7 @@ namespace MyProject
                 team.AddGitRepositoryConfiguration(
                     new GitRepositoryConfiguration
                     {
-                        Name = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces bar",
+                        Name = "xyLOGIX.Interop.Git.Repositories.Actions.Committers.Interfaces bar",
                         Email = "@noneofyourbeeswax",
                         RemoteUserName = "astrohart",
                         RemotePassword = "xxxxx"

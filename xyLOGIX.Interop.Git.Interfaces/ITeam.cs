@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces;
-using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces;
-using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces;
-using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces;
+using xyLOGIX.Interop.Git.Configuration.Interfaces;
+using xyLOGIX.Interop.Git.Repositories.Actions.Committers.Interfaces;
+using xyLOGIX.Interop.Git.Repositories.Actions.Stagers.Interfaces;
+using xyLOGIX.Interop.Git.Repositories.Actions.Synchronizers.Interfaces;
 
 namespace xyLOGIX.Interop.Git.Interfaces
 {
@@ -19,14 +19,14 @@ namespace xyLOGIX.Interop.Git.Interfaces
     {
         /// <summary>
         /// Gets a reference to an instance of an object that implements the
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.ICommitter" /> interface.
+        /// <see cref="T:xyLOGIX.Interop.Git.Interfaces.ICommitter" /> interface.
         /// </summary>
         ICommitter Committer { get; }
 
         /// <summary>
         /// Gets a reference to a read-only collection of references to instances of
         /// objects that implement the
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
+        /// <see cref="T:xyLOGIX.Interop.Git.Interfaces.IGitRepositoryConfiguration" />
         /// interface.
         /// </summary>
         IReadOnlyCollection<IGitRepositoryConfiguration> GitRepositoryConfigurations
@@ -36,26 +36,26 @@ namespace xyLOGIX.Interop.Git.Interfaces
 
         /// <summary>
         /// Gets a reference to an instance of an object that implements the
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IStager" /> interface.
+        /// <see cref="T:xyLOGIX.Interop.Git.Interfaces.IStager" /> interface.
         /// </summary>
         IStager Stager { get; }
 
         /// <summary>
         /// Gets a reference to an instance of an object that implements the
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.ISynchronizer" />
+        /// <see cref="T:xyLOGIX.Interop.Git.Interfaces.ISynchronizer" />
         /// interface.
         /// </summary>
         ISynchronizer Synchronizer { get; }
 
         /// <summary>
         /// Adds an instance of an object that implements the
-        /// <see cref="T:xyLGOIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
+        /// <see cref="T:xyLGOIX.Interop.Git.Interfaces.IGitRepositoryConfiguration" />
         /// interface to the list that this object maintains and optionally sets it active.
         /// </summary>
         /// <param name="configuration">
         /// Reference to an instance of an object that
         /// implements the
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
+        /// <see cref="T:xyLOGIX.Interop.Git.Interfaces.IGitRepositoryConfiguration" />
         /// interface that is to be added to the list of configurations.
         /// </param>
         /// <param name="setActive">
@@ -104,17 +104,17 @@ namespace xyLOGIX.Interop.Git.Interfaces
         /// <paramref name="files" /> are specified.
         /// </remarks>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
+        ///     cref="M:xyLOGIX.Interop.Git.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// An
         /// active and valid
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
+        /// <see cref="T:xyLOGIX.Interop.Git.Interfaces.IGitRepositoryConfiguration" />
         /// is not associated with the repository.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
@@ -123,7 +123,7 @@ namespace xyLOGIX.Interop.Git.Interfaces
         /// <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.TeamConfigurationException">
         /// Thrown
         /// if a validation error is encountered due to improper configuration of this
         /// Team.
@@ -149,17 +149,17 @@ namespace xyLOGIX.Interop.Git.Interfaces
         /// message from a detailed commit message.
         /// </remarks>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
+        ///     cref="M:xyLOGIX.Interop.Git.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// An
         /// active and valid
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
+        /// <see cref="T:xyLOGIX.Interop.Git.Interfaces.IGitRepositoryConfiguration" />
         /// is not associated with the repository.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
@@ -168,7 +168,7 @@ namespace xyLOGIX.Interop.Git.Interfaces
         /// <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.TeamConfigurationException">
         /// Thrown
         /// if a validation error is encountered due to improper configuration of this
         /// Team.
@@ -188,17 +188,17 @@ namespace xyLOGIX.Interop.Git.Interfaces
         /// commit message.
         /// </param>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
+        ///     cref="M:xyLOGIX.Interop.Git.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// An
         /// active and valid
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
+        /// <see cref="T:xyLOGIX.Interop.Git.Interfaces.IGitRepositoryConfiguration" />
         /// is not associated with the repository.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
@@ -207,7 +207,7 @@ namespace xyLOGIX.Interop.Git.Interfaces
         /// <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.TeamConfigurationException">
         /// Thrown
         /// if a validation error is encountered due to improper configuration of this
         /// Team.
@@ -229,17 +229,17 @@ namespace xyLOGIX.Interop.Git.Interfaces
         /// commit message.
         /// </param>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
+        ///     cref="M:xyLOGIX.Interop.Git.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// An
         /// active and valid
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
+        /// <see cref="T:xyLOGIX.Interop.Git.Interfaces.IGitRepositoryConfiguration" />
         /// is not associated with the repository.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
@@ -248,7 +248,7 @@ namespace xyLOGIX.Interop.Git.Interfaces
         /// <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.TeamConfigurationException">
         /// Thrown
         /// if a validation error is encountered due to improper configuration of this
         /// Team.
@@ -282,17 +282,17 @@ namespace xyLOGIX.Interop.Git.Interfaces
         /// <paramref name="files" /> are specified.
         /// </remarks>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
+        ///     cref="M:xyLOGIX.Interop.Git.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// An
         /// active and valid
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
+        /// <see cref="T:xyLOGIX.Interop.Git.Interfaces.IGitRepositoryConfiguration" />
         /// is not associated with the repository.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
@@ -301,7 +301,7 @@ namespace xyLOGIX.Interop.Git.Interfaces
         /// <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.TeamConfigurationException">
         /// Thrown
         /// if a validation error is encountered due to improper configuration of this
         /// Team.
@@ -336,17 +336,17 @@ namespace xyLOGIX.Interop.Git.Interfaces
         /// <paramref name="files" /> are specified.
         /// </remarks>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
+        ///     cref="M:xyLOGIX.Interop.Git.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// An
         /// active and valid
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
+        /// <see cref="T:xyLOGIX.Interop.Git.Interfaces.IGitRepositoryConfiguration" />
         /// is not associated with the repository.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
@@ -355,7 +355,7 @@ namespace xyLOGIX.Interop.Git.Interfaces
         /// <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.Git.Repositories.Actions.Exceptions.TeamConfigurationException">
         /// Thrown
         /// if a validation error is encountered due to improper configuration of this
         /// Team.
@@ -382,7 +382,7 @@ namespace xyLOGIX.Interop.Git.Interfaces
         /// <param name="configuration">
         /// Reference to the instance of the object that
         /// implements the
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
+        /// <see cref="T:xyLOGIX.Interop.Git.Interfaces.IGitRepositoryConfiguration" />
         /// interface that is to be made active.  This is also attached to the repository
         /// currently in use.
         /// </param>
