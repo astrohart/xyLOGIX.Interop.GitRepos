@@ -2,7 +2,6 @@
 using System;
 using xyLOGIX.Interop.LibGit2Sharp.Exceptions;
 using xyLOGIX.Interop.LibGit2Sharp.Helpers;
-using xyLOGIX.Interop.LibGit2Sharp.Internal;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Events;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces;
 

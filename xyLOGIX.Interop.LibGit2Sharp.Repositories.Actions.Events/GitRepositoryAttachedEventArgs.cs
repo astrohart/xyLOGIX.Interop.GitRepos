@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibGit2Sharp;
+using System;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Events
 {
