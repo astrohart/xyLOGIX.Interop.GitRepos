@@ -88,8 +88,6 @@
     </Compile>
     <Compile Include="PullFailedEventArgs.cs" />
     <Compile Include="PullFailedEventHandler.cs" />
-    <Compile Include="PushFailedEventArgs.cs" />
-    <Compile Include="PushFailedEventHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
