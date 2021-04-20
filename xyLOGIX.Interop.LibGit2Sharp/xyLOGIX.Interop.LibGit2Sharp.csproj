@@ -84,7 +84,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GlobalAspects.cs" />
-    <Compile Include="Configurations\GitRepositoryConfiguration.cs" />
     <Compile Include="Pullers\Puller.cs" />
     <Compile Include="Pushers\Pusher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,6 +1,6 @@
-﻿using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
+﻿using xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Configurations
+namespace xyLOGIX.Interop.LibGit2Sharp.Configuration
 {
     /// <summary>
     /// GitRepositoryConfiguration for a committer and remote.
@@ -10,7 +10,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Configurations
         /// <summary>
         /// Constructs a new instance of
         /// <see
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Configurations.GitRepositoryConfiguration" />
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Configuration.GitRepositoryConfiguration" />
         /// and returns a reference to it.
         /// </summary>
         /// <remarks>This constructor sets default values for some of the properties.</remarks>
