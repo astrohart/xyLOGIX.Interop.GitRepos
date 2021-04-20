@@ -1,14 +1,8 @@
-﻿using LibGit2Sharp;
-using System;
+﻿using System;
 using System.IO;
-using xyLOGIX.Interop.LibGit2Sharp.Events;
-using xyLOGIX.Interop.LibGit2Sharp.Exceptions;
-using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
-using xyLOGIX.Interop.LibGit2Sharp.Internal;
-using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
-using File = Alphaleonis.Win32.Filesystem.File;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Stagers
+namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers
 {
     /// <summary>
     /// Stages changes in the working tree to a local Git repository.
@@ -46,7 +40,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Stagers
 
         /// <summary>
         /// Gets a reference to the one and only instance of
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Stagers.Stager" />.
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Stager" />.
         /// </summary>
         public static Stager Instance { get; } = new Stager();
 
