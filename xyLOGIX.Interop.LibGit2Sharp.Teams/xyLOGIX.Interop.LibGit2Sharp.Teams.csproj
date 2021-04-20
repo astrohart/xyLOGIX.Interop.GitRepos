@@ -96,6 +96,10 @@
       <Project>{14D206F0-F02A-4A5A-9882-92553D03663D}</Project>
       <Name>xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Factories\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Factories.csproj">
+      <Project>{B56BE734-293D-427D-8DF9-3177F65A95FC}</Project>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Factories</Name>
+    </ProjectReference>
     <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces.csproj">
       <Project>{A17FD436-3781-4C20-BA32-E6425D650A74}</Project>
       <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces</Name>

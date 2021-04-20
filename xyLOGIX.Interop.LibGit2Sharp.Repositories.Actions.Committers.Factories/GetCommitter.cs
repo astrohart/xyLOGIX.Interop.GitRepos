@@ -11,7 +11,8 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Factories
     public static class GetCommitter
     {
         /// <summary>
-        /// Gets the sole instance of the object that implements the
+        /// Gets a reference to the sole instance of the object that implements
+        /// the
         /// <see
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces.ICommitter" />
         /// interface.
