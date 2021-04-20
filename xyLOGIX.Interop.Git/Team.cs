@@ -6,6 +6,7 @@ using xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Factories;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces;
 using xyLOGIX.Interop.Git.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Factories;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces;
 
 namespace xyLOGIX.Interop.Git
@@ -88,7 +89,7 @@ namespace xyLOGIX.Interop.Git
         /// Gets a reference to an instance of an object that implements the
         /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IStager" /> interface.
         /// </summary>
-        public IStager Stager { get; } = Stagers.Stager.Instance;
+        public IStager Stager { get; } = GetStager.SoleInstance();
 
         /// <summary>
         /// Gets a reference to an instance of an object that implements the

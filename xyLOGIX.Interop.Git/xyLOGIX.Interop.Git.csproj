@@ -108,6 +108,10 @@
       <Project>{065F3287-831F-4A7F-A552-FED28A188121}</Project>
       <Name>xyLOGIX.Interop.Git.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Factories\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Factories.csproj">
+      <Project>{84C1F71A-AAA4-4A08-9728-19E710965E4D}</Project>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Factories</Name>
+    </ProjectReference>
     <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces.csproj">
       <Project>{470E3CC9-9676-4342-82C6-D2BF7762969E}</Project>
       <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces</Name>
