@@ -38,9 +38,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Shar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Events", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Events\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Events.csproj", "{F4D04E9A-E420-47F1-90E1-860F15EF09BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Teams.Interfaces", "xyLOGIX.Interop.LibGit2Sharp.Teams.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Teams.Interfaces.csproj", "{065F3287-831F-4A7F-A552-FED28A188121}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git.Interfaces", "xyLOGIX.Interop.Git.Interfaces\xyLOGIX.Interop.Git.Interfaces.csproj", "{065F3287-831F-4A7F-A552-FED28A188121}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Teams", "xyLOGIX.Interop.LibGit2Sharp.Teams\xyLOGIX.Interop.LibGit2Sharp.Teams.csproj", "{CB510BC7-7DCC-4D7D-A41E-DE99E82CAB0B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.Git", "xyLOGIX.Interop.Git\xyLOGIX.Interop.Git.csproj", "{CB510BC7-7DCC-4D7D-A41E-DE99E82CAB0B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Factories", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Factories\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Factories.csproj", "{B56BE734-293D-427D-8DF9-3177F65A95FC}"
 EndProject

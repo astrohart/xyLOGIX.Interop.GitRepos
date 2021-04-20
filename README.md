@@ -22,7 +22,7 @@ Here's an example that commits and synchronizes (i.e., pulls, then pushes) all t
 ```
 using LibGit2Sharp;
 using xyLOGIX.Interop.LibGit2Sharp.GitRepositoryConfigurations;
-using xyLOGIX.Interop.LibGit2Sharp.Teams;
+using xyLOGIX.Interop.Git;
 
 namespace MyProject
 {

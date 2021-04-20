@@ -5,9 +5,9 @@ using System.Linq;
 using xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Factories;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces;
-using xyLOGIX.Interop.LibGit2Sharp.Teams.Interfaces;
+using xyLOGIX.Interop.Git.Interfaces;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Teams
+namespace xyLOGIX.Interop.Git
 {
     /// <summary>
     /// Main workhorse of this library.
@@ -17,7 +17,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
     /// Team Explorer. Work with an instance of this class in a using block --
     /// or, be sure to call its
     /// <see
-    ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.Dispose" />
+    ///     cref="M:xyLOGIX.Interop.Git.Team.Dispose" />
     /// method when
     /// done utilizing it. You must pass an instance of an object that
     /// implements the <see cref="T:LibGit2Sharp.IRepository" /> interface to its
@@ -45,7 +45,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// <summary>
         /// Constructs a new instance of
         /// <see
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Teams.Team" />
+        ///     cref="T:xyLOGIX.Interop.Git.Team" />
         /// and returns a
         /// reference to it.
         /// </summary>
@@ -121,7 +121,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// it, either pass true for the <paramref name="setActive" /> parameter
         /// (which is the default), or call the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.SetGitRepositoryConfigurationActive" />
+        ///     cref="M:xyLOGIX.Interop.Git.Team.SetGitRepositoryConfigurationActive" />
         /// next. If this method's <paramref name="setActive" /> parameter is set
         /// to true, then this method will set the added configuration active
         /// for the caller.
@@ -162,7 +162,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// short commit message from a detailed commit message. This method
         /// simply calls the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.CommitAll" />
+        ///     cref="M:xyLOGIX.Interop.Git.Team.CommitAll" />
         /// method
         /// if no <paramref name="files" /> are specified.
         /// </remarks>
@@ -382,7 +382,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// short commit message from a detailed commit message. This method
         /// simply calls the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.CommitAllAndPush" />
+        ///     cref="M:xyLOGIX.Interop.Git.Team.CommitAllAndPush" />
         /// method if no <paramref name="files" /> are specified.
         /// </remarks>
         /// <exception
@@ -445,7 +445,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// short commit message from a detailed commit message. This method
         /// simply calls the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.CommitAllAndSync" />
+        ///     cref="M:xyLOGIX.Interop.Git.Team.CommitAllAndSync" />
         /// method if no <paramref name="files" /> are specified.
         /// </remarks>
         /// <exception
@@ -490,7 +490,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// <remarks>
         /// After this method is called, the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.SetGitRepositoryConfigurationActive" />
+        ///     cref="M:xyLOGIX.Interop.Git.Team.SetGitRepositoryConfigurationActive" />
         /// method must be called prior to any Git methods being called again.
         /// </remarks>
         public void DeactivateAllConfigurations()
@@ -590,12 +590,12 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// <exception cref="T:System.InvalidOperationException">
         /// Thrown if the
         /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.Committer" />
+        ///     cref="P:xyLOGIX.Interop.Git.Team.Committer" />
         /// ,
         /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.Stager" />
+        ///     cref="P:xyLOGIX.Interop.Git.Team.Stager" />
         /// , or the
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.Synchronizer" />
+        /// <see cref="P:xyLOGIX.Interop.Git.Team.Synchronizer" />
         /// property are <see langword="null" />.
         /// </exception>
         private void AttachGitRepositoryToDependencies()
@@ -617,12 +617,12 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// <exception cref="T:System.InvalidOperationException">
         /// Thrown if the
         /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.Committer" />
+        ///     cref="P:xyLOGIX.Interop.Git.Team.Committer" />
         /// ,
         /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.Stager" />
+        ///     cref="P:xyLOGIX.Interop.Git.Team.Stager" />
         /// , or the
-        /// <see cref="P:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.Synchronizer" />
+        /// <see cref="P:xyLOGIX.Interop.Git.Team.Synchronizer" />
         /// property are <see langword="null" />.
         /// </exception>
         private void DetachGitRepositoryFromDependencies()
@@ -640,7 +640,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// <summary>
         /// This method runs validation rules against the
         /// <see
-        ///     cref="P:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.GitRepositoryConfigurations" />
+        ///     cref="P:xyLOGIX.Interop.Git.Team.GitRepositoryConfigurations" />
         /// collection.
         /// </summary>
         /// <exception

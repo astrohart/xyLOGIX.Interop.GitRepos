@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\LibGit2Sharp.NativeBinaries.2.0.306\build\net46\LibGit2Sharp.NativeBinaries.props" Condition="Exists('..\packages\LibGit2Sharp.NativeBinaries.2.0.306\build\net46\LibGit2Sharp.NativeBinaries.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -61,10 +61,10 @@
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyName>xyLOGIX.Interop.LibGit2Sharp.Teams</AssemblyName>
+    <AssemblyName>xyLOGIX.Interop.Git</AssemblyName>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>xyLOGIX.Interop.LibGit2Sharp.Teams</RootNamespace>
+    <RootNamespace>xyLOGIX.Interop.Git</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="LibGit2Sharp, Version=0.26.0.0, Culture=neutral, PublicKeyToken=7cbde695407f0333, processorArchitecture=MSIL">
@@ -104,9 +104,9 @@
       <Project>{A17FD436-3781-4C20-BA32-E6425D650A74}</Project>
       <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Teams.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Teams.Interfaces.csproj">
+    <ProjectReference Include="..\xyLOGIX.Interop.Git.Interfaces\xyLOGIX.Interop.Git.Interfaces.csproj">
       <Project>{065F3287-831F-4A7F-A552-FED28A188121}</Project>
-      <Name>xyLOGIX.Interop.LibGit2Sharp.Teams.Interfaces</Name>
+      <Name>xyLOGIX.Interop.Git.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

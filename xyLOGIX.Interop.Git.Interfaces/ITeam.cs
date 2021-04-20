@@ -5,7 +5,7 @@ using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Teams.Interfaces
+namespace xyLOGIX.Interop.Git.Interfaces
 {
     /// <summary>
     /// Defines methods and properties for a Team object.
@@ -68,7 +68,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams.Interfaces
         /// repository this Team is using.  To associate it, either pass true for the
         /// <paramref name="setActive" /> parameter (which is the default), or call the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.SetGitRepositoryConfigurationActive" />
+        ///     cref="M:xyLOGIX.Interop.Git.Team.SetGitRepositoryConfigurationActive" />
         /// next.  If this method's <paramref name="setActive" /> parameter is set to true,
         /// then this method will
         /// set the added configuration active for the caller.
@@ -100,7 +100,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams.Interfaces
         /// <remarks>
         /// Use two newline characters, '\n\n', in the message to separate the short commit
         /// message from a detailed commit message.  This method simply calls the
-        /// <see cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.CommitAll" /> method if no
+        /// <see cref="M:xyLOGIX.Interop.Git.Team.CommitAll" /> method if no
         /// <paramref name="files" /> are specified.
         /// </remarks>
         /// <exception
@@ -277,7 +277,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams.Interfaces
         /// <remarks>
         /// Use two newline characters, '\n\n', in the message to separate the short commit
         /// message from a detailed commit message.  This method simply calls the
-        /// <see cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.CommitAllAndPush" />
+        /// <see cref="M:xyLOGIX.Interop.Git.Team.CommitAllAndPush" />
         /// method if no
         /// <paramref name="files" /> are specified.
         /// </remarks>
@@ -331,7 +331,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams.Interfaces
         /// <remarks>
         /// Use two newline characters, '\n\n', in the message to separate the short commit
         /// message from a detailed commit message.  This method simply calls the
-        /// <see cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.CommitAllAndSync" />
+        /// <see cref="M:xyLOGIX.Interop.Git.Team.CommitAllAndSync" />
         /// method if no
         /// <paramref name="files" /> are specified.
         /// </remarks>
@@ -370,7 +370,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams.Interfaces
         /// <remarks>
         /// After this method is called, the
         /// <see
-        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Teams.Team.SetGitRepositoryConfigurationActive" />
+        ///     cref="M:xyLOGIX.Interop.Git.Team.SetGitRepositoryConfigurationActive" />
         /// method must be called prior to any Git methods being called again.
         /// </remarks>
         void DeactivateAllConfigurations();

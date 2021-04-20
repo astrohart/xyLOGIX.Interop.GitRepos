@@ -10,7 +10,7 @@
 
 using System;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Teams.Properties
+namespace xyLOGIX.Interop.Git.Properties
 {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
@@ -44,7 +44,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams.Properties
             {
                 if (object.ReferenceEquals(resourceMan, null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("xyLOGIX.Interop.LibGit2Sharp.Teams.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("xyLOGIX.Interop.Git.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
