@@ -8,7 +8,8 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <ProjectGuid>{7DB91784-63E9-46C0-92FD-AF8EFF8A90BC}</ProjectGuid>
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -121,6 +122,10 @@
     <ProjectReference Include="..\xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions\xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.csproj">
       <Project>{8802EB52-7346-4084-953C-80B1C6CBB619}</Project>
       <Name>xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.GitRepos.Repositories.Actions.Interfaces\xyLOGIX.Interop.GitRepos.Repositories.Actions.Interfaces.csproj">
+      <Project>{180A869D-9A16-4085-BF0A-16D079CADC5F}</Project>
+      <Name>xyLOGIX.Interop.GitRepos.Repositories.Actions.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\xyLOGIX.Interop.GitRepos.Repositories.Actions.Stagers.Events\xyLOGIX.Interop.GitRepos.Repositories.Actions.Stagers.Events.csproj">
       <Project>{9967E06D-FF1E-4B00-A0D3-0CC6F8E41050}</Project>
