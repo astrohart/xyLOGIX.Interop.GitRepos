@@ -1,4 +1,6 @@
 using System;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Events;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Interfaces
 {

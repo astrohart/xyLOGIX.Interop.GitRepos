@@ -1,4 +1,8 @@
+using LibGit2Sharp;
 using System;
+using xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Events;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Interfaces;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers
@@ -37,7 +41,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers
         /// Gets a reference to the one and only instance of
         /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Puller" />.
         /// </summary>
-        public static Puller Instance { get; } = new Puller();
+        public static IPuller Instance { get; } = new Puller();
 
         /// <summary>
         /// Pulls the latest commits from the origin remote to the local repository's
