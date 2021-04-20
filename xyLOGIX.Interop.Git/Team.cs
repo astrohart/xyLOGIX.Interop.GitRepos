@@ -6,8 +6,13 @@ using xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Factories;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces;
 using xyLOGIX.Interop.Git.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers;
+using xyLOGIX.Interop.LibGit2Sharp.Configuration.Validators;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Factories;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Factories;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces;
 
 namespace xyLOGIX.Interop.Git
 {
@@ -98,7 +103,7 @@ namespace xyLOGIX.Interop.Git
         /// interface.
         /// </summary>
         public ISynchronizer Synchronizer { get; } =
-            Synchronizers.Synchronizer.Instance;
+            GetSynchronizer.SoleInstance();
 
         /// <summary>
         /// Adds an instance of an object that implements the
@@ -317,7 +322,7 @@ namespace xyLOGIX.Interop.Git
             bool addTimestamp = false)
         {
             CommitAll(commitMessage, addTimestamp);
-            Synchronizer.Pusher.Push();
+            Synchronizer.Push();
         }
 
         /// <summary>
@@ -420,7 +425,7 @@ namespace xyLOGIX.Interop.Git
             }
 
             Commit(commitMessage, addTimestamp, files);
-            Synchronizer.Pusher.Push();
+            Synchronizer.Push();
         }
 
         /// <summary>

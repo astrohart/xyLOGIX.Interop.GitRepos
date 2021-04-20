@@ -1,6 +1,6 @@
 ﻿using LibGit2Sharp;
 using System;
-using xyLOGIX.Interop.LibGit2Sharp.Events;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Events;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces
 {
@@ -26,20 +26,22 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces
 
         /// <summary>
         /// Attaches an instance of an object that implements the
-        /// <see cref="T:LibGit2Sharp.IGitRepository" /> interface to this object.
+        /// <see
+        ///     cref="T:LibGit2Sharp.IGitRepository" />
+        /// interface to this object.
         /// </summary>
         /// <param name="repository">
-        /// Reference to an instance of an object that implements
-        /// the <see cref="T:LibGit2Sharp.IGitRepository" /> interface that is to be attached
-        /// to this object.
+        /// Reference to an instance of an object that implements the
+        /// <see
+        ///     cref="T:LibGit2Sharp.IGitRepository" />
+        /// interface that is to be
+        /// attached to this object.
         /// </param>
         /// <remarks>
-        /// A repository object must be attached to this object object prior to
-        /// use.
+        /// A repository object must be attached to this object object prior to use.
         /// </remarks>
         /// <exception cref="T:System.ArgumentNullException">
-        /// Thrown if the
-        /// <paramref name="repository" /> parameter is blank.
+        /// Thrown if the <paramref name="repository" /> parameter is blank.
         /// </exception>
         void AttachGitRepository(IRepository repository);
 

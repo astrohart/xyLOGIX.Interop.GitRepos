@@ -6,7 +6,8 @@ using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Interfaces;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Factories;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Events;
-using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces;
+using
+    xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers
 {
@@ -26,6 +27,26 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers
         private Synchronizer() { }
 
         /// <summary>
+        /// Gets a reference to the one and only instance of
+        /// <see
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Synchronizer" />
+        /// .
+        /// </summary>
+        public static Synchronizer Instance { get; } = new Synchronizer();
+
+        /// <summary>
+        /// Gets a reference to an instance of an object that implements the
+        /// <see cref="IPuller" /> interface.
+        /// </summary>
+        private IPuller Puller { get; } = GetPuller.SoleInstance();
+
+        /// <summary>
+        /// Gets a reference to an instance of an object that implements the
+        /// <see cref="IPusher" /> interface.
+        /// </summary>
+        private IPusher Pusher { get; } = GetPusher.SoleInstance();
+
+        /// <summary>
         /// Raised when a Synchronization operation has completed.
         /// </summary>
         public event EventHandler SynchronizationCompleted;
@@ -41,39 +62,23 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers
         public event EventHandler SynchronizationStarted;
 
         /// <summary>
-        /// Gets a reference to the one and only instance of
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Synchronizer" />.
-        /// </summary>
-        public static Synchronizer Instance { get; } = new Synchronizer();
-
-        /// <summary>
-        /// Gets a reference to an instance of an object that implements the
-        /// <see cref="IPuller" /> interface.
-        /// </summary>
-        public IPuller Puller { get; } = GetPuller.SoleInstance();
-
-        /// <summary>
-        /// Gets a reference to an instance of an object that implements the
-        /// <see cref="IPusher" /> interface.
-        /// </summary>
-        public IPusher Pusher { get; } = GetPusher.SoleInstance();
-
-        /// <summary>
         /// Attaches an instance of an object that implements the
-        /// <see cref="T:LibGit2Sharp.IGitRepository" /> interface to this object.
+        /// <see
+        ///     cref="T:LibGit2Sharp.IGitRepository" />
+        /// interface to this object.
         /// </summary>
         /// <param name="repository">
-        /// Reference to an instance of an object that implements
-        /// the <see cref="T:LibGit2Sharp.IGitRepository" /> interface that is to be attached
-        /// to this object.
+        /// Reference to an instance of an object that implements the
+        /// <see
+        ///     cref="T:LibGit2Sharp.IGitRepository" />
+        /// interface that is to be
+        /// attached to this object.
         /// </param>
         /// <remarks>
-        /// A repository object must be attached to this object object prior to
-        /// use.
+        /// A repository object must be attached to this object object prior to use.
         /// </remarks>
         /// <exception cref="T:System.ArgumentNullException">
-        /// Thrown if the
-        /// <paramref name="repository" /> parameter is blank.
+        /// Thrown if the <paramref name="repository" /> parameter is blank.
         /// </exception>
         public override void AttachGitRepository(IRepository repository)
         {
@@ -95,8 +100,8 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers
         }
 
         /// <summary>
-        /// Synchronizes (i.e., pulls, then pushes) the latest commits from the origin
-        /// remote to the local repository's master branch.
+        /// Pulls the latest commits from the origin remote to the local
+        /// repository's master branch.
         /// </summary>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
@@ -107,8 +112,45 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers
         /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
-        /// Thrown if the repository currently in use does not have a valid configuration
-        /// associated with it.
+        /// Thrown if the repository currently in use does not have a valid
+        /// configuration associated with it.
+        /// </exception>
+        public void Pull()
+            => Puller.Pull();
+
+        /// <summary>
+        /// Pushes commits from the master branch to a remote called origin.
+        /// </summary>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
+        /// Thrown if the
+        /// <see
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
+        /// method has not been called.
+        /// </exception>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
+        /// Thrown if the repository currently in use does not have a valid
+        /// configuration associated with it.
+        /// </exception>
+        public void Push()
+            => Pusher.Push();
+
+        /// <summary>
+        /// Synchronizes (i.e., pulls, then pushes) the latest commits from the
+        /// origin remote to the local repository's master branch.
+        /// </summary>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
+        /// Thrown if the
+        /// <see
+        ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
+        /// method has not been called.
+        /// </exception>
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
+        /// Thrown if the repository currently in use does not have a valid
+        /// configuration associated with it.
         /// </exception>
         public void Sync()
         {
@@ -135,7 +177,8 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers
         /// <summary>
         /// Raises the
         /// <see
-        ///     cref="E:xyLOGIX.Interop.LibGit2Sharp.Synchronizers.Synchronizer.SynchronizationCompleted " />
+        ///     cref="E:xyLOGIX.Interop.LibGit2Sharp.Synchronizers.Synchronizer.SynchronizationCompleted
+        /// " />
         /// event.
         /// </summary>
         private void OnSynchronizationCompleted()
@@ -144,7 +187,8 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers
         /// <summary>
         /// Raises the
         /// <see
-        ///     cref="E:xyLOGIX.Interop.LibGit2Sharp.Synchronizers.Synchronizer.SynchronizationFailed " />
+        ///     cref="E:xyLOGIX.Interop.LibGit2Sharp.Synchronizers.Synchronizer.SynchronizationFailed
+        /// " />
         /// event.
         /// </summary>
         /// <param name="e">
@@ -153,14 +197,14 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.SynchronizationFailedEventArgs" />
         /// that contains the event data.
         /// </param>
-        private void OnSynchronizationFailed(
-            SynchronizationFailedEventArgs e)
+        private void OnSynchronizationFailed(SynchronizationFailedEventArgs e)
             => SynchronizationFailed?.Invoke(this, e);
 
         /// <summary>
         /// Raises the
         /// <see
-        ///     cref="E:xyLOGIX.Interop.LibGit2Sharp.Synchronizers.Synchronizer.SynchronizationStarted " />
+        ///     cref="E:xyLOGIX.Interop.LibGit2Sharp.Synchronizers.Synchronizer.SynchronizationStarted
+        /// " />
         /// event.
         /// </summary>
         private void OnSynchronizationStarted()

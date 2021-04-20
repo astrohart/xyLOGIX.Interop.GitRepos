@@ -1,5 +1,10 @@
+using Alphaleonis.Win32.Filesystem;
 using LibGit2Sharp;
 using System;
+using xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers;
+using xyLOGIX.Interop.LibGit2Sharp.Configuration.Validators;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Events;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions

@@ -2,6 +2,7 @@ using LibGit2Sharp;
 using System;
 using System.Collections.Generic;
 using xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Configuration.Validators;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers
 {

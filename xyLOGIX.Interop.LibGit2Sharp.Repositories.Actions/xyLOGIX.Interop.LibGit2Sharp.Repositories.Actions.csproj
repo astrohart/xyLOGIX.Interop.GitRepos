@@ -67,11 +67,15 @@
     <RootNamespace>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AlphaFS, Version=2.2.0.0, Culture=neutral, PublicKeyToken=4d31a58f7d7ad5c9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AlphaFS.2.2.6\lib\net452\AlphaFS.dll</HintPath>
+    </Reference>
     <Reference Include="LibGit2Sharp, Version=0.26.0.0, Culture=neutral, PublicKeyToken=7cbde695407f0333, processorArchitecture=MSIL">
       <HintPath>..\packages\LibGit2Sharp.0.26.2\lib\net46\LibGit2Sharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GitRepositoryAction.cs" />
@@ -92,6 +96,26 @@
     <Content Include="1382_cogs.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers\xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers.csproj">
+      <Project>{D419F75D-4277-4D66-92D8-CE81EB2A5B2F}</Project>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces.csproj">
+      <Project>{14D206F0-F02A-4A5A-9882-92553D03663D}</Project>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Configuration.Validators\xyLOGIX.Interop.LibGit2Sharp.Configuration.Validators.csproj">
+      <Project>{B7B55702-8E90-4E9F-97D0-F5778297FC24}</Project>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Configuration.Validators</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Events\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Events.csproj">
+      <Project>{F4D04E9A-E420-47F1-90E1-860F15EF09BA}</Project>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Events</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.csproj">
+      <Project>{8802EB52-7346-4084-953C-80B1C6CBB619}</Project>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces.csproj">
       <Project>{180A869D-9A16-4085-BF0A-16D079CADC5F}</Project>
       <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces</Name>

@@ -1,4 +1,5 @@
 using System;
+using xyLOGIX.Interop.Git.Interfaces;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions
 {
@@ -16,7 +17,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions
         /// </summary>
         /// <param name="team">
         /// (Required.) Reference to an instance of an object that implements
-        /// the <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.ITeam" />
+        /// the <see cref="T:xyLOGIX.Interop.Git.Interfaces.ITeam" />
         /// interface. This object represents the Team that this exception is
         /// talking about.
         /// </param>
@@ -36,7 +37,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions
 
         /// <summary>
         /// Gets a reference to an instance of an object that implements the
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.ITeam" />
+        /// <see cref="T:xyLOGIX.Interop.Git.Interfaces.ITeam" />
         /// interface that represents the Team this exception is talking about.
         /// </summary>
         public ITeam Team { get; }
