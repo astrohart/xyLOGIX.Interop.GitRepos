@@ -118,6 +118,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\xyLOGIX.Interop.GitRepos.Interfaces\xyLOGIX.Interop.GitRepos.Interfaces.csproj">
