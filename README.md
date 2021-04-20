@@ -1,4 +1,4 @@
-# xyLOGIX.Interop.LibGit2Sharp
+# xyLOGIX.Interop.GitRepos
 This library serves as a user-friendly wrapper for some common Git operations supported by the [libgit2
 /
 libgit2sharp](https://github.com/libgit2/libgit2sharp) project, such as `git add` (known as Staging), `git commit`, `git pull` and `git push`.  
