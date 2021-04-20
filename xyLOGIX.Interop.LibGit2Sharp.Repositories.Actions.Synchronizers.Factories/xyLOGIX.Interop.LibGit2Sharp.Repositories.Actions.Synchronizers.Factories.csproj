@@ -86,6 +86,10 @@
     <Content Include="1382_cogs.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces.csproj">
+      <Project>{180A869D-9A16-4085-BF0A-16D079CADC5F}</Project>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces.csproj">
       <Project>{EFDA4ED8-7E59-43BF-A945-523A6823BC03}</Project>
       <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces</Name>
@@ -93,6 +97,10 @@
     <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.csproj">
       <Project>{77A4E037-A706-4FCD-BCD1-37C54FB10994}</Project>
       <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.csproj">
+      <Project>{56909587-2574-4098-8D15-57B08B0C0C7C}</Project>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
