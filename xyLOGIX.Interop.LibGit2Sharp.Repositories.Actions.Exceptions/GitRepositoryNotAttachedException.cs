@@ -1,4 +1,4 @@
-﻿namespace xyLOGIX.Interop.LibGit2Sharp.Exceptions
+namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions
 {
     /// <summary>
     /// An exception object that informs the caller that an object that implements the
@@ -9,7 +9,7 @@
     {
         /// <summary>
         /// Constructs a new instance of
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException" />
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException" />
         /// and returns a reference to it.
         /// </summary>
         public GitRepositoryNotAttachedException() : base(

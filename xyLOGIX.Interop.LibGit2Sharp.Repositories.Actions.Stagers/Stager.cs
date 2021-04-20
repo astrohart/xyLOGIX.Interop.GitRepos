@@ -1,8 +1,8 @@
-﻿using LibGit2Sharp;
+using LibGit2Sharp;
 using System;
 using System.IO;
 using xyLOGIX.Interop.LibGit2Sharp.Events;
-using xyLOGIX.Interop.LibGit2Sharp.Exceptions;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers
@@ -52,7 +52,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers
         /// </summary>
         /// <returns>True if the stage operation succeeded; false otherwise.</returns>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
@@ -92,7 +92,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers
         /// </param>
         /// <returns>True if the stage operation succeeded; false otherwise.</returns>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />

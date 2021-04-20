@@ -1,4 +1,4 @@
-﻿using LibGit2Sharp;
+using LibGit2Sharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -167,14 +167,14 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// if no <paramref name="files" /> are specified.
         /// </remarks>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// An active and valid
         /// <see
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
@@ -185,7 +185,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// messages mandatory, yet the <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.TeamConfigurationException">
         /// Thrown if a validation error is encountered due to improper
         /// configuration of this Team.
         /// </exception>
@@ -235,14 +235,14 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// short commit message from a detailed commit message.
         /// </remarks>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// An active and valid
         /// <see
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
@@ -253,7 +253,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// messages mandatory, yet the <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.TeamConfigurationException">
         /// Thrown if a validation error is encountered due to improper
         /// configuration of this Team.
         /// </exception>
@@ -289,14 +289,14 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// (Optional.) Set to true to add the timestamp to the commit message.
         /// </param>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// An active and valid
         /// <see
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
@@ -307,7 +307,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// messages mandatory, yet the <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.TeamConfigurationException">
         /// Thrown if a validation error is encountered due to improper
         /// configuration of this Team.
         /// </exception>
@@ -330,14 +330,14 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// (Optional.) Set to true to add the timestamp to the commit message.
         /// </param>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// An active and valid
         /// <see
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
@@ -348,7 +348,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// messages mandatory, yet the <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.TeamConfigurationException">
         /// Thrown if a validation error is encountered due to improper
         /// configuration of this Team.
         /// </exception>
@@ -386,14 +386,14 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// method if no <paramref name="files" /> are specified.
         /// </remarks>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// An active and valid
         /// <see
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
@@ -404,7 +404,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// messages mandatory, yet the <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.TeamConfigurationException">
         /// Thrown if a validation error is encountered due to improper
         /// configuration of this Team.
         /// </exception>
@@ -449,14 +449,14 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// method if no <paramref name="files" /> are specified.
         /// </remarks>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// An active and valid
         /// <see
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration" />
@@ -467,7 +467,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// messages mandatory, yet the <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.TeamConfigurationException">
         /// Thrown if a validation error is encountered due to improper
         /// configuration of this Team.
         /// </exception>
@@ -644,7 +644,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// collection.
         /// </summary>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.TeamConfigurationException">
         /// Thrown if a validation error is encountered due to improper
         /// configuration of this Team.
         /// </exception>

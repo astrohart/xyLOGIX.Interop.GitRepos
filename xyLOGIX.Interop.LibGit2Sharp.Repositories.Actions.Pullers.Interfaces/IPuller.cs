@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Interfaces
 {
@@ -27,14 +27,14 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Interfaces
         /// master branch.
         /// </summary>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// Thrown
         /// if the repository currently in use does not have a valid configuration
         /// associated with it.

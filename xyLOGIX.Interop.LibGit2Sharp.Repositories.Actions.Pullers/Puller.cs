@@ -1,13 +1,7 @@
-﻿using LibGit2Sharp;
 using System;
-using xyLOGIX.Interop.LibGit2Sharp.Events;
-using xyLOGIX.Interop.LibGit2Sharp.Exceptions;
-using xyLOGIX.Interop.LibGit2Sharp.Extensions;
-using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
-using xyLOGIX.Interop.LibGit2Sharp.Internal;
-using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Interfaces;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Pullers
+namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers
 {
     /// <summary>
     /// Pulls changes from the remote to the local repository.
@@ -41,7 +35,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Pullers
 
         /// <summary>
         /// Gets a reference to the one and only instance of
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Pullers.Puller" />.
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Puller" />.
         /// </summary>
         public static Puller Instance { get; } = new Puller();
 
@@ -50,14 +44,14 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Pullers
         /// master branch.
         /// </summary>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// Thrown
         /// if the repository currently in use does not have a valid configuration
         /// associated with it.

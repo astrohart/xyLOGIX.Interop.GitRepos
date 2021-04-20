@@ -1,4 +1,4 @@
-﻿using LibGit2Sharp;
+using LibGit2Sharp;
 using System;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
 
@@ -135,7 +135,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions
         /// <summary>
         /// Determine whether the configuration is set up.
         /// </summary>
-        /// <exception cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotConfiguredException">
+        /// <exception cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// Thrown if the repository does not have a valid object that
         /// implements the <see
         /// cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryConfiguration"/>

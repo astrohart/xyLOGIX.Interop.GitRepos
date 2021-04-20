@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Events
+namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Events
 {
     /// <summary>
     /// Contains the data for a PullFailed event.
@@ -9,7 +9,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Events
     {
         /// <summary>
         /// Constructs a new instance of
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.PullFailedEventArgs" /> and
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Events.PullFailedEventArgs" /> and
         /// returns a reference to it.
         /// </summary>
         /// <param name="exception" />

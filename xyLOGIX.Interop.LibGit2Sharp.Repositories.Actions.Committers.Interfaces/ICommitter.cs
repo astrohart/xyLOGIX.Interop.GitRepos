@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Events;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
 
@@ -41,14 +41,14 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interface
         /// from a detailed commit message.
         /// </remarks>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.LibGit2Sharp.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// Thrown
         /// if the repository currently in use does not have a valid configuration
         /// associated with it.

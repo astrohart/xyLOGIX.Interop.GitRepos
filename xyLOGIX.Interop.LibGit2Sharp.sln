@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Exceptions", "xyLOGIX.Interop.LibGit2Sharp.Exceptions\xyLOGIX.Interop.LibGit2Sharp.Exceptions.csproj", "{8802EB52-7346-4084-953C-80B1C6CBB619}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.csproj", "{8802EB52-7346-4084-953C-80B1C6CBB619}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces.csproj", "{180A869D-9A16-4085-BF0A-16D079CADC5F}"
 EndProject

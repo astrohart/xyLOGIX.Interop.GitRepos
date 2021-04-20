@@ -1,4 +1,4 @@
-﻿namespace xyLOGIX.Interop.LibGit2Sharp.Events
+﻿namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Events
 {
     /// <summary>
     /// Delegate for a PullFailed event.
@@ -9,7 +9,7 @@
     /// </param>
     /// <param name="e">
     /// A
-    /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.PullFailedEventArgs" /> that
+    /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Events.PullFailedEventArgs" /> that
     /// contains the event data.
     /// </param>
     public delegate void PullFailedEventHandler(object sender,

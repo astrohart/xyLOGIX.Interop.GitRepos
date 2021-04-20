@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\LibGit2Sharp.NativeBinaries.2.0.306\build\net46\LibGit2Sharp.NativeBinaries.props" Condition="Exists('..\packages\LibGit2Sharp.NativeBinaries.2.0.306\build\net46\LibGit2Sharp.NativeBinaries.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -96,9 +96,9 @@
       <Project>{14D206F0-F02A-4A5A-9882-92553D03663D}</Project>
       <Name>xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Exceptions\xyLOGIX.Interop.LibGit2Sharp.Exceptions.csproj">
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.csproj">
       <Project>{8802EB52-7346-4084-953C-80B1C6CBB619}</Project>
-      <Name>xyLOGIX.Interop.LibGit2Sharp.Exceptions</Name>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions</Name>
     </ProjectReference>
     <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Helpers\xyLOGIX.Interop.LibGit2Sharp.Helpers.csproj">
       <Project>{D419F75D-4277-4D66-92D8-CE81EB2A5B2F}</Project>

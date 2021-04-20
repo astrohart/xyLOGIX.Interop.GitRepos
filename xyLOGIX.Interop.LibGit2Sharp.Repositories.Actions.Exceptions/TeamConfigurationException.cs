@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Exceptions
+namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions
 {
     /// <summary>
     /// Exception object to be thrown in the event that a Team object is not
@@ -11,7 +11,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Exceptions
         /// <summary>
         /// Constructs a new instance of
         /// <see
-        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.TeamConfigurationException" />
+        ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions.TeamConfigurationException" />
         /// and returns a reference to it.
         /// </summary>
         /// <param name="team">
