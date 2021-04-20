@@ -10,7 +10,7 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Synchronizers.Events
         /// <summary>
         /// Constructs a new instance of <see cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Synchronizers.Events.SynchronizationFailedEventArgs" /> and returns a reference to it.
         /// </summary>
-        /// <param name="exception"/>Reference to a <see cref="T:System.Exception"/> that contains the error data.</param>
+        /// <param name="exception" >Reference to a <see cref="T:System.Exception"/> that contains the error data.</param>
         public SynchronizationFailedEventArgs(Exception exception)
         {
             Exception = exception;

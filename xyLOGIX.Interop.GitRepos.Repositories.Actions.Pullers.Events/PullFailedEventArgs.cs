@@ -12,7 +12,7 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Pullers.Events
         /// <see cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Pullers.Events.PullFailedEventArgs" /> and
         /// returns a reference to it.
         /// </summary>
-        /// <param name="exception" />
+        /// <param name="exception" >
         /// Reference to a
         /// <see cref="T:System.Exception" />
         /// that contains the error data.
