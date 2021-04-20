@@ -1,4 +1,5 @@
 using LibGit2Sharp;
+using PostSharp.Patterns.Diagnostics;
 using System;
 using xyLOGIX.Interop.GitRepos.Configuration.Helpers;
 using xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions;
@@ -15,12 +16,21 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Pullers
         /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.
         /// </summary>
+        [Log(AttributeExclude = true)]
         static Puller() { }
 
         /// <summary>
         /// Empty, protected constructor to prohibit direct allocation of this class.
         /// </summary>
+        [Log(AttributeExclude = true)]
         protected Puller() { }
+
+        /// <summary>
+        /// Gets a reference to the one and only instance of
+        /// <see cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Pullers.Puller" />.
+        /// </summary>
+        [Log(AttributeExclude = true)]
+        public static IPuller Instance { get; } = new Puller();
 
         /// <summary>
         /// Raised when a Pull operation has completed successfully.
@@ -38,14 +48,8 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Pullers
         public event EventHandler PullStarted;
 
         /// <summary>
-        /// Gets a reference to the one and only instance of
-        /// <see cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Pullers.Puller" />.
-        /// </summary>
-        public static IPuller Instance { get; } = new Puller();
-
-        /// <summary>
-        /// Pulls the latest commits from the origin remote to the local repository's
-        /// master branch.
+        /// Pulls the latest commits from the origin remote to the local
+        /// repository's master branch.
         /// </summary>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
@@ -56,9 +60,8 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Pullers
         /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
-        /// Thrown
-        /// if the repository currently in use does not have a valid configuration
-        /// associated with it.
+        /// Thrown if the repository currently in use does not have a valid
+        /// configuration associated with it.
         /// </exception>
         public void Pull()
         {
@@ -78,8 +81,8 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Pullers
                 {
                     FetchOptions = new FetchOptions
                     {
-                        CredentialsProvider = (url, usernameFromUrl, types) =>
-                            new UsernamePasswordCredentials
+                        CredentialsProvider = (url, usernameFromUrl, types)
+                            => new UsernamePasswordCredentials
                             {
                                 Username = repositoryConfiguration
                                     .RemoteUserName,
@@ -90,12 +93,13 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Pullers
                 };
 
                 // User information to create a merge commit
-                var signature =
-                    new Signature(repositoryConfiguration.Name,
-                        repositoryConfiguration.Email, DateTime.UtcNow);
+                var signature = new Signature(
+                    repositoryConfiguration.Name, repositoryConfiguration.Email,
+                    DateTime.UtcNow
+                );
 
                 // Pull
-                Commands.Pull((Repository)GitRepository, signature, options);
+                Commands.Pull((Repository) GitRepository, signature, options);
             }
             catch (Exception ex)
             {
@@ -107,7 +111,8 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Pullers
 
         /// <summary>
         /// Raises the
-        /// <see cref="E:xyLOGIX.Interop.GitRepos.Pullers.Puller.PullCompleted " />
+        /// <see
+        ///     cref="E:xyLOGIX.Interop.GitRepos.Pullers.Puller.PullCompleted " />
         /// event.
         /// </summary>
         protected virtual void OnPullCompleted()
@@ -115,11 +120,15 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Pullers
 
         /// <summary>
         /// Raises the
-        /// <see cref="E:xyLOGIX.Interop.GitRepos.Pullers.Puller.PullFailed " /> event.
+        /// <see
+        ///     cref="E:xyLOGIX.Interop.GitRepos.Pullers.Puller.PullFailed " />
+        /// event.
         /// </summary>
         /// <param name="e">
         /// A
-        /// <see cref="T:xyLOGIX.Interop.GitRepos.Events.PullFailedEventArgs" /> that
+        /// <see
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Events.PullFailedEventArgs" />
+        /// that
         /// contains the event data.
         /// </param>
         protected virtual void OnPullFailed(PullFailedEventArgs e)
@@ -127,7 +136,8 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Pullers
 
         /// <summary>
         /// Raises the
-        /// <see cref="E:xyLOGIX.Interop.GitRepos.Pullers.Puller.PullStarted " />
+        /// <see
+        ///     cref="E:xyLOGIX.Interop.GitRepos.Pullers.Puller.PullStarted " />
         /// event.
         /// </summary>
         protected virtual void OnPullStarted()

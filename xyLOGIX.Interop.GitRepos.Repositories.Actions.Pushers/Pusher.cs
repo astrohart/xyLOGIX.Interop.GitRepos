@@ -1,4 +1,5 @@
 using LibGit2Sharp;
+using PostSharp.Patterns.Diagnostics;
 using System;
 using xyLOGIX.Interop.GitRepos.Configuration.Helpers;
 using xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions;
@@ -15,12 +16,21 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Pushers
         /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.
         /// </summary>
+        [Log(AttributeExclude = true)]
         static Pusher() { }
 
         /// <summary>
         /// Empty, protected constructor to prohibit direct allocation of this class.
         /// </summary>
+        [Log(AttributeExclude = true)]
         protected Pusher() { }
+
+        /// <summary>
+        /// Gets a reference to the one and only instance of
+        /// <see cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Pushers.Pusher" />.
+        /// </summary>
+        [Log(AttributeExclude = true)]
+        public static IPusher Instance { get; } = new Pusher();
 
         /// <summary>
         /// Raised when a Push operation has been completed.
@@ -38,12 +48,6 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Pushers
         public event EventHandler PushStarted;
 
         /// <summary>
-        /// Gets a reference to the one and only instance of
-        /// <see cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Pushers.Pusher" />.
-        /// </summary>
-        public static IPusher Instance { get; } = new Pusher();
-
-        /// <summary>
         /// Pushes commits from the master branch to a remote called origin.
         /// </summary>
         /// <exception
@@ -55,9 +59,8 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Pushers
         /// </exception>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
-        /// Thrown
-        /// if the repository currently in use does not have a valid configuration
-        /// associated with it.
+        /// Thrown if the repository currently in use does not have a valid
+        /// configuration associated with it.
         /// </exception>
         public void Push()
         {
@@ -78,15 +81,16 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Pushers
 
                 var options = new PushOptions
                 {
-                    CredentialsProvider = (_url, _user, _cred) =>
-                        new UsernamePasswordCredentials
+                    CredentialsProvider = (_url, _user, _cred)
+                        => new UsernamePasswordCredentials
                         {
                             Username = repositoryConfiguration.RemoteUserName,
                             Password = repositoryConfiguration.RemotePassword
                         }
                 };
-                GitRepository.Network.Push(remote, @"refs/heads/master",
-                    options);
+                GitRepository.Network.Push(
+                    remote, @"refs/heads/master", options
+                );
             }
             catch (Exception ex)
             {
@@ -98,7 +102,8 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Pushers
 
         /// <summary>
         /// Raises the
-        /// <see cref="E:xyLOGIX.Interop.GitRepos.Pushers.Pusher.PushCompleted " />
+        /// <see
+        ///     cref="E:xyLOGIX.Interop.GitRepos.Pushers.Pusher.PushCompleted " />
         /// event.
         /// </summary>
         protected virtual void OnPushCompleted()
@@ -106,11 +111,15 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Pushers
 
         /// <summary>
         /// Raises the
-        /// <see cref="E:xyLOGIX.Interop.GitRepos.Pushers.Pusher.PushFailed " /> event.
+        /// <see
+        ///     cref="E:xyLOGIX.Interop.GitRepos.Pushers.Pusher.PushFailed " />
+        /// event.
         /// </summary>
         /// <param name="e">
         /// A
-        /// <see cref="T:xyLOGIX.Interop.GitRepos.Events.PushFailedEventArgs" /> that
+        /// <see
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Events.PushFailedEventArgs" />
+        /// that
         /// contains the event data.
         /// </param>
         protected virtual void OnPushFailed(PushFailedEventArgs e)
@@ -118,7 +127,8 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Pushers
 
         /// <summary>
         /// Raises the
-        /// <see cref="E:xyLOGIX.Interop.GitRepos.Pushers.Pusher.PushStarted " />
+        /// <see
+        ///     cref="E:xyLOGIX.Interop.GitRepos.Pushers.Pusher.PushStarted " />
         /// event.
         /// </summary>
         protected virtual void OnPushStarted()

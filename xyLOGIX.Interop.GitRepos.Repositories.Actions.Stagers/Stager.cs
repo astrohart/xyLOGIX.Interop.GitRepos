@@ -1,4 +1,5 @@
 using LibGit2Sharp;
+using PostSharp.Patterns.Diagnostics;
 using System;
 using System.IO;
 using xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions;
@@ -15,16 +16,14 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Stagers
         /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.
         /// </summary>
+        [Log(AttributeExclude = true)]
         static Stager() { }
 
         /// <summary>
         /// Empty, protected constructor to prohibit direct allocation of this class.
         /// </summary>
-        protected Stager()
-        {
-            GitRepository =
-                null; // initialize this object as unattached by default
-        }
+        [Log(AttributeExclude = true)]
+        protected Stager() { }
 
         /// <summary>
         /// Raised when a Stage operation has completed successfully.
@@ -42,20 +41,20 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Stagers
         public event EventHandler StageStarted;
 
         /// <summary>
-        /// Gets a reference to the one and only instance of
-        /// <see cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Stagers.Stager" />.
+        /// Gets a reference to the one and only instance of <see cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Stagers.Stager"/>.
         /// </summary>
+        [Log(AttributeExclude = true)]
         public static IStager Instance { get; } = new Stager();
 
         /// <summary>
         /// Stages all pending changes in the repository.
         /// </summary>
-        /// <returns>True if the stage operation succeeded; false otherwise.</returns>
-        /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
-        /// Thrown if the
-        /// <see
-        ///     cref="M:xyLOGIX.Interop.GitRepos.Interfaces.IGitRepositoryAction.AttachGitRepository" />
+        /// <returns>
+        /// True if the stage operation succeeded; false otherwise.
+        /// </returns>
+        /// <exception cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
+        /// Thrown if the <see
+        /// cref="M:xyLOGIX.Interop.GitRepos.Interfaces.IGitRepositoryAction.AttachGitRepository"/>
         /// method has not been called.
         /// </exception>
         public bool StageAll()
@@ -84,24 +83,23 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Stagers
         }
 
         /// <summary>
-        /// Stages the specified <paramref name="file" /> to the repository.
+        /// Stages the specified <paramref name="file"/> to the repository.
         /// </summary>
         /// <param name="file">
         /// String containing the full or relative path (to the working
         /// directory) of the item to be staged.
         /// </param>
-        /// <returns>True if the stage operation succeeded; false otherwise.</returns>
-        /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
-        /// Thrown if the
-        /// <see
-        ///     cref="M:xyLOGIX.Interop.GitRepos.Interfaces.IGitRepositoryAction.AttachGitRepository" />
+        /// <returns>
+        /// True if the stage operation succeeded; false otherwise.
+        /// </returns>
+        /// <exception cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
+        /// Thrown if the <see
+        /// cref="M:xyLOGIX.Interop.GitRepos.Interfaces.IGitRepositoryAction.AttachGitRepository"/>
         /// method has not been called.
         /// </exception>
         /// <exception cref="T:System.IO.FileNotFoundException">
-        /// The item to be staged,
-        /// whose path is specified by the <paramref name="file" /> parameter, could not be
-        /// located.
+        /// The item to be staged, whose path is specified by the <paramref
+        /// name="file"/> parameter, could not be located.
         /// </exception>
         public bool StageFile(string file)
         {
@@ -145,31 +143,27 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions.Stagers
         }
 
         /// <summary>
-        /// Raises the
-        /// <see cref="E:xyLOGIX.Interop.GitRepos.Stagers.Stager.StageCompleted " />
-        /// event.
+        /// Raises the <see
+        /// cref="E:xyLOGIX.Interop.GitRepos.Stagers.Stager.StageCompleted "/> event.
         /// </summary>
         protected virtual void OnStageCompleted()
             => StageCompleted?.Invoke(this, EventArgs.Empty);
 
         /// <summary>
-        /// Raises the
-        /// <see cref="E:xyLOGIX.Interop.GitRepos.Stagers.Stager.StageFailed " />
-        /// event.
+        /// Raises the <see
+        /// cref="E:xyLOGIX.Interop.GitRepos.Stagers.Stager.StageFailed "/> event.
         /// </summary>
         /// <param name="e">
-        /// A
-        /// <see cref="T:xyLOGIX.Interop.GitRepos.Events.StageFailedEventArgs" /> that
-        /// contains
-        /// the event data.
+        /// A <see
+        /// cref="T:xyLOGIX.Interop.GitRepos.Events.StageFailedEventArgs"/> that
+        /// contains the event data.
         /// </param>
         protected virtual void OnStageFailed(StageFailedEventArgs e)
             => StageFailed?.Invoke(this, e);
 
         /// <summary>
-        /// Raises the
-        /// <see cref="E:xyLOGIX.Interop.GitRepos.Stagers.Stager.StageStarted " />
-        /// event.
+        /// Raises the <see
+        /// cref="E:xyLOGIX.Interop.GitRepos.Stagers.Stager.StageStarted "/> event.
         /// </summary>
         protected virtual void OnStageStarted()
             => StageStarted?.Invoke(this, EventArgs.Empty);

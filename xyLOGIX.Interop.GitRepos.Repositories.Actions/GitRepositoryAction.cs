@@ -20,6 +20,26 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions
     public abstract class GitRepositoryAction : IGitRepositoryAction
     {
         /// <summary>
+        /// Constructs a new instance of
+        /// <see
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.GitRepositoryAction" />
+        /// and returns a reference to it.
+        /// </summary>
+        protected GitRepositoryAction()
+
+            // Initialize this class as not attached to a Git repo by default.
+            => GitRepository = null;
+
+        /// <summary>
+        /// Gets or sets a reference to an object that implements the
+        /// <see
+        ///     cref="T:LibGit2Sharp.IGitRepository" />
+        /// interface that this object is
+        /// currently working with.
+        /// </summary>
+        protected IRepository GitRepository { get; set; }
+
+        /// <summary>
         /// Raised when a new GitRepository is attached to this object.
         /// </summary>
         public event GitRepositoryAttachedEventHandler GitRepositoryAttached;
@@ -30,26 +50,23 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions
         public event EventHandler GitRepositoryDetached;
 
         /// <summary>
-        /// Gets or sets a reference to an object that implements the <see
-        /// cref="T:LibGit2Sharp.IGitRepository"/> interface that this object is
-        /// currently working with.
-        /// </summary>
-        protected IRepository GitRepository { get; set; }
-
-        /// <summary>
-        /// Attaches an instance of an object that implements the <see
-        /// cref="T:LibGit2Sharp.IGitRepository"/> interface to this object.
+        /// Attaches an instance of an object that implements the
+        /// <see
+        ///     cref="T:LibGit2Sharp.IGitRepository" />
+        /// interface to this object.
         /// </summary>
         /// <param name="repository">
-        /// Reference to an instance of an object that implements the <see
-        /// cref="T:LibGit2Sharp.IGitRepository"/> interface that is to be
+        /// Reference to an instance of an object that implements the
+        /// <see
+        ///     cref="T:LibGit2Sharp.IGitRepository" />
+        /// interface that is to be
         /// attached to this object.
         /// </param>
         /// <remarks>
         /// A repository object must be attached to this object object prior to use.
         /// </remarks>
         /// <exception cref="T:System.ArgumentNullException">
-        /// Thrown if the <paramref name="repository"/> parameter is blank.
+        /// Thrown if the <paramref name="repository" /> parameter is blank.
         /// </exception>
         public virtual void AttachGitRepository(IRepository repository)
         {
@@ -67,12 +84,15 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions
             => GitRepository = null;
 
         /// <summary>
-        /// Raises the <see
-        /// cref="E:xyLOGIX.Interop.GitRepos.Changes.Stager.GitRepositoryAttached"/> event.
+        /// Raises the
+        /// <see
+        ///     cref="E:xyLOGIX.Interop.GitRepos.Changes.Stager.GitRepositoryAttached" />
+        /// event.
         /// </summary>
         /// <param name="e">
-        /// A <see
-        /// cref="T:xyLOGIX.Interop.GitRepos.Events.GitRepositoryAttachedEventArgs"/>
+        /// A
+        /// <see
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Events.GitRepositoryAttachedEventArgs" />
         /// that contains the event data.
         /// </param>
         protected virtual void OnGitRepositoryAttached(
@@ -80,8 +100,10 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions
             => GitRepositoryAttached?.Invoke(this, e);
 
         /// <summary>
-        /// Raises the <see
-        /// cref="E:xyLOGIX.Interop.GitRepos.Changes.Stager.GitRepositoryDetached.GitRepositoryDetached"/> event.
+        /// Raises the
+        /// <see
+        ///     cref="E:xyLOGIX.Interop.GitRepos.Changes.Stager.GitRepositoryDetached.GitRepositoryDetached" />
+        /// event.
         /// </summary>
         protected virtual void OnGitRepositoryDetached()
             => GitRepositoryDetached?.Invoke(this, EventArgs.Empty);
@@ -98,11 +120,12 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions
         /// string if an error occurred.
         /// </returns>
         /// <remarks>
-        /// If the required parameter, <paramref name="path"/>, is a blank
+        /// If the required parameter, <paramref name="path" />, is a blank
         /// string or refers to the pathname of a file that does not exist, or
-        /// if the <see
-        /// cref="P:xyLOGIX.Interop.GitRepos.Repositories.Actions.GitRepositoryAction.GitRepository"/>
-        /// property has a <see langword="null"/> value, then this method does
+        /// if the
+        /// <see
+        ///     cref="P:xyLOGIX.Interop.GitRepos.Repositories.Actions.GitRepositoryAction.GitRepository" />
+        /// property has a <see langword="null" /> value, then this method does
         /// nothing and returns the blank string as the result.
         /// </remarks>
         protected string StripRepoDirFromFilePath(string path)
@@ -140,10 +163,12 @@ namespace xyLOGIX.Interop.GitRepos.Repositories.Actions
         /// <summary>
         /// Determine whether the configuration is set up.
         /// </summary>
-        /// <exception cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
+        /// <exception
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// Thrown if the repository does not have a valid object that
-        /// implements the <see
-        /// cref="T:xyLOGIX.Interop.GitRepos.Interfaces.IGitRepositoryConfiguration"/>
+        /// implements the
+        /// <see
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Interfaces.IGitRepositoryConfiguration" />
         /// interface associated with it.
         /// </exception>
         protected void ValidateConfiguration()
