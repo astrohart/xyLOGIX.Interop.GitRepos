@@ -92,8 +92,6 @@
     <Compile Include="PushFailedEventHandler.cs" />
     <Compile Include="StageFailedEventArgs.cs" />
     <Compile Include="StageFailedEventHandler.cs" />
-    <Compile Include="SynchronizationFailedEventArgs.cs" />
-    <Compile Include="SynchronizationFailedEventHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

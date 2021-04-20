@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Events
+namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Events
 {
     /// <summary>
     /// Contains the data for a SynchronizationFailed event.
@@ -8,7 +8,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Events
     public class SynchronizationFailedEventArgs : EventArgs
     {
         /// <summary>
-        /// Constructs a new instance of <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.SynchronizationFailedEventArgs" /> and returns a reference to it.
+        /// Constructs a new instance of <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Events.SynchronizationFailedEventArgs" /> and returns a reference to it.
         /// </summary>
         /// <param name="exception"/>Reference to a <see cref="T:System.Exception"/> that contains the error data.</param>
         public SynchronizationFailedEventArgs(Exception exception)
