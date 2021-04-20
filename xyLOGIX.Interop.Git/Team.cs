@@ -6,6 +6,7 @@ using xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Factories;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces;
 using xyLOGIX.Interop.Git.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces;
 
 namespace xyLOGIX.Interop.Git
 {
