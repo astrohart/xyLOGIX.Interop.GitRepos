@@ -1,6 +1,4 @@
-﻿using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
-
-namespace xyLOGIX.Interop.LibGit2Sharp.Validators
+﻿namespace xyLOGIX.Interop.LibGit2Sharp.Configuration.Validators
 {
     /// <summary>
     /// Methods to validate the values of the properties of objects that are instances

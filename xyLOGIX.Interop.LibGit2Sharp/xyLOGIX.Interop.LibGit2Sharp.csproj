@@ -95,7 +95,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Synchronizers\Synchronizer.cs" />
-    <Compile Include="Validators\GitRepositoryConfigurationValidator.cs" />
     <Compile Include="Validators\TeamConfigurationValidator.cs" />
   </ItemGroup>
   <ItemGroup>
