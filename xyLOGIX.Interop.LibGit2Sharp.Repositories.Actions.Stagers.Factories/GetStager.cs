@@ -22,9 +22,6 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Factories
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces.IStager" />
         /// interface.
         /// </returns>
-        /// <exception cref="T:System.ArgumentOutOfRangeException">
-        /// Thrown if the object type requested is not supported.
-        /// </exception>
         public static IStager SoleInstance()
             => Stager.Instance;
     }
