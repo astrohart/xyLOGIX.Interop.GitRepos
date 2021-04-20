@@ -100,9 +100,9 @@
       <Project>{8802EB52-7346-4084-953C-80B1C6CBB619}</Project>
       <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Helpers\xyLOGIX.Interop.LibGit2Sharp.Helpers.csproj">
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers\xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers.csproj">
       <Project>{D419F75D-4277-4D66-92D8-CE81EB2A5B2F}</Project>
-      <Name>xyLOGIX.Interop.LibGit2Sharp.Helpers</Name>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers</Name>
     </ProjectReference>
     <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Events\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Events.csproj">
       <Project>{86BF12E9-FCAF-4B12-A928-F1E5828FB055}</Project>

@@ -14,7 +14,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Shar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces", "xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces.csproj", "{14D206F0-F02A-4A5A-9882-92553D03663D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Helpers", "xyLOGIX.Interop.LibGit2Sharp.Helpers\xyLOGIX.Interop.LibGit2Sharp.Helpers.csproj", "{D419F75D-4277-4D66-92D8-CE81EB2A5B2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers", "xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers\xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers.csproj", "{D419F75D-4277-4D66-92D8-CE81EB2A5B2F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Configuration.Validators", "xyLOGIX.Interop.LibGit2Sharp.Configuration.Validators\xyLOGIX.Interop.LibGit2Sharp.Configuration.Validators.csproj", "{B7B55702-8E90-4E9F-97D0-F5778297FC24}"
 EndProject
