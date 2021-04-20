@@ -98,12 +98,6 @@
     <Content Include="1382_cogs.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Events\xyLOGIX.Interop.LibGit2Sharp.Events.csproj">
-      <Project>{D864DB0A-1A11-45B4-8B7C-CEF252E1010B}</Project>
-      <Name>xyLOGIX.Interop.LibGit2Sharp.Events</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

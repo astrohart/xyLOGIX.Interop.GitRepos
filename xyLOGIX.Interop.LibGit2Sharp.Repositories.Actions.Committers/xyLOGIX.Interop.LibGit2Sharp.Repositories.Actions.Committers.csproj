@@ -120,10 +120,6 @@
       <Project>{56909587-2574-4098-8D15-57B08B0C0C7C}</Project>
       <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp\xyLOGIX.Interop.LibGit2Sharp.csproj">
-      <Project>{84C1F71A-AAA4-4A08-9728-19E710965E4D}</Project>
-      <Name>xyLOGIX.Interop.LibGit2Sharp</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
