@@ -1,12 +1,8 @@
-﻿using Alphaleonis.Win32.Filesystem;
-using LibGit2Sharp;
+﻿using LibGit2Sharp;
 using System;
-using xyLOGIX.Interop.LibGit2Sharp.Events;
-using xyLOGIX.Interop.LibGit2Sharp.Extensions;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
-using xyLOGIX.Interop.LibGit2Sharp.Validators;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Internal
+namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions
 {
     /// <summary>
     /// Defines methods and properties that are common to all repository-bound objects.
@@ -100,7 +96,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Internal
         /// If the required parameter, <paramref name="path"/>, is a blank
         /// string or refers to the pathname of a file that does not exist, or
         /// if the <see
-        /// cref="P:xyLOGIX.Interop.LibGit2Sharp.Internal.GitRepositoryAction.GitRepository"/>
+        /// cref="P:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.GitRepositoryAction.GitRepository"/>
         /// property has a <see langword="null"/> value, then this method does
         /// nothing and returns the blank string as the result.
         /// </remarks>
