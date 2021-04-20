@@ -85,5 +85,15 @@
   <ItemGroup>
     <Content Include="1382_cogs.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces.csproj">
+      <Project>{180A869D-9A16-4085-BF0A-16D079CADC5F}</Project>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Events\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Events.csproj">
+      <Project>{60A09E43-6E20-4BD5-A6DE-17972E6ED4E0}</Project>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Events</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

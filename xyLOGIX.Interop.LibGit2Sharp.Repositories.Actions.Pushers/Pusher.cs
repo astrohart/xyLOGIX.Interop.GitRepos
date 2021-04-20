@@ -1,4 +1,9 @@
+using LibGit2Sharp;
 using System;
+using xyLOGIX.Interop.LibGit2Sharp.Configuration.Helpers;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Events;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers
 {
@@ -36,7 +41,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers
         /// Gets a reference to the one and only instance of
         /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Pusher" />.
         /// </summary>
-        public static Pusher Instance { get; } = new Pusher();
+        public static IPusher Instance { get; } = new Pusher();
 
         /// <summary>
         /// Pushes commits from the master branch to a remote called origin.

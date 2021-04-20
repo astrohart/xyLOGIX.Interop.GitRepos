@@ -68,6 +68,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GetPusher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -83,6 +84,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1382_cogs.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces.csproj">
+      <Project>{5141A303-C55D-40BF-870C-AAC091FB56FD}</Project>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.csproj">
+      <Project>{09EA6716-FCD7-4CC9-9D04-973980E5830D}</Project>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
