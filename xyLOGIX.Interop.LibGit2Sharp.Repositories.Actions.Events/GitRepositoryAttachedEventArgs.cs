@@ -1,7 +1,6 @@
-﻿using LibGit2Sharp;
-using System;
+﻿using System;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Events
+namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Events
 {
     /// <summary>
     /// Contains the data for a GitRepositoryAttached event.

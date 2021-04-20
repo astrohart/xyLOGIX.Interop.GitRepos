@@ -1,4 +1,4 @@
-﻿namespace xyLOGIX.Interop.LibGit2Sharp.Events
+﻿namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Events
 {
     /// <summary>
     /// Delegate for a GitRepositoryAttached event.
@@ -9,7 +9,7 @@
     /// </param>
     /// <param name="e">
     /// A
-    /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.GitRepositoryAttachedEventArgs" /> that
+    /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Events.GitRepositoryAttachedEventArgs" /> that
     /// contains the event data.
     /// </param>
     public delegate void GitRepositoryAttachedEventHandler(object sender,
