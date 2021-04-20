@@ -1,8 +1,8 @@
 using LibGit2Sharp;
 using System;
 using System.IO;
-using xyLOGIX.Interop.LibGit2Sharp.Events;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Events;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers
@@ -45,7 +45,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers
         /// Gets a reference to the one and only instance of
         /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Stager" />.
         /// </summary>
-        public static Stager Instance { get; } = new Stager();
+        public static IStager Instance { get; } = new Stager();
 
         /// <summary>
         /// Stages all pending changes in the repository.
