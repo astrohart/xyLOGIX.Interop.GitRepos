@@ -1,4 +1,5 @@
 ﻿using System;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces
 {

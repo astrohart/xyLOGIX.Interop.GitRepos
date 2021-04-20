@@ -1,12 +1,7 @@
-﻿using LibGit2Sharp;
-using System;
-using xyLOGIX.Interop.LibGit2Sharp.Events;
-using xyLOGIX.Interop.LibGit2Sharp.Exceptions;
-using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
-using xyLOGIX.Interop.LibGit2Sharp.Internal;
-using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
+﻿using System;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Synchronizers
+namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers
 {
     /// <summary>
     /// Synchronizes a Git local repository with a remote.
@@ -40,7 +35,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Synchronizers
 
         /// <summary>
         /// Gets a reference to the one and only instance of
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Synchronizers.Synchronizer" />.
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Synchronizer" />.
         /// </summary>
         public static Synchronizer Instance { get; } = new Synchronizer();
 
