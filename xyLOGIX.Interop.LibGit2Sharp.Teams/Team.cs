@@ -2,11 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using xyLOGIX.Interop.LibGit2Sharp.Exceptions;
-using xyLOGIX.Interop.LibGit2Sharp.Extensions;
-using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
-using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
-using xyLOGIX.Interop.LibGit2Sharp.Validators;
+using xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Teams.Interfaces;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Teams
 {
@@ -71,7 +69,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Teams
         /// Gets a reference to an instance of an object that implements the
         /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Interfaces.ICommitter" /> interface.
         /// </summary>
-        public ICommitter Committer { get; } = Committers.Committer.Instance;
+        public ICommitter Committer { get; } = Committer.Instance;
 
         /// <summary>
         /// Gets a reference to a read-only collection of references to
