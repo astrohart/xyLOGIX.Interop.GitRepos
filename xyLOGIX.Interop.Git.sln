@@ -60,7 +60,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Shar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.csproj", "{0DE24E06-80DE-42DF-9E14-804464BBF3F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foo", "Foo\Foo.csproj", "{84C1F71A-AAA4-4A08-9728-19E710965E4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Factories", "xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Factories\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Factories.csproj", "{84C1F71A-AAA4-4A08-9728-19E710965E4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
