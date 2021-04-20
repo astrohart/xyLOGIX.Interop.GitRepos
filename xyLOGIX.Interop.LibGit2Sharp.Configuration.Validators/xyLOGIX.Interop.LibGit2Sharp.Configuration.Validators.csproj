@@ -75,6 +75,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="TeamConfigurationValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -84,6 +85,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1382_cogs.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces.csproj">
+      <Project>{14D206F0-F02A-4A5A-9882-92553D03663D}</Project>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

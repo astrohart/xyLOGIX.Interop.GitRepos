@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Validators
+namespace xyLOGIX.Interop.LibGit2Sharp.Configuration.Validators
 {
     /// <summary>
     /// Methods to validate team configurations.
