@@ -90,6 +90,18 @@
       <Project>{180A869D-9A16-4085-BF0A-16D079CADC5F}</Project>
       <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Interfaces.csproj">
+      <Project>{A9F322DD-1095-4BBA-B89F-C487BFF495BA}</Project>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces.csproj">
+      <Project>{5141A303-C55D-40BF-870C-AAC091FB56FD}</Project>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Events\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Events.csproj">
+      <Project>{8E3F95AB-FA8D-483C-9F92-8545E2A908CF}</Project>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Events</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

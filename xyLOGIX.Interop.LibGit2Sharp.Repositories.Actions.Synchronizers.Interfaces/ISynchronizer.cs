@@ -1,5 +1,8 @@
 using System;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Events;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces
 {

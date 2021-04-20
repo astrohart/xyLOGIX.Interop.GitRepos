@@ -1,4 +1,11 @@
+using LibGit2Sharp;
 using System;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Exceptions;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Factories;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pullers.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Factories;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Pushers.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Events;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers
@@ -43,13 +50,13 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers
         /// Gets a reference to an instance of an object that implements the
         /// <see cref="IPuller" /> interface.
         /// </summary>
-        public IPuller Puller { get; } = Pullers.Puller.Instance;
+        public IPuller Puller { get; } = GetPuller.SoleInstance();
 
         /// <summary>
         /// Gets a reference to an instance of an object that implements the
         /// <see cref="IPusher" /> interface.
         /// </summary>
-        public IPusher Pusher { get; } = Pushers.Pusher.Instance;
+        public IPusher Pusher { get; } = GetPusher.SoleInstance();
 
         /// <summary>
         /// Attaches an instance of an object that implements the
