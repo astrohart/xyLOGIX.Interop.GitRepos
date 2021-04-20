@@ -1,4 +1,6 @@
 ﻿using System;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Events;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces
 {

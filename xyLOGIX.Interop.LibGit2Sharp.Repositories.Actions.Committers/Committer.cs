@@ -1,13 +1,12 @@
 ﻿using LibGit2Sharp;
 using System;
-using xyLOGIX.Interop.LibGit2Sharp.Events;
 using xyLOGIX.Interop.LibGit2Sharp.Exceptions;
-using xyLOGIX.Interop.LibGit2Sharp.Extensions;
-using xyLOGIX.Interop.LibGit2Sharp.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Helpers;
 using xyLOGIX.Interop.LibGit2Sharp.Internal;
-using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Events;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Committers
+namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers
 {
     /// <summary>
     /// Commits staged items to a Git repository.
@@ -26,7 +25,7 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Committers
 
         /// <summary>
         /// Gets a reference to the one and only instance of
-        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Committers.Committer" />.
+        /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Committer" />.
         /// </summary>
         public static Committer Instance { get; } = new Committer();
 
