@@ -3,16 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using xyLOGIX.Interop.GitRepos.Configuration.Interfaces;
-using xyLOGIX.Interop.GitRepos.Repositories.Actions.Committers.Factories;
-using xyLOGIX.Interop.GitRepos.Repositories.Actions.Committers.Interfaces;
+using xyLOGIX.Interop.GitRepos.Actions.Committers.Factories;
+using xyLOGIX.Interop.GitRepos.Actions.Committers.Interfaces;
 using xyLOGIX.Interop.GitRepos.Interfaces;
 using xyLOGIX.Interop.GitRepos.Configuration.Helpers;
 using xyLOGIX.Interop.GitRepos.Configuration.Validators;
-using xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions;
-using xyLOGIX.Interop.GitRepos.Repositories.Actions.Stagers.Factories;
-using xyLOGIX.Interop.GitRepos.Repositories.Actions.Stagers.Interfaces;
-using xyLOGIX.Interop.GitRepos.Repositories.Actions.Synchronizers.Factories;
-using xyLOGIX.Interop.GitRepos.Repositories.Actions.Synchronizers.Interfaces;
+using xyLOGIX.Interop.GitRepos.Actions.Exceptions;
+using xyLOGIX.Interop.GitRepos.Actions.Stagers.Factories;
+using xyLOGIX.Interop.GitRepos.Actions.Stagers.Interfaces;
+using xyLOGIX.Interop.GitRepos.Actions.Synchronizers.Factories;
+using xyLOGIX.Interop.GitRepos.Actions.Synchronizers.Interfaces;
 
 namespace xyLOGIX.Interop.GitRepos
 {
@@ -174,14 +174,14 @@ namespace xyLOGIX.Interop.GitRepos
         /// if no <paramref name="files" /> are specified.
         /// </remarks>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.GitRepos.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// An active and valid
         /// <see
         ///     cref="T:xyLOGIX.Interop.GitRepos.Interfaces.IGitRepositoryConfiguration" />
@@ -192,7 +192,7 @@ namespace xyLOGIX.Interop.GitRepos
         /// messages mandatory, yet the <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.TeamConfigurationException">
         /// Thrown if a validation error is encountered due to improper
         /// configuration of this Team.
         /// </exception>
@@ -242,14 +242,14 @@ namespace xyLOGIX.Interop.GitRepos
         /// short commit message from a detailed commit message.
         /// </remarks>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.GitRepos.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// An active and valid
         /// <see
         ///     cref="T:xyLOGIX.Interop.GitRepos.Interfaces.IGitRepositoryConfiguration" />
@@ -260,7 +260,7 @@ namespace xyLOGIX.Interop.GitRepos
         /// messages mandatory, yet the <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.TeamConfigurationException">
         /// Thrown if a validation error is encountered due to improper
         /// configuration of this Team.
         /// </exception>
@@ -296,14 +296,14 @@ namespace xyLOGIX.Interop.GitRepos
         /// (Optional.) Set to true to add the timestamp to the commit message.
         /// </param>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.GitRepos.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// An active and valid
         /// <see
         ///     cref="T:xyLOGIX.Interop.GitRepos.Interfaces.IGitRepositoryConfiguration" />
@@ -314,7 +314,7 @@ namespace xyLOGIX.Interop.GitRepos
         /// messages mandatory, yet the <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.TeamConfigurationException">
         /// Thrown if a validation error is encountered due to improper
         /// configuration of this Team.
         /// </exception>
@@ -337,14 +337,14 @@ namespace xyLOGIX.Interop.GitRepos
         /// (Optional.) Set to true to add the timestamp to the commit message.
         /// </param>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.GitRepos.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// An active and valid
         /// <see
         ///     cref="T:xyLOGIX.Interop.GitRepos.Interfaces.IGitRepositoryConfiguration" />
@@ -355,7 +355,7 @@ namespace xyLOGIX.Interop.GitRepos
         /// messages mandatory, yet the <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.TeamConfigurationException">
         /// Thrown if a validation error is encountered due to improper
         /// configuration of this Team.
         /// </exception>
@@ -393,14 +393,14 @@ namespace xyLOGIX.Interop.GitRepos
         /// method if no <paramref name="files" /> are specified.
         /// </remarks>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.GitRepos.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// An active and valid
         /// <see
         ///     cref="T:xyLOGIX.Interop.GitRepos.Interfaces.IGitRepositoryConfiguration" />
@@ -411,7 +411,7 @@ namespace xyLOGIX.Interop.GitRepos
         /// messages mandatory, yet the <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.TeamConfigurationException">
         /// Thrown if a validation error is encountered due to improper
         /// configuration of this Team.
         /// </exception>
@@ -456,14 +456,14 @@ namespace xyLOGIX.Interop.GitRepos
         /// method if no <paramref name="files" /> are specified.
         /// </remarks>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotAttachedException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
         /// <see
         ///     cref="M:xyLOGIX.Interop.GitRepos.Interfaces.IGitRepositoryAction.AttachGitRepository" />
         /// method has not been called.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.GitRepositoryNotConfiguredException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.GitRepositoryNotConfiguredException">
         /// An active and valid
         /// <see
         ///     cref="T:xyLOGIX.Interop.GitRepos.Interfaces.IGitRepositoryConfiguration" />
@@ -474,7 +474,7 @@ namespace xyLOGIX.Interop.GitRepos
         /// messages mandatory, yet the <paramref name="commitMessage" /> is blank.
         /// </exception>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.TeamConfigurationException">
         /// Thrown if a validation error is encountered due to improper
         /// configuration of this Team.
         /// </exception>
@@ -651,7 +651,7 @@ namespace xyLOGIX.Interop.GitRepos
         /// collection.
         /// </summary>
         /// <exception
-        ///     cref="T:xyLOGIX.Interop.GitRepos.Repositories.Actions.Exceptions.TeamConfigurationException">
+        ///     cref="T:xyLOGIX.Interop.GitRepos.Actions.Exceptions.TeamConfigurationException">
         /// Thrown if a validation error is encountered due to improper
         /// configuration of this Team.
         /// </exception>

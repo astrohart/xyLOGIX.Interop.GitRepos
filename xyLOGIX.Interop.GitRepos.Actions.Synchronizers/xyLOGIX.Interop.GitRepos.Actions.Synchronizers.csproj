@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\PostSharp.6.9.4\build\PostSharp.props" Condition="Exists('..\packages\PostSharp.6.9.4\build\PostSharp.props')" />
+  <Import Project="..\packages\LibGit2Sharp.NativeBinaries.2.0.306\build\net46\LibGit2Sharp.NativeBinaries.props" Condition="Exists('..\packages\LibGit2Sharp.NativeBinaries.2.0.306\build\net46\LibGit2Sharp.NativeBinaries.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <ApplicationIcon>1382_cogs.ico</ApplicationIcon>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
-    <ProjectGuid>{065F3287-831F-4A7F-A552-FED28A188121}</ProjectGuid>
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <ProjectGuid>{77A4E037-A706-4FCD-BCD1-37C54FB10994}</ProjectGuid>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -20,7 +22,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>False</SkipPostSharp>
-    <DocumentationFile>bin\x64\Debug\xyLOGIX.Interop.GitRepos.Interfaces.xml</DocumentationFile>
+    <DocumentationFile>bin\x64\Debug\xyLOGIX.Interop.GitRepos.Actions.Synchronizers.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -33,7 +35,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>True</SkipPostSharp>
-    <DocumentationFile>bin\x64\Release\xyLOGIX.Interop.GitRepos.Interfaces.xml</DocumentationFile>
+    <DocumentationFile>bin\x64\Release\xyLOGIX.Interop.GitRepos.Actions.Synchronizers.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -46,7 +48,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>False</SkipPostSharp>
-    <DocumentationFile>bin\x86\Debug\xyLOGIX.Interop.GitRepos.Interfaces.xml</DocumentationFile>
+    <DocumentationFile>bin\x86\Debug\xyLOGIX.Interop.GitRepos.Actions.Synchronizers.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -59,7 +61,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>True</SkipPostSharp>
-    <DocumentationFile>bin\x86\Release\xyLOGIX.Interop.GitRepos.Interfaces.xml</DocumentationFile>
+    <DocumentationFile>bin\x86\Release\xyLOGIX.Interop.GitRepos.Actions.Synchronizers.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <OutputType>Library</OutputType>
@@ -68,12 +70,15 @@
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyName>xyLOGIX.Interop.GitRepos.Interfaces</AssemblyName>
+    <AssemblyName>xyLOGIX.Interop.GitRepos.Actions.Synchronizers</AssemblyName>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>xyLOGIX.Interop.GitRepos.Interfaces</RootNamespace>
+    <RootNamespace>xyLOGIX.Interop.GitRepos.Actions.Synchronizers</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LibGit2Sharp, Version=0.26.0.0, Culture=neutral, PublicKeyToken=7cbde695407f0333, processorArchitecture=MSIL">
+      <HintPath>..\packages\LibGit2Sharp.0.26.2\lib\net46\LibGit2Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
     </Reference>
@@ -96,13 +101,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GlobalAspects.cs" />
-    <Compile Include="ITeam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Synchronizer.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -114,21 +119,45 @@
     <Content Include="1382_cogs.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\xyLOGIX.Interop.GitRepos.Configuration.Interfaces\xyLOGIX.Interop.GitRepos.Configuration.Interfaces.csproj">
-      <Project>{14D206F0-F02A-4A5A-9882-92553D03663D}</Project>
-      <Name>xyLOGIX.Interop.GitRepos.Configuration.Interfaces</Name>
+    <ProjectReference Include="..\xyLOGIX.Interop.GitRepos.Actions.Events\xyLOGIX.Interop.GitRepos.Actions.Events.csproj">
+      <Project>{F4D04E9A-E420-47F1-90E1-860F15EF09BA}</Project>
+      <Name>xyLOGIX.Interop.GitRepos.Actions.Events</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Interop.GitRepos.Actions.Committers.Interfaces\xyLOGIX.Interop.GitRepos.Actions.Committers.Interfaces.csproj">
-      <Project>{A17FD436-3781-4C20-BA32-E6425D650A74}</Project>
-      <Name>xyLOGIX.Interop.GitRepos.Actions.Committers.Interfaces</Name>
+    <ProjectReference Include="..\xyLOGIX.Interop.GitRepos.Actions.Exceptions\xyLOGIX.Interop.GitRepos.Actions.Exceptions.csproj">
+      <Project>{8802EB52-7346-4084-953C-80B1C6CBB619}</Project>
+      <Name>xyLOGIX.Interop.GitRepos.Actions.Exceptions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Interop.GitRepos.Actions.Stagers.Interfaces\xyLOGIX.Interop.GitRepos.Actions.Stagers.Interfaces.csproj">
-      <Project>{470E3CC9-9676-4342-82C6-D2BF7762969E}</Project>
-      <Name>xyLOGIX.Interop.GitRepos.Actions.Stagers.Interfaces</Name>
+    <ProjectReference Include="..\xyLOGIX.Interop.GitRepos.Actions.Interfaces\xyLOGIX.Interop.GitRepos.Actions.Interfaces.csproj">
+      <Project>{180A869D-9A16-4085-BF0A-16D079CADC5F}</Project>
+      <Name>xyLOGIX.Interop.GitRepos.Actions.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.GitRepos.Actions.Pullers.Factories\xyLOGIX.Interop.GitRepos.Actions.Pullers.Factories.csproj">
+      <Project>{0D0C3AA5-DEBF-4E67-9D56-0883479AC6AD}</Project>
+      <Name>xyLOGIX.Interop.GitRepos.Actions.Pullers.Factories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.GitRepos.Actions.Pullers.Interfaces\xyLOGIX.Interop.GitRepos.Actions.Pullers.Interfaces.csproj">
+      <Project>{A9F322DD-1095-4BBA-B89F-C487BFF495BA}</Project>
+      <Name>xyLOGIX.Interop.GitRepos.Actions.Pullers.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.GitRepos.Actions.Pushers.Factories\xyLOGIX.Interop.GitRepos.Actions.Pushers.Factories.csproj">
+      <Project>{526E8BE6-2E6E-442F-A337-F5996003B342}</Project>
+      <Name>xyLOGIX.Interop.GitRepos.Actions.Pushers.Factories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.GitRepos.Actions.Pushers.Interfaces\xyLOGIX.Interop.GitRepos.Actions.Pushers.Interfaces.csproj">
+      <Project>{5141A303-C55D-40BF-870C-AAC091FB56FD}</Project>
+      <Name>xyLOGIX.Interop.GitRepos.Actions.Pushers.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.GitRepos.Actions.Synchronizers.Events\xyLOGIX.Interop.GitRepos.Actions.Synchronizers.Events.csproj">
+      <Project>{8E3F95AB-FA8D-483C-9F92-8545E2A908CF}</Project>
+      <Name>xyLOGIX.Interop.GitRepos.Actions.Synchronizers.Events</Name>
     </ProjectReference>
     <ProjectReference Include="..\xyLOGIX.Interop.GitRepos.Actions.Synchronizers.Interfaces\xyLOGIX.Interop.GitRepos.Actions.Synchronizers.Interfaces.csproj">
       <Project>{EFDA4ED8-7E59-43BF-A945-523A6823BC03}</Project>
       <Name>xyLOGIX.Interop.GitRepos.Actions.Synchronizers.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.GitRepos.Actions\xyLOGIX.Interop.GitRepos.Actions.csproj">
+      <Project>{56909587-2574-4098-8D15-57B08B0C0C7C}</Project>
+      <Name>xyLOGIX.Interop.GitRepos.Actions</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +169,7 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
+    <Error Condition="!Exists('..\packages\LibGit2Sharp.NativeBinaries.2.0.306\build\net46\LibGit2Sharp.NativeBinaries.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\LibGit2Sharp.NativeBinaries.2.0.306\build\net46\LibGit2Sharp.NativeBinaries.props'))" />
     <Error Condition="!Exists('..\packages\PostSharp.6.9.4\build\PostSharp.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PostSharp.6.9.4\build\PostSharp.props'))" />
     <Error Condition="!Exists('..\packages\PostSharp.6.9.4\build\PostSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PostSharp.6.9.4\build\PostSharp.targets'))" />
     <Error Condition="!Exists('..\packages\Vsxmd.1.4.5\build\Vsxmd.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Vsxmd.1.4.5\build\Vsxmd.targets'))" />
