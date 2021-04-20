@@ -1,6 +1,6 @@
 ﻿using System;
-using xyLOGIX.Interop.LibGit2Sharp.Events;
 using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Events;
 
 namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces
 {
@@ -27,7 +27,9 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces
         /// <summary>
         /// Stages all pending changes in the repository.
         /// </summary>
-        /// <returns>True if the stage operation succeeded; false otherwise.</returns>
+        /// <returns>
+        /// True if the stage operation succeeded; false otherwise.
+        /// </returns>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
@@ -44,7 +46,9 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces
         /// String containing the full or relative path (to the working
         /// directory) of the item to be staged.
         /// </param>
-        /// <returns>True if the stage operation succeeded; false otherwise.</returns>
+        /// <returns>
+        /// True if the stage operation succeeded; false otherwise.
+        /// </returns>
         /// <exception
         ///     cref="T:xyLOGIX.Interop.LibGit2Sharp.Exceptions.GitRepositoryNotAttachedException">
         /// Thrown if the
@@ -53,9 +57,10 @@ namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces
         /// method has not been called.
         /// </exception>
         /// <exception cref="T:System.IO.FileNotFoundException">
-        /// The item to be staged,
-        /// whose path is specified by the <paramref name="file" /> parameter, could not be
-        /// located.
+        /// The item to be staged, whose path is specified by the
+        /// <paramref
+        ///     name="file" />
+        /// parameter, could not be located.
         /// </exception>
         bool StageFile(string file);
     }

@@ -1,4 +1,4 @@
-﻿namespace xyLOGIX.Interop.LibGit2Sharp.Events
+﻿namespace xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Events
 {
     /// <summary>
     /// Delegate for a StageFailed event.
@@ -9,7 +9,7 @@
     /// </param>
     /// <param name="e">
     /// A
-    /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Events.StageFailedEventArgs" /> that contains
+    /// <see cref="T:xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Events.StageFailedEventArgs" /> that contains
     /// the event data.
     /// </param>
     public delegate void StageFailedEventHandler(object sender,

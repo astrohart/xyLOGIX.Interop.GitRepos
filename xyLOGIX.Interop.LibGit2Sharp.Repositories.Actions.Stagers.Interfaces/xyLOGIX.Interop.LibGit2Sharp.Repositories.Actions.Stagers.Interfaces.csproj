@@ -94,6 +94,10 @@
       <Project>{180A869D-9A16-4085-BF0A-16D079CADC5F}</Project>
       <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Events\xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Events.csproj">
+      <Project>{9967E06D-FF1E-4B00-A0D3-0CC6F8E41050}</Project>
+      <Name>xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Events</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
