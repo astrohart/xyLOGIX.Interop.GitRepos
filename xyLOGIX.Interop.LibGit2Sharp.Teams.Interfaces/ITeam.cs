@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Configuration.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Committers.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Stagers.Interfaces;
+using xyLOGIX.Interop.LibGit2Sharp.Repositories.Actions.Synchronizers.Interfaces;
 
-namespace xyLOGIX.Interop.LibGit2Sharp.Interfaces
+namespace xyLOGIX.Interop.LibGit2Sharp.Teams.Interfaces
 {
     /// <summary>
     /// Defines methods and properties for a Team object.
